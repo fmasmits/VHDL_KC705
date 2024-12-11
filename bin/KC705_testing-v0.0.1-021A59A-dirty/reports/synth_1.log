@@ -1,0 +1,298 @@
+
+*** Running vivado
+    with args -log KC705_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source KC705_top.tcl
+
+
+****** Vivado v2024.1.2 (64-bit)
+  **** SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
+  **** IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+  **** SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+  **** Start of session at: Wed Dec 11 12:30:27 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source KC705_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1413.566 ; gain = 0.023 ; free physical = 12845 ; free virtual = 18363
+source /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog/Tcl/integrated/pre-synthesis.tcl
+INFO: [Hog:GetRepoVersions-0] Hog submodule /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog clean.
+CRITICAL WARNING: [Hog:GetRepoVersions-0] Git working directory /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top/KC705_testing not clean, commit hash, and version will be set to 0.
+INFO: [Hog:GetRepoVersions-0] This project does not use IPbus XMLs
+INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.1-021A59A-dirty...
+INFO: [Hog:Msg-0] Opening project KC705_testing...
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [Hog:Msg-0] Checking KC705_testing list files...
+INFO: [Hog:Msg-0] Retrieved Vivado project files...
+INFO: [Hog:Msg-0] Design List Files matches project. Nothing to do.
+INFO: [Hog:Msg-0] Simulation List Files matches project. Nothing to do.
+INFO: [Hog:Msg-0] Constraint List Files matches project. Nothing to do.
+INFO: [Hog:Msg-0] /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top//KC705_testing/hog.conf matches project. Nothing to do
+WARNING: [Hog:Msg-0] /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top//KC705_testing/sim.conf not found. Skipping properties check
+INFO: [Hog:Msg-0] Design List files and hog.conf match project. All ok!
+INFO: [Hog:Msg-0] Simulation list files match project. All ok!
+INFO: [Hog:Msg-0] Simulation config files match project. All ok!
+INFO: [Hog:Msg-0] All done.
+INFO: [Hog:Msg-0] Evaluating non committed changes...
+WARNING: [Hog:Msg-0] Found non committed changes:...
+ .../KC705_testing.cache/wt/project.wpc             |  2 +-
+ Projects/KC705_testing/KC705_testing.xpr           | 85 +++++++++++-----------
+ 2 files changed, 43 insertions(+), 44 deletions(-)
+CRITICAL WARNING: [Hog:Msg-0] Repository is not clean, will use current SHA (021a59a) and create a dirty bitfile...
+INFO: [Hog:Msg-0] Git describe for 0000000 is: v0.0.1-021A59A-dirty
+CRITICAL WARNING: [Hog:Msg-0] Multithreading enabled. Bitfile will not be deterministic. Number of threads: 20
+INFO: [Hog:WriteGenerics-0] Passing parameters/generics to project's top module...
+INFO: [Hog:WriteGenerics-0] Setting parameters/generics...
+INFO: [Hog:Msg-0] Opening version file /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/versions.txt...
+ ------------------------- PRE SYNTHESIS -------------------------
+ 11/12/2024 at 12:30:40
+ Firmware date and time: 11122024, 00122855
+ Global SHA: 021a59a, VER: 0.0.0
+ Constraints SHA: ab3d196, VER: 0.0.0
+ Top SHA: ab3d196, VER: 0.0.0
+ Hog SHA: 219f277, VER: 8.15.4
+ --- Libraries ---
+ xil_defaultlib SHA: ab3d196, VER: 0.0.0
+ ips SHA: ab3d196, VER: 0.0.0
+ -----------------------------------------------------------------
+INFO: [Hog:CheckYmlRef-0] .gitlab-ci.yml not found in /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705. Skipping this step
+INFO: [Hog:Msg-0] All done.
+Command: synth_design -top KC705_top -part xc7k325tffg900-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Device 21-9227] Part: xc7k325tffg900-2 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 85694
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2237.941 ; gain = 404.625 ; free physical = 11696 ; free virtual = 17214
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'KC705_top' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:43]
+	Parameter GLOBAL_DATE bound to: 32'b00010001000100100010000000100100 
+	Parameter GLOBAL_TIME bound to: 32'b00000000000100100010100001010101 
+	Parameter GLOBAL_VER bound to: 32'b00000000000000000000000000000000 
+	Parameter GLOBAL_SHA bound to: 32'b00000000001000011010010110011010 
+	Parameter TOP_VER bound to: 32'b00000000000000000000000000000000 
+	Parameter TOP_SHA bound to: 32'b00001010101100111101000110010110 
+	Parameter CON_VER bound to: 32'b00000000000000000000000000000000 
+	Parameter CON_SHA bound to: 32'b00001010101100111101000110010110 
+	Parameter HOG_VER bound to: 32'b00001000000011110000000000000100 
+	Parameter HOG_SHA bound to: 32'b00000010000110011111001001110111 
+	Parameter IPS_VER bound to: 32'b00000000000000000000000000000000 
+	Parameter IPS_SHA bound to: 32'b00001010101100111101000110010110 
+	Parameter XIL_DEFAULTLIB_VER bound to: 32'b00000000000000000000000000000000 
+	Parameter XIL_DEFAULTLIB_SHA bound to: 32'b00001010101100111101000110010110 
+INFO: [Synth 8-113] binding component instance 'IBUFDS_sys_clc' to cell 'IBUFDS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:81]
+INFO: [Synth 8-3491] module 'mmcm_sys_clk' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/realtime/mmcm_sys_clk_stub.vhdl:6' bound to instance 'mmcm_sys_clk_wiz' of component 'mmcm_sys_clk' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'mmcm_sys_clk' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/realtime/mmcm_sys_clk_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'vio_mmcm' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/realtime/vio_mmcm_stub.vhdl:6' bound to instance 'vio_mmcm_lock_reset' of component 'vio_mmcm' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:97]
+INFO: [Synth 8-638] synthesizing module 'vio_mmcm' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/realtime/vio_mmcm_stub.vhdl:15]
+INFO: [Synth 8-113] binding component instance 'OBUF_sys_clk' to cell 'OBUF' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:104]
+INFO: [Synth 8-256] done synthesizing module 'KC705_top' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:43]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2323.910 ; gain = 490.594 ; free physical = 11604 ; free virtual = 17122
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2341.723 ; gain = 508.406 ; free physical = 11592 ; free virtual = 17110
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2341.723 ; gain = 508.406 ; free physical = 11592 ; free virtual = 17110
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2347.660 ; gain = 0.000 ; free physical = 11587 ; free virtual = 17106
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/vio_mmcm/vio_mmcm/vio_mmcm_in_context.xdc] for cell 'vio_mmcm_lock_reset'
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/vio_mmcm/vio_mmcm/vio_mmcm_in_context.xdc] for cell 'vio_mmcm_lock_reset'
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/mmcm_sys_clk/mmcm_sys_clk/mmcm_sys_clk_in_context.xdc] for cell 'mmcm_sys_clk_wiz'
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-85625-fmasmitsxps15/mmcm_sys_clk/mmcm_sys_clk/mmcm_sys_clk_in_context.xdc] for cell 'mmcm_sys_clk_wiz'
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_constraints.xdc]
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/KC705_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/KC705_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.730 ; gain = 0.000 ; free physical = 11572 ; free virtual = 17090
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.730 ; gain = 0.000 ; free physical = 11572 ; free virtual = 17090
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'vio_mmcm_lock_reset' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11574 ; free virtual = 17092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11574 ; free virtual = 17092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for vio_mmcm_lock_reset. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for mmcm_sys_clk_wiz. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11574 ; free virtual = 17092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17091
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11569 ; free virtual = 17092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |mmcm_sys_clk  |         1|
+|2     |vio_mmcm      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------------+------+
+|      |Cell              |Count |
++------+------------------+------+
+|1     |mmcm_sys_clk_bbox |     1|
+|2     |vio_mmcm_bbox     |     1|
+|3     |IBUFDS            |     1|
+|4     |OBUF              |     1|
++------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2558.730 ; gain = 508.406 ; free physical = 11571 ; free virtual = 17094
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2558.730 ; gain = 725.414 ; free physical = 11571 ; free virtual = 17094
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.730 ; gain = 0.000 ; free physical = 11571 ; free virtual = 17094
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.730 ; gain = 0.000 ; free physical = 11864 ; free virtual = 17388
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: aaf1922a
+INFO: [Common 17-83] Releasing license: Synthesis
+50 Infos, 4 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 2558.730 ; gain = 1113.148 ; free physical = 11864 ; free virtual = 17388
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1988.021; main = 1637.941; forked = 398.912
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3548.879; main = 2526.715; forked = 1022.164
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2558.730 ; gain = 0.000 ; free physical = 11864 ; free virtual = 17388
+INFO: [Common 17-1381] The checkpoint '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/KC705_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file KC705_top_utilization_synth.rpt -pb KC705_top_utilization_synth.pb
+source /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog/Tcl/integrated/post-synthesis.tcl
+INFO: [Hog:Msg-0] Evaluating Git sha for KC705_testing...
+INFO: [Hog:GetRepoVersions-0] Hog submodule /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog clean.
+CRITICAL WARNING: [Hog:GetRepoVersions-0] Git working directory /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top/KC705_testing not clean, commit hash, and version will be set to 0.
+INFO: [Hog:GetRepoVersions-0] This project does not use IPbus XMLs
+INFO: [Hog:Msg-0] Git describe set to: v0.0.1-021A59A-dirty
+INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.1-021A59A-dirty...
+INFO: [Hog:Msg-0] All done.
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 11 12:31:11 2024...
