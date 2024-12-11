@@ -1,0 +1,3 @@
+sources/hdl/KC705_top.vhd top=KC705_top
+sources/ip/mmcm_sys_clk.xcix
+sources/ip/vio_mmcm.xcix
