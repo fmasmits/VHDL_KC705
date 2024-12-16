@@ -1,1 +1,2 @@
-sources/constraints/KC705_constraints.xdc
+sources/constraints/KC705_clocking.xdc
+sources/constraints/KC705_physical.xdc

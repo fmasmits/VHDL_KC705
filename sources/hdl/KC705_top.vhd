@@ -46,23 +46,26 @@ architecture Behavioral of KC705_top is
     --            Signals           --
     ----------------------------------
     signal clk_sys_in       : std_logic;
+    signal clk_sys_gl       : std_logic;
     signal mmcm_lck_ind     : std_logic;
     signal mmcm_rst         : std_logic;
-    signal clk_6MHz         : std_logic;
-    signal clk_12MHz        : std_logic;
+    signal clk_lf           : std_logic;
+    signal clk_lf_div2      : std_logic;
+    signal clk_trans        : std_logic;
     
     
     ----------------------------------
     --           Components         --
     ----------------------------------
-    component mmcm_sys_clk
+    component mmcm_sys_clk_wiz
     port
     (
-        clk_sys           : in     std_logic;
-        clk_out_lf1       : out    std_logic;
-        clk_out_lf2       : out    std_logic;
-        reset             : in     std_logic;
-        locked            : out    std_logic
+        clk_in          : in     std_logic;
+        clk_out_lf      : out    std_logic;
+        clk_out_lfdiv2  : out    std_logic;
+        clk_out_trans   : out    std_logic;
+        reset           : in     std_logic;
+        locked          : out    std_logic
     );
     end component;
     
@@ -73,37 +76,36 @@ architecture Behavioral of KC705_top is
         probe_out0  : out   std_logic 
     );
     end component;
-    
-    
-    
+ 
 begin
 
-    IBUFDS_sys_clc : IBUFDS
+    IBUFGDS_sys_clc : IBUFGDS
     port map (
         I   => clk_sys_in_diff(0),     
         IB  => clk_sys_in_diff(1),   
-        O   => clk_sys_in     
+        O   => clk_sys_gl     
     );
     
-    mmcm_sys_clk_wiz : mmcm_sys_clk
+    mmcm_sys_clk : mmcm_sys_clk_wiz
     port map ( 
-       clk_sys      => clk_sys_in,
-       clk_out_lf1  => clk_6MHz,
-       clk_out_lf2  => clk_12MHz,     
-       reset        => mmcm_rst,
-       locked       => mmcm_lck_ind
+       clk_in           => clk_sys_gl,
+       clk_out_lf       => clk_lf,          --6.25  MHz clock signal
+       clk_out_lfdiv2   => clk_lf_div2,     --12.50 MHz clock signal
+       clk_out_trans    => clk_trans,       --160   MHz clock signal
+       reset            => mmcm_rst, 
+       locked           => mmcm_lck_ind
     );
     
-    vio_mmcm_lock_reset : vio_mmcm
+    vio_mmcm_lck_rst : vio_mmcm
     port map (
-        clk         => clk_sys_in,
+        clk         => clk_sys_gl,
         probe_in0   => mmcm_lck_ind,
         probe_out0  => mmcm_rst
     );
     
     OBUF_sys_clk : OBUF
     port map (
-        I => clk_6MHz,
+        I => clk_lf,
         O => clk_sys_out
     );
     

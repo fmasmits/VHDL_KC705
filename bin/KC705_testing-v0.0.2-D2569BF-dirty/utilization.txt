@@ -1,0 +1,636 @@
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    562      |   0         |   0              |   203800        |    0.28      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Implementation Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs      |    554      |   0         |   0              |   203800        |    0.27      |   
+| Slice  Registers |    983      |   0         |   0              |   407600        |    0.24      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   3         |   0              |   500           |    0.60      |   
+                                                                                                       
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    3        |   0         |   0              |   500           |    0.60      |   
+                                                                                                       

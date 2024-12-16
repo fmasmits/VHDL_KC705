@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1733916625">
+<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734014503" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
   <File Type="VDS-TIMING-PB" Name="KC705_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="KC705_top_timing_summary_synth.rpt"/>
-  <File Type="PA-TCL" Name="KC705_top.tcl"/>
   <File Type="RDS-DCP" Name="KC705_top.dcp"/>
-  <File Type="REPORTS-TCL" Name="KC705_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="KC705_top.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="KC705_top_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="KC705_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="KC705_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="KC705_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="KC705_top_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="KC705_top.vds"/>
+  <File Type="REPORTS-TCL" Name="KC705_top_reports.tcl"/>
+  <File Type="PA-TCL" Name="KC705_top.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../../sources/ip/vio_mmcm/vio_mmcm.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../sources/ip/mmcm_sys_clk/mmcm_sys_clk.xci">
+    <File Path="$PPRDIR/../../sources/ip/mmcm_sys_clk_wiz/mmcm_sys_clk_wiz.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -32,20 +25,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../sources/ip/mmcm_sys_clk.xcix">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../sources/ip/vio_mmcm.xcix">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="KC705_top"/>
@@ -53,13 +32,20 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../../sources/constraints/KC705_constraints.xdc">
+    <File Path="$PPRDIR/../../sources/constraints/KC705_physical.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../sources/constraints/KC705_clocking.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PPRDIR/../../sources/constraints/KC705_clocking.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -113,6 +99,14 @@
         <Attr Name="UsedInSteps" Val="impl_1;WRITE_BITSTREAM;TCL.POST"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
@@ -121,4 +115,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design" PreStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/pre-synthesis.tcl" PostStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/post-synthesis.tcl"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="vio_mmcm"/>
 </GenRun>

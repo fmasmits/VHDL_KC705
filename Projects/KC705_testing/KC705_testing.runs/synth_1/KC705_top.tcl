@@ -56,6 +56,8 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -string {{.*The IP file '.*' has been moved from its original location, as a result the outputs for this IP will now be generated in '.*'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands..*}}  -suppress  -regexp
 set_msg_config  -string {{.*File '.*.xci' referenced by design '.*' could not be found..*}}  -suppress  -regexp
 OPTRACE "Creating in-memory project" START { }
@@ -86,14 +88,14 @@ if {$src_rc} {
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -vhdl2008 -library xil_defaultlib /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd
+read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk_wiz/mmcm_sys_clk_wiz.xci
+set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk_wiz/mmcm_sys_clk_wiz_board.xdc]
+set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk_wiz/mmcm_sys_clk_wiz.xdc]
+set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk_wiz/mmcm_sys_clk_wiz_ooc.xdc]
+
 read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_mmcm/vio_mmcm.xci
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_mmcm/vio_mmcm.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_mmcm/vio_mmcm_ooc.xdc]
-
-read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk/mmcm_sys_clk.xci
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk/mmcm_sys_clk_board.xdc]
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk/mmcm_sys_clk.xdc]
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/mmcm_sys_clk/mmcm_sys_clk_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -104,12 +106,17 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_constraints.xdc
-set_property used_in_implementation false [get_files /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_constraints.xdc]
+read_xdc /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_physical.xdc
+set_property used_in_implementation false [get_files /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_physical.xdc]
+
+read_xdc /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_clocking.xdc
+set_property used_in_implementation false [get_files /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_clocking.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.srcs/utils_1/imports/synth_1/KC705_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
