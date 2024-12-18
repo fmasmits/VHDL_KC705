@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734536479" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
-  <File Type="VDS-TIMING-PB" Name="KC705_top_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="KC705_top_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="KC705_top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="KC705_top_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="KC705_top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="KC705_top_drc_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734537032" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
   <File Type="RDS-RDS" Name="KC705_top.vds"/>
   <File Type="REPORTS-TCL" Name="KC705_top_reports.tcl"/>
   <File Type="PA-TCL" Name="KC705_top.tcl"/>
+  <File Type="RDS-DCP" Name="KC705_top.dcp"/>
+  <File Type="RDS-UTIL" Name="KC705_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="KC705_top_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../sources/hdl/KC705_top.vhd">
@@ -106,14 +103,14 @@
   </FileSet>
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
-    <Step Id="synth_design" PreStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/pre-synthesis.tcl" PostStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/post-synthesis.tcl"/>
+    <Step Id="synth_design" PostStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/post-synthesis.tcl" PreStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/pre-synthesis.tcl"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="vio_TX"/>
-  <BlockFileSet Type="BlockSrcs" Name="vio_misc"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_RX"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_misc"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_TX"/>
+  <BlockFileSet Type="BlockSrcs" Name="trans_wiz"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_TRANS"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_QPLL"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_DRP"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
-  <BlockFileSet Type="BlockSrcs" Name="trans_wiz"/>
 </GenRun>

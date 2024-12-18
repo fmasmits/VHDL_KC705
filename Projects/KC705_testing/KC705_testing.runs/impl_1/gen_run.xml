@@ -1,89 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734536479">
+<GenRun Id="impl_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734537088">
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="KC705_top_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS" Name="KC705_top_routed.rqs"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="KC705_top.vdi"/>
-  <File Type="BG-DRC" Name="KC705_top.drc"/>
-  <File Type="BG-BGN" Name="KC705_top.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="KC705_top.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="KC705_top.ltx"/>
-  <File Type="RBD_FILE" Name="KC705_top.rbd"/>
-  <File Type="NPI_FILE" Name="KC705_top.npi"/>
-  <File Type="RNPI_FILE" Name="KC705_top.rnpi"/>
-  <File Type="CFI_FILE" Name="KC705_top.cfi"/>
-  <File Type="RCFI_FILE" Name="KC705_top.rcfi"/>
-  <File Type="PL-PDI-FILE" Name="KC705_top_pld.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="KC705_top_boot.pdi"/>
-  <File Type="PDI-FILE" Name="KC705_top.pdi"/>
-  <File Type="BITSTR-MMI" Name="KC705_top.mmi"/>
-  <File Type="BITSTR-BMM" Name="KC705_top_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="KC705_top.nky"/>
-  <File Type="BITSTR-RBT" Name="KC705_top.rbt"/>
-  <File Type="BITSTR-MSK" Name="KC705_top.msk"/>
-  <File Type="BG-BIN" Name="KC705_top.bin"/>
-  <File Type="BG-BIT" Name="KC705_top.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="KC705_top_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="KC705_top_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="KC705_top_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="KC705_top_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="KC705_top_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="KC705_top_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="KC705_top_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="KC705_top_postroute_physopt.dcp"/>
-  <File Type="ROUTE-RQS-PB" Name="KC705_top_rqs_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="KC705_top_bus_skew_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="KC705_top_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="KC705_top_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="KC705_top_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="KC705_top_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="KC705_top_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="KC705_top_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="KC705_top_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="KC705_top_route_status.pb"/>
+  <File Type="ROUTE-DCP" Name="KC705_top_routed.dcp"/>
   <File Type="ROUTE-STATUS" Name="KC705_top_route_status.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="KC705_top_power_routed.rpx"/>
   <File Type="ROUTE-PWR-SUM" Name="KC705_top_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR" Name="KC705_top_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="KC705_top_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="KC705_top_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="KC705_top_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="KC705_top_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="KC705_top_drc_routed.pb"/>
   <File Type="ROUTE-DRC" Name="KC705_top_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="KC705_top_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="KC705_top_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="KC705_top_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="KC705_top_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="KC705_top_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="KC705_top_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="KC705_top_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="KC705_top_postplace_pwropt.dcp"/>
-  <File Type="PLACE-RQA-PB" Name="KC705_top_rqa_placed.pb"/>
-  <File Type="PLACE-TIMING" Name="KC705_top_timing_summary_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="KC705_top_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="KC705_top_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-CTRL" Name="KC705_top_control_sets_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="KC705_top_utilization_placed.pb"/>
   <File Type="PLACE-UTIL" Name="KC705_top_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="KC705_top_clock_utilization_placed.rpt"/>
   <File Type="PLACE-IO" Name="KC705_top_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="KC705_top_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="KC705_top_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="KC705_top_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="KC705_top_pwropt.dcp"/>
-  <File Type="OPT-RQA-PB" Name="KC705_top_rqa_opted.pb"/>
-  <File Type="OPT-TIMING" Name="KC705_top_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="KC705_top.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="KC705_top_methodology_drc_opted.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="KC705_top_route_status.pb"/>
+  <File Type="BG-BIT" Name="KC705_top.bit"/>
+  <File Type="PDI-FILE" Name="KC705_top.pdi"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="KC705_top_routed_bb.dcp"/>
+  <File Type="BG-BGN" Name="KC705_top.bgn"/>
+  <File Type="RCFI_FILE" Name="KC705_top.rcfi"/>
+  <File Type="ROUTE-ERROR-DCP" Name="KC705_top_routed_error.dcp"/>
+  <File Type="BG-DRC" Name="KC705_top.drc"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="KC705_top_timing_summary_routed.rpt"/>
+  <File Type="BG-BIN" Name="KC705_top.bin"/>
+  <File Type="CFI_FILE" Name="KC705_top.cfi"/>
   <File Type="OPT-DRC" Name="KC705_top_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="KC705_top_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="KC705_top_timing_summary_init.rpt"/>
-  <File Type="REPORTS-TCL" Name="KC705_top_reports.tcl"/>
+  <File Type="RDI-RDI" Name="KC705_top.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="KC705_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="KC705_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-TIMING-PB" Name="KC705_top_timing_summary_routed.pb"/>
   <File Type="PA-TCL" Name="KC705_top.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="KC705_top_bus_skew_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="KC705_top.msk"/>
+  <File Type="RNPI_FILE" Name="KC705_top.rnpi"/>
+  <File Type="OPT-HWDEF" Name="KC705_top.hwdef"/>
+  <File Type="ROUTE-TIMING-RPX" Name="KC705_top_timing_summary_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="KC705_top_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="KC705_top_bus_skew_routed.rpx"/>
+  <File Type="BITSTR-RBT" Name="KC705_top.rbt"/>
+  <File Type="NPI_FILE" Name="KC705_top.npi"/>
+  <File Type="BITSTR-NKY" Name="KC705_top.nky"/>
+  <File Type="RBD_FILE" Name="KC705_top.rbd"/>
+  <File Type="BITSTR-BMM" Name="KC705_top_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="KC705_top.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="KC705_top.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="KC705_top.ltx"/>
+  <File Type="ROUTE-SIMILARITY" Name="KC705_top_incremental_reuse_routed_1.rpt"/>
+  <File Type="ROUTE-CLK" Name="KC705_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="KC705_top_bus_skew_routed.rpt"/>
+  <File Type="OPT-DCP" Name="KC705_top_opt.dcp"/>
+  <File Type="PLACE-DCP" Name="KC705_top_placed.dcp"/>
+  <File Type="PWROPT-DCP" Name="KC705_top_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="KC705_top_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="KC705_top_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="KC705_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="KC705_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="KC705_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="KC705_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="KC705_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="KC705_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="KC705_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="KC705_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="KC705_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="KC705_top_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="KC705_top_methodology_drc_routed.rpx"/>
+  <File Type="BOOT-PDI-FILE" Name="KC705_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="KC705_top_pld.pdi"/>
+  <File Type="ROUTE-RQS" Name="KC705_top_routed.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../sources/hdl/KC705_top.vhd">
@@ -191,12 +177,12 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream" PreStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/pre-bitstream.tcl" PostStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/post-bitstream.tcl"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="vio_TX"/>
-  <BlockFileSet Type="BlockSrcs" Name="vio_misc"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_RX"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_misc"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_TX"/>
+  <BlockFileSet Type="BlockSrcs" Name="trans_wiz"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_TRANS"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_QPLL"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_DRP"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
-  <BlockFileSet Type="BlockSrcs" Name="trans_wiz"/>
 </GenRun>

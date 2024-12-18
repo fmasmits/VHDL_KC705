@@ -641,7 +641,7 @@
           <ReportConfigOutputOption Name="pb" Type="string" Value="KC705_top_timing_summary_routed.pb"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value="KC705_top_timing_summary_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig DisplayName="Incremental Reuse - Route Design" Name="impl_1_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="KC705_top_incremental_reuse_routed.rpt" Version="1" Minor="0">
+        <ReportConfig DisplayName="Incremental Reuse - Route Design" Name="impl_1_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="KC705_top_incremental_reuse_routed_1.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
         <ReportConfig DisplayName="Clock Utilization - Route Design" Name="impl_1_route_report_clock_utilization_0" Spec="report_clock_utilization" RunStep="route_design" ReportFile="KC705_top_clock_utilization_routed.rpt" Version="1" Minor="0">
