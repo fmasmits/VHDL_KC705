@@ -1,0 +1,2 @@
+vio_misc.vhd,vhdl,xil_defaultlib,../../../../../../sources/ip/vio_misc/sim/vio_misc.vhd,incdir="../../../../../../sources/ip/vio_misc/hdl/verilog"incdir="../../../../../../sources/ip/vio_misc/hdl"
+glbl.v,Verilog,xil_defaultlib,glbl.v

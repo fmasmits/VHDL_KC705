@@ -1,0 +1,2 @@
+vio_QPLL.vhd,vhdl,xil_defaultlib,../../../../../../sources/ip/vio_QPLL/sim/vio_QPLL.vhd,incdir="../../../../../../sources/ip/vio_QPLL/hdl/verilog"incdir="../../../../../../sources/ip/vio_QPLL/hdl"
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,2 @@
+vio_RX.vhd,vhdl,xil_defaultlib,../../../../KC705_testing.gen/sources_1/ip/vio_RX/sim/vio_RX.vhd,incdir="../../../../KC705_testing.gen/sources_1/ip/vio_RX/hdl/verilog"incdir="../../../../KC705_testing.gen/sources_1/ip/vio_RX/hdl"
+glbl.v,Verilog,xil_defaultlib,glbl.v

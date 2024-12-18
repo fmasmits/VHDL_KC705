@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../KC705_testing.gen/sources_1/ip/vio_RX/sim/vio_RX.vhd" \
+
+# Do not sort compile order
+nosort

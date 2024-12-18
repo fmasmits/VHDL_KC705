@@ -1,0 +1,662 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Wed Dec 18 15:30:12 2024
+# Process ID: 56598
+# Current directory: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1
+# Command line: vivado -log trans_wiz.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source trans_wiz.tcl
+# Log file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/trans_wiz.vds
+# Journal file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/vivado.jou
+# Running On        :fmasmitsxps15
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 20.04.6 LTS
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700H
+# CPU Frequency     :2918.400 MHz
+# CPU Physical cores:10
+# CPU Logical cores :20
+# Host memory       :16599 MB
+# Swap memory       :4294 MB
+# Total Virtual     :20894 MB
+# Available Virtual :18906 MB
+#-----------------------------------------------------------
+source trans_wiz.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1412.535 ; gain = 0.023 ; free physical = 12516 ; free virtual = 17640
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: trans_wiz
+Command: synth_design -top trans_wiz -part xc7k325tffg900-2 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k325t'
+INFO: [Device 21-403] Loading part xc7k325tffg900-2
+INFO: [Device 21-9227] Part: xc7k325tffg900-2 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 56665
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2210.020 ; gain = 412.715 ; free physical = 11342 ; free virtual = 16507
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'trans_wiz' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz.vhd:167]
+WARNING: [Synth 8-3819] Generic 'GLOBAL_DATE' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'GLOBAL_TIME' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'GLOBAL_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'GLOBAL_SHA' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'TOP_SHA' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'TOP_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'HOG_SHA' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'HOG_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'CON_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'CON_SHA' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'XIL_DEFAULTLIB_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'XIL_DEFAULTLIB_SHA' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'IPS_VER' not present in instantiated entity will be ignored
+WARNING: [Synth 8-3819] Generic 'IPS_SHA' not present in instantiated entity will be ignored
+	Parameter EXAMPLE_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter STABLE_CLOCK_PERIOD bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'trans_wiz_support' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:74' bound to instance 'U0' of component 'trans_wiz_support' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz.vhd:276]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_support' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:175]
+INFO: [Synth 8-3491] module 'trans_wiz_GT_USRCLK_SOURCE' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt_usrclk_source.vhd:72' bound to instance 'gt_usrclk_source' of component 'trans_wiz_GT_USRCLK_SOURCE' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:483]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_GT_USRCLK_SOURCE' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt_usrclk_source.vhd:89]
+INFO: [Synth 8-113] binding component instance 'ibufds_instq0_clk0' to cell 'IBUFDS_GTE2' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt_usrclk_source.vhd:142]
+INFO: [Synth 8-113] binding component instance 'txoutclk_bufg0_i' to cell 'BUFG' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt_usrclk_source.vhd:156]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_GT_USRCLK_SOURCE' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt_usrclk_source.vhd:89]
+	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_QPLLREFCLK_SEL bound to: 3'b001 
+INFO: [Synth 8-3491] module 'trans_wiz_common' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common.vhd:72' bound to instance 'common0_i' of component 'trans_wiz_common' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:500]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_common' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common.vhd:95]
+	Parameter BIAS_CFG bound to: 64'b0000000000000000000001000000000000000000000000000001000000000000 
+	Parameter COMMON_CFG bound to: 32'b00000000000000000000000000000000 
+	Parameter QPLL_CFG bound to: 28'b0000011010000000000110000001 
+	Parameter QPLL_CLKOUT_CFG bound to: 4'b0000 
+	Parameter QPLL_COARSE_FREQ_OVRD bound to: 6'b010000 
+	Parameter QPLL_COARSE_FREQ_OVRD_EN bound to: 1'b0 
+	Parameter QPLL_CP bound to: 10'b0000011111 
+	Parameter QPLL_CP_MONITOR_EN bound to: 1'b0 
+	Parameter QPLL_DMONITOR_SEL bound to: 1'b0 
+	Parameter QPLL_FBDIV bound to: 10'b0100100000 
+	Parameter QPLL_FBDIV_MONITOR_EN bound to: 1'b0 
+	Parameter QPLL_FBDIV_RATIO bound to: 1'b1 
+	Parameter QPLL_INIT_CFG bound to: 24'b000000000000000000000110 
+	Parameter QPLL_LOCK_CFG bound to: 16'b0010000111101000 
+	Parameter QPLL_LPF bound to: 4'b1111 
+	Parameter QPLL_REFCLK_DIV bound to: 1 - type: integer 
+	Parameter SIM_QPLLREFCLK_SEL bound to: 3'b001 
+	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_VERSION bound to: 4.0 - type: string 
+INFO: [Synth 8-113] binding component instance 'gtxe2_common_i' to cell 'GTXE2_COMMON' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common.vhd:173]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_common' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common.vhd:95]
+	Parameter STABLE_CLOCK_PERIOD bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'trans_wiz_common_reset' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common_reset.vhd:78' bound to instance 'common_reset_i' of component 'trans_wiz_common_reset' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:521]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_common_reset' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common_reset.vhd:91]
+INFO: [Synth 8-226] default block is never used [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common_reset.vhd:133]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_common_reset' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_common_reset.vhd:91]
+INFO: [Synth 8-3491] module 'trans_wiz_init' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:75' bound to instance 'trans_wiz_init_i' of component 'trans_wiz_init' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:535]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_init' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:181]
+	Parameter WRAPPER_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+INFO: [Synth 8-3491] module 'trans_wiz_multi_gt' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_multi_gt.vhd:73' bound to instance 'trans_wiz_i' of component 'trans_wiz_multi_gt' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:457]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_multi_gt' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_multi_gt.vhd:171]
+	Parameter GT_SIM_GTRESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter RX_DFE_KL_CFG2_IN bound to: 32'b00110000000100010100100010101100 
+	Parameter PMA_RSV_IN bound to: 32'b00000000000111100111000010000000 
+	Parameter SIM_CPLLREFCLK_SEL bound to: 3'b001 
+	Parameter PCS_RSVD_ATTR_IN bound to: 48'b000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-3491] module 'trans_wiz_GT' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt.vhd:72' bound to instance 'gt0_trans_wiz_i' of component 'trans_wiz_GT' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_multi_gt.vhd:318]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_GT' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt.vhd:167]
+	Parameter ALIGN_COMMA_DOUBLE bound to: FALSE - type: string 
+	Parameter ALIGN_COMMA_ENABLE bound to: 10'b1111111111 
+	Parameter ALIGN_COMMA_WORD bound to: 1 - type: integer 
+	Parameter ALIGN_MCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_MCOMMA_VALUE bound to: 10'b1010000011 
+	Parameter ALIGN_PCOMMA_DET bound to: TRUE - type: string 
+	Parameter ALIGN_PCOMMA_VALUE bound to: 10'b0101111100 
+	Parameter CBCC_DATA_SOURCE_SEL bound to: ENCODED - type: string 
+	Parameter CHAN_BOND_KEEP_ALIGN bound to: FALSE - type: string 
+	Parameter CHAN_BOND_MAX_SKEW bound to: 1 - type: integer 
+	Parameter CHAN_BOND_SEQ_1_1 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_2 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_1 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_2 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_3 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_4 bound to: 10'b0000000000 
+	Parameter CHAN_BOND_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CHAN_BOND_SEQ_2_USE bound to: FALSE - type: string 
+	Parameter CHAN_BOND_SEQ_LEN bound to: 1 - type: integer 
+	Parameter CLK_CORRECT_USE bound to: FALSE - type: string 
+	Parameter CLK_COR_KEEP_IDLE bound to: FALSE - type: string 
+	Parameter CLK_COR_MAX_LAT bound to: 19 - type: integer 
+	Parameter CLK_COR_MIN_LAT bound to: 15 - type: integer 
+	Parameter CLK_COR_PRECEDENCE bound to: TRUE - type: string 
+	Parameter CLK_COR_REPEAT_WAIT bound to: 0 - type: integer 
+	Parameter CLK_COR_SEQ_1_1 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_1_2 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_3 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_4 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_1_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_1 bound to: 10'b0100000000 
+	Parameter CLK_COR_SEQ_2_2 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_2_3 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_2_4 bound to: 10'b0000000000 
+	Parameter CLK_COR_SEQ_2_ENABLE bound to: 4'b1111 
+	Parameter CLK_COR_SEQ_2_USE bound to: FALSE - type: string 
+	Parameter CLK_COR_SEQ_LEN bound to: 1 - type: integer 
+	Parameter CPLL_CFG bound to: 24'b101111000000011111011100 
+	Parameter CPLL_FBDIV bound to: 4 - type: integer 
+	Parameter CPLL_FBDIV_45 bound to: 5 - type: integer 
+	Parameter CPLL_INIT_CFG bound to: 24'b000000000000000000011110 
+	Parameter CPLL_LOCK_CFG bound to: 16'b0000000111101000 
+	Parameter CPLL_REFCLK_DIV bound to: 1 - type: integer 
+	Parameter DEC_MCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_PCOMMA_DETECT bound to: TRUE - type: string 
+	Parameter DEC_VALID_COMMA_ONLY bound to: FALSE - type: string 
+	Parameter DMONITOR_CFG bound to: 24'b000000000000101000000000 
+	Parameter ES_CONTROL bound to: 6'b000000 
+	Parameter ES_ERRDET_EN bound to: FALSE - type: string 
+	Parameter ES_EYE_SCAN_EN bound to: TRUE - type: string 
+	Parameter ES_HORZ_OFFSET bound to: 12'b000000000000 
+	Parameter ES_PMA_CFG bound to: 10'b0000000000 
+	Parameter ES_PRESCALE bound to: 5'b00000 
+	Parameter ES_QUALIFIER bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_QUAL_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_SDATA_MASK bound to: 80'b00000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ES_VERT_OFFSET bound to: 9'b000000000 
+	Parameter FTS_DESKEW_SEQ_ENABLE bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_CFG bound to: 4'b1111 
+	Parameter FTS_LANE_DESKEW_EN bound to: FALSE - type: string 
+	Parameter GEARBOX_MODE bound to: 3'b000 
+	Parameter OUTREFCLK_SEL_INV bound to: 2'b11 
+	Parameter PCS_PCIE_EN bound to: FALSE - type: string 
+	Parameter PCS_RSVD_ATTR bound to: 48'b000000000000000000000000000000000000000000000000 
+	Parameter PD_TRANS_TIME_FROM_P2 bound to: 12'b000000111100 
+	Parameter PD_TRANS_TIME_NONE_P2 bound to: 8'b00111100 
+	Parameter PD_TRANS_TIME_TO_P2 bound to: 8'b01100100 
+	Parameter PMA_RSV bound to: 32'b00000000000111100111000010000000 
+	Parameter PMA_RSV2 bound to: 16'b0010000001010000 
+	Parameter PMA_RSV3 bound to: 2'b00 
+	Parameter PMA_RSV4 bound to: 32'b00000000000000000000000000000000 
+	Parameter RXBUFRESET_TIME bound to: 5'b00001 
+	Parameter RXBUF_ADDR_MODE bound to: FAST - type: string 
+	Parameter RXBUF_EIDLE_HI_CNT bound to: 4'b1000 
+	Parameter RXBUF_EIDLE_LO_CNT bound to: 4'b0000 
+	Parameter RXBUF_EN bound to: TRUE - type: string 
+	Parameter RXBUF_RESET_ON_CB_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_RESET_ON_COMMAALIGN bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_EIDLE bound to: FALSE - type: string 
+	Parameter RXBUF_RESET_ON_RATE_CHANGE bound to: TRUE - type: string 
+	Parameter RXBUF_THRESH_OVFLW bound to: 61 - type: integer 
+	Parameter RXBUF_THRESH_OVRD bound to: FALSE - type: string 
+	Parameter RXBUF_THRESH_UNDFLW bound to: 4 - type: integer 
+	Parameter RXCDRFREQRESET_TIME bound to: 5'b00001 
+	Parameter RXCDRPHRESET_TIME bound to: 5'b00001 
+	Parameter RXCDR_CFG bound to: 72'b000010110000000000000000001000111111111100010000010000000000000000100000 
+	Parameter RXCDR_FR_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXCDR_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RXCDR_LOCK_CFG bound to: 6'b010101 
+	Parameter RXCDR_PH_RESET_ON_EIDLE bound to: 1'b0 
+	Parameter RXDFELPMRESET_TIME bound to: 7'b0001111 
+	Parameter RXDLY_CFG bound to: 16'b0000000000011111 
+	Parameter RXDLY_LCFG bound to: 12'b000000110000 
+	Parameter RXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter RXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter RXISCANRESET_TIME bound to: 5'b00001 
+	Parameter RXLPM_HF_CFG bound to: 14'b00000011110000 
+	Parameter RXLPM_LF_CFG bound to: 14'b00000011110000 
+	Parameter RXOOB_CFG bound to: 7'b0000110 
+	Parameter RXOUT_DIV bound to: 1 - type: integer 
+	Parameter RXPCSRESET_TIME bound to: 5'b00001 
+	Parameter RXPHDLY_CFG bound to: 24'b000010000100000000100000 
+	Parameter RXPH_CFG bound to: 24'b000000000000000000000000 
+	Parameter RXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter RXPMARESET_TIME bound to: 5'b00011 
+	Parameter RXPRBS_ERR_LOOPBACK bound to: 1'b1 
+	Parameter RXSLIDE_AUTO_WAIT bound to: 7 - type: integer 
+	Parameter RXSLIDE_MODE bound to: PCS - type: string 
+	Parameter RX_BIAS_CFG bound to: 12'b000000000100 
+	Parameter RX_BUFFER_CFG bound to: 6'b000000 
+	Parameter RX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter RX_CLKMUX_PD bound to: 1'b1 
+	Parameter RX_CM_SEL bound to: 2'b11 
+	Parameter RX_CM_TRIM bound to: 3'b010 
+	Parameter RX_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter RX_DDI_SEL bound to: 6'b000000 
+	Parameter RX_DEBUG_CFG bound to: 12'b000000000000 
+	Parameter RX_DEFER_RESET_BUF_EN bound to: TRUE - type: string 
+	Parameter RX_DFE_GAIN_CFG bound to: 24'b000000100000111111101010 
+	Parameter RX_DFE_H2_CFG bound to: 12'b000000000000 
+	Parameter RX_DFE_H3_CFG bound to: 12'b000001000000 
+	Parameter RX_DFE_H4_CFG bound to: 11'b00011110000 
+	Parameter RX_DFE_H5_CFG bound to: 11'b00011100000 
+	Parameter RX_DFE_KL_CFG bound to: 13'b0000011111110 
+	Parameter RX_DFE_KL_CFG2 bound to: 32'b00110000000100010100100010101100 
+	Parameter RX_DFE_LPM_CFG bound to: 16'b0000100101010100 
+	Parameter RX_DFE_LPM_HOLD_DURING_EIDLE bound to: 1'b0 
+	Parameter RX_DFE_UT_CFG bound to: 17'b10001111000000000 
+	Parameter RX_DFE_VP_CFG bound to: 17'b00011111100000011 
+	Parameter RX_DFE_XYD_CFG bound to: 13'b0000000000000 
+	Parameter RX_DISPERR_SEQ_MATCH bound to: FALSE - type: string 
+	Parameter RX_INT_DATAWIDTH bound to: 1 - type: integer 
+	Parameter RX_OS_CFG bound to: 13'b0000010000000 
+	Parameter RX_SIG_VALID_DLY bound to: 10 - type: integer 
+	Parameter RX_XCLK_SEL bound to: RXREC - type: string 
+	Parameter SAS_MAX_COM bound to: 64 - type: integer 
+	Parameter SAS_MIN_COM bound to: 36 - type: integer 
+	Parameter SATA_BURST_SEQ_LEN bound to: 4'b0101 
+	Parameter SATA_BURST_VAL bound to: 3'b100 
+	Parameter SATA_CPLL_CFG bound to: VCO_3000MHZ - type: string 
+	Parameter SATA_EIDLE_VAL bound to: 3'b100 
+	Parameter SATA_MAX_BURST bound to: 8 - type: integer 
+	Parameter SATA_MAX_INIT bound to: 21 - type: integer 
+	Parameter SATA_MAX_WAKE bound to: 7 - type: integer 
+	Parameter SATA_MIN_BURST bound to: 4 - type: integer 
+	Parameter SATA_MIN_INIT bound to: 12 - type: integer 
+	Parameter SATA_MIN_WAKE bound to: 4 - type: integer 
+	Parameter SHOW_REALIGN_COMMA bound to: FALSE - type: string 
+	Parameter SIM_CPLLREFCLK_SEL bound to: 3'b001 
+	Parameter SIM_RECEIVER_DETECT_PASS bound to: TRUE - type: string 
+	Parameter SIM_RESET_SPEEDUP bound to: TRUE - type: string 
+	Parameter SIM_TX_EIDLE_DRIVE_LEVEL bound to: X - type: string 
+	Parameter SIM_VERSION bound to: 4.0 - type: string 
+	Parameter TERM_RCAL_CFG bound to: 5'b10000 
+	Parameter TERM_RCAL_OVRD bound to: 1'b0 
+	Parameter TRANS_TIME_RATE bound to: 8'b00001110 
+	Parameter TST_RSV bound to: 32'b00000000000000000000000000000000 
+	Parameter TXBUF_EN bound to: TRUE - type: string 
+	Parameter TXBUF_RESET_ON_RATE_CHANGE bound to: TRUE - type: string 
+	Parameter TXDLY_CFG bound to: 16'b0000000000011111 
+	Parameter TXDLY_LCFG bound to: 12'b000000110000 
+	Parameter TXDLY_TAP_CFG bound to: 16'b0000000000000000 
+	Parameter TXGEARBOX_EN bound to: FALSE - type: string 
+	Parameter TXOUT_DIV bound to: 1 - type: integer 
+	Parameter TXPCSRESET_TIME bound to: 5'b00001 
+	Parameter TXPHDLY_CFG bound to: 24'b000010000100000000100000 
+	Parameter TXPH_CFG bound to: 16'b0000011110000000 
+	Parameter TXPH_MONITOR_SEL bound to: 5'b00000 
+	Parameter TXPMARESET_TIME bound to: 5'b00001 
+	Parameter TX_CLK25_DIV bound to: 5 - type: integer 
+	Parameter TX_CLKMUX_PD bound to: 1'b1 
+	Parameter TX_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter TX_DEEMPH0 bound to: 5'b00000 
+	Parameter TX_DEEMPH1 bound to: 5'b00000 
+	Parameter TX_DRIVE_MODE bound to: DIRECT - type: string 
+	Parameter TX_EIDLE_ASSERT_DELAY bound to: 3'b110 
+	Parameter TX_EIDLE_DEASSERT_DELAY bound to: 3'b100 
+	Parameter TX_INT_DATAWIDTH bound to: 1 - type: integer 
+	Parameter TX_LOOPBACK_DRIVE_HIZ bound to: FALSE - type: string 
+	Parameter TX_MAINCURSOR_SEL bound to: 1'b0 
+	Parameter TX_MARGIN_FULL_0 bound to: 7'b1001110 
+	Parameter TX_MARGIN_FULL_1 bound to: 7'b1001001 
+	Parameter TX_MARGIN_FULL_2 bound to: 7'b1000101 
+	Parameter TX_MARGIN_FULL_3 bound to: 7'b1000010 
+	Parameter TX_MARGIN_FULL_4 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_0 bound to: 7'b1000110 
+	Parameter TX_MARGIN_LOW_1 bound to: 7'b1000100 
+	Parameter TX_MARGIN_LOW_2 bound to: 7'b1000010 
+	Parameter TX_MARGIN_LOW_3 bound to: 7'b1000000 
+	Parameter TX_MARGIN_LOW_4 bound to: 7'b1000000 
+	Parameter TX_PREDRIVER_MODE bound to: 1'b0 
+	Parameter TX_QPI_STATUS_EN bound to: 1'b0 
+	Parameter TX_RXDETECT_CFG bound to: 16'b0001100000110010 
+	Parameter TX_RXDETECT_REF bound to: 3'b100 
+	Parameter TX_XCLK_SEL bound to: TXOUT - type: string 
+	Parameter UCODEER_CLR bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'gtxe2_i' to cell 'GTXE2_CHANNEL' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt.vhd:215]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_GT' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_gt.vhd:167]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_multi_gt' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_multi_gt.vhd:171]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter STABLE_CLOCK_PERIOD bound to: 16 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 1 - type: bool 
+	Parameter RX_QPLL_USED bound to: 1 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'trans_wiz_TX_STARTUP_FSM' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:74' bound to instance 'gt0_txresetfsm_i' of component 'trans_wiz_TX_STARTUP_FSM' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:573]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_TX_STARTUP_FSM' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:120]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_run_phase_alignment_int' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:276]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:97]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg1' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:130]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg2' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:140]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg3' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:150]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg4' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:160]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg5' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:170]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'data_sync_reg6' to cell 'FD' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:180]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_sync_block' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:97]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_tx_fsm_reset_done_int' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:284]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_TXRESETDONE' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:301]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_time_out_wait_bypass' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:309]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_mmcm_lock_reclocked' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:317]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_CPLLLOCK' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:337]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_QPLLLOCK' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:345]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_TX_STARTUP_FSM' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:120]
+	Parameter EXAMPLE_SIMULATION bound to: 0 - type: integer 
+	Parameter EQ_MODE bound to: DFE - type: string 
+	Parameter STABLE_CLOCK_PERIOD bound to: 16 - type: integer 
+	Parameter RETRY_COUNTER_BITWIDTH bound to: 8 - type: integer 
+	Parameter TX_QPLL_USED bound to: 1 - type: bool 
+	Parameter RX_QPLL_USED bound to: 1 - type: bool 
+	Parameter PHASE_ALIGNMENT_MANUAL bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'trans_wiz_RX_STARTUP_FSM' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:76' bound to instance 'gt0_rxresetfsm_i' of component 'trans_wiz_RX_STARTUP_FSM' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:614]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz_RX_STARTUP_FSM' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:131]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_run_phase_alignment_int' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:370]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_rx_fsm_reset_done_int' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:377]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_RXRESETDONE' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:394]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_time_out_wait_bypass' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:402]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_mmcm_lock_reclocked' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:410]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_data_valid' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:418]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_CPLLLOCK' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:438]
+INFO: [Synth 8-3491] module 'trans_wiz_sync_block' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_sync_block.vhd:81' bound to instance 'sync_QPLLLOCK' of component 'trans_wiz_sync_block' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:446]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_RX_STARTUP_FSM' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:131]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_init' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_init.vhd:181]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz_support' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_support.vhd:175]
+INFO: [Synth 8-256] done synthesizing module 'trans_wiz' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz.vhd:167]
+WARNING: [Synth 8-3301] Unused top level parameter/generic GLOBAL_DATE
+WARNING: [Synth 8-3301] Unused top level parameter/generic GLOBAL_TIME
+WARNING: [Synth 8-3301] Unused top level parameter/generic GLOBAL_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic GLOBAL_SHA
+WARNING: [Synth 8-3301] Unused top level parameter/generic TOP_SHA
+WARNING: [Synth 8-3301] Unused top level parameter/generic TOP_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic HOG_SHA
+WARNING: [Synth 8-3301] Unused top level parameter/generic HOG_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic CON_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic CON_SHA
+WARNING: [Synth 8-3301] Unused top level parameter/generic XIL_DEFAULTLIB_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic XIL_DEFAULTLIB_SHA
+WARNING: [Synth 8-3301] Unused top level parameter/generic IPS_VER
+WARNING: [Synth 8-3301] Unused top level parameter/generic IPS_SHA
+WARNING: [Synth 8-6014] Unused sequential element cplllock_prev_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:332]
+WARNING: [Synth 8-6014] Unused sequential element qplllock_prev_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:333]
+WARNING: [Synth 8-6014] Unused sequential element cplllock_ris_edge_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:358]
+WARNING: [Synth 8-6014] Unused sequential element qplllock_ris_edge_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd:373]
+WARNING: [Synth 8-6014] Unused sequential element time_out_500us_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:314]
+WARNING: [Synth 8-6014] Unused sequential element cplllock_prev_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:433]
+WARNING: [Synth 8-6014] Unused sequential element qplllock_prev_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:434]
+WARNING: [Synth 8-6014] Unused sequential element cplllock_ris_edge_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:460]
+WARNING: [Synth 8-6014] Unused sequential element qplllock_ris_edge_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:475]
+WARNING: [Synth 8-6014] Unused sequential element pll_reset_asserted_reg was removed.  [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz/example_design/trans_wiz_rx_startup_fsm.vhd:550]
+WARNING: [Synth 8-7129] Port QPLLREFCLKLOST in module trans_wiz_RX_STARTUP_FSM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CPLLREFCLKLOST in module trans_wiz_RX_STARTUP_FSM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port CPLLREFCLKLOST in module trans_wiz_TX_STARTUP_FSM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_rxuserrdy_in in module trans_wiz_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_gtrxreset_in in module trans_wiz_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_gttxreset_in in module trans_wiz_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_txuserrdy_in in module trans_wiz_init is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2305.988 ; gain = 508.684 ; free physical = 11241 ; free virtual = 16410
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2320.832 ; gain = 523.527 ; free physical = 11229 ; free virtual = 16397
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2320.832 ; gain = 523.527 ; free physical = 11229 ; free virtual = 16397
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2326.770 ; gain = 0.000 ; free physical = 11221 ; free virtual = 16389
+INFO: [Netlist 29-17] Analyzing 90 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz.xdc] for cell 'U0'
+Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2456.582 ; gain = 0.000 ; free physical = 11126 ; free virtual = 16310
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 90 instances were transformed.
+  FD => FDRE: 90 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2456.582 ; gain = 0.000 ; free physical = 11126 ; free virtual = 16310
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2456.582 ; gain = 659.277 ; free physical = 11124 ; free virtual = 16310
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k325tffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11124 ; free virtual = 16310
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11124 ; free virtual = 16310
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'trans_wiz_TX_STARTUP_FSM'
+INFO: [Synth 8-802] inferred FSM for state register 'rx_state_reg' in module 'trans_wiz_RX_STARTUP_FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                             0000 |                             0000
+       assert_all_resets |                             0001 |                             0001
+       wait_for_pll_lock |                             0010 |                             0010
+       release_pll_reset |                             0011 |                             0011
+       wait_for_txoutclk |                             0100 |                             0100
+      release_mmcm_reset |                             0101 |                             0101
+       wait_for_txusrclk |                             0110 |                             0110
+         wait_reset_done |                             0111 |                             0111
+      do_phase_alignment |                             1000 |                             1000
+          reset_fsm_done |                             1001 |                             1001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'trans_wiz_TX_STARTUP_FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    init |                             0000 |                             0000
+       assert_all_resets |                             0001 |                             0001
+       wait_for_pll_lock |                             0010 |                             0010
+       release_pll_reset |                             0011 |                             0011
+    verify_recclk_stable |                             0100 |                             0100
+      release_mmcm_reset |                             0101 |                             0101
+       wait_for_rxusrclk |                             0110 |                             0110
+         wait_reset_done |                             0111 |                             0111
+      do_phase_alignment |                             1000 |                             1000
+      monitor_data_valid |                             1001 |                             1001
+                fsm_done |                             1010 |                             1010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rx_state_reg' using encoding 'sequential' in module 'trans_wiz_RX_STARTUP_FSM'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11123 ; free virtual = 16310
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 5     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 49    
++---Muxes : 
+	  10 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 10    
+	  11 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 20    
+	  10 Input    1 Bit        Muxes := 17    
+	  11 Input    1 Bit        Muxes := 19    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 840 (col length:140)
+BRAMs: 890 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port gt0_rxuserrdy_in in module trans_wiz_support is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_gtrxreset_in in module trans_wiz_support is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_gttxreset_in in module trans_wiz_support is either unconnected or has no load
+WARNING: [Synth 8-7129] Port gt0_txuserrdy_in in module trans_wiz_support is either unconnected or has no load
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg1) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg2) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg3) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg4) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg5) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_txresetfsm_i/sync_CPLLLOCK/data_sync_reg6) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg1) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg2) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg3) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg4) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg5) is unused and will be removed from module trans_wiz_support.
+INFO: [Synth 8-3332] Sequential element (trans_wiz_init_i/gt0_rxresetfsm_i/sync_CPLLLOCK/data_sync_reg6) is unused and will be removed from module trans_wiz_support.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11110 ; free virtual = 16299
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11075 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11075 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11075 ; free virtual = 16272
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------------+------+
+|      |Cell          |Count |
++------+--------------+------+
+|1     |BUFG          |     1|
+|2     |CARRY4        |    26|
+|3     |GTXE2_CHANNEL |     1|
+|4     |GTXE2_COMMON  |     1|
+|5     |IBUFDS_GTE2   |     1|
+|6     |LUT1          |    17|
+|7     |LUT2          |    48|
+|8     |LUT3          |    21|
+|9     |LUT4          |    31|
+|10    |LUT5          |    30|
+|11    |LUT6          |    71|
+|12    |FD            |    78|
+|13    |FDCE          |    14|
+|14    |FDRE          |   169|
+|15    |FDSE          |     8|
++------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.586 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2464.586 ; gain = 531.531 ; free physical = 11076 ; free virtual = 16273
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2464.594 ; gain = 667.281 ; free physical = 11076 ; free virtual = 16273
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2464.594 ; gain = 0.000 ; free physical = 11071 ; free virtual = 16273
+INFO: [Netlist 29-17] Analyzing 104 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2520.613 ; gain = 0.000 ; free physical = 11369 ; free virtual = 16573
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 78 instances were transformed.
+  FD => FDRE: 78 instances
+
+Synth Design complete | Checksum: 49719759
+INFO: [Common 17-83] Releasing license: Synthesis
+92 Infos, 50 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:39 . Memory (MB): peak = 2520.613 ; gain = 1108.078 ; free physical = 11369 ; free virtual = 16573
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2041.791; main = 1693.106; forked = 396.986
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3485.742; main = 2520.613; forked = 1021.156
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2544.625 ; gain = 0.000 ; free physical = 11368 ; free virtual = 16572
+INFO: [Common 17-1381] The checkpoint '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/trans_wiz.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP trans_wiz, cache-ID = 73abc0fdbefa3895
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2544.625 ; gain = 0.000 ; free physical = 11363 ; free virtual = 16569
+INFO: [Common 17-1381] The checkpoint '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/trans_wiz_synth_1/trans_wiz.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file trans_wiz_utilization_synth.rpt -pb trans_wiz_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 15:31:06 2024...

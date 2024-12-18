@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Wed Dec 18 15:48:31 2024
+# Process ID: 540
+# Current directory: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705
+# Command line: vivado
+# Log file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/vivado.log
+# Journal file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/vivado.jou
+# Running On        :fmasmitsxps15
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 20.04.6 LTS
+# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700H
+# CPU Frequency     :2918.400 MHz
+# CPU Physical cores:10
+# CPU Logical cores :20
+# Host memory       :16599 MB
+# Swap memory       :4294 MB
+# Total Virtual     :20894 MB
+# Available Virtual :20307 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1
+open_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 20
+wait_on_run impl_1
+open_run impl_1
+open_run synth_1 -name synth_1
+close_design
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 20
+wait_on_run impl_1

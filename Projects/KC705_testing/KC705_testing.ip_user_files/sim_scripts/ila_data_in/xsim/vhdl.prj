@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../../../../sources/ip/ila_data_in/sim/ila_data_in.vhd" \
+
+# Do not sort compile order
+nosort

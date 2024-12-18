@@ -1,0 +1,4 @@
+xpm_cdc.sv,systemverilog,xpm,../../../../tools/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,incdir="../../../../../../sources/ip/vio_misc/hdl/verilog"incdir="../../../../../../sources/ip/vio_misc/hdl"
+xpm_VCOMP.vhd,vhdl,xpm,../../../../tools/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_VCOMP.vhd,incdir="../../../../../../sources/ip/vio_misc/hdl/verilog"incdir="../../../../../../sources/ip/vio_misc/hdl"
+vio_misc.vhd,vhdl,xil_defaultlib,../../../../../../sources/ip/vio_misc/sim/vio_misc.vhd,incdir="../../../../../../sources/ip/vio_misc/hdl/verilog"incdir="../../../../../../sources/ip/vio_misc/hdl"
+glbl.v,Verilog,xil_defaultlib,glbl.v
