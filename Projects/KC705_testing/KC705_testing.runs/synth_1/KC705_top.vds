@@ -3,8 +3,8 @@
 # SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
 # IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
 # SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
-# Start of session at: Wed Dec 18 17:51:52 2024
-# Process ID: 308107
+# Start of session at: Wed Dec 18 18:07:43 2024
+# Process ID: 312339
 # Current directory: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1
 # Command line: vivado -log KC705_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source KC705_top.tcl
 # Log file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/KC705_top.vds
@@ -19,15 +19,15 @@
 # Host memory       :16599 MB
 # Swap memory       :4294 MB
 # Total Virtual     :20894 MB
-# Available Virtual :18600 MB
+# Available Virtual :18920 MB
 #-----------------------------------------------------------
 source KC705_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1418.469 ; gain = 0.023 ; free physical = 11807 ; free virtual = 17430
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1413.562 ; gain = 0.023 ; free physical = 11966 ; free virtual = 17667
 source /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog/Tcl/integrated/pre-synthesis.tcl
 INFO: [Hog:GetRepoVersions-0] Hog submodule /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog clean.
 CRITICAL WARNING: [Hog:GetRepoVersions-0] Git working directory /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top/KC705_testing not clean, commit hash, and version will be set to 0.
 INFO: [Hog:GetRepoVersions-0] This project does not use IPbus XMLs
-INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.2-EEA89A0-dirty...
+INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.2-5382A30-dirty...
 INFO: [Hog:Msg-0] Opening project KC705_testing...
 Scanning sources...
 Finished scanning sources
@@ -48,41 +48,38 @@ INFO: [Hog:Msg-0] All done.
 INFO: [Hog:Msg-0] Evaluating non committed changes...
 WARNING: [Hog:Msg-0] Found non committed changes:...
  .../KC705_testing.cache/wt/project.wpc             |   4 +-
- .../KC705_testing.cache/wt/synthesis.wdf           |   5 +-
- .../KC705_testing.cache/wt/webtalk_pa.xml          |   4 +-
+ .../KC705_testing.runs/impl_1/.vivado.begin.rst    |  10 -
  .../synth_1/.Xil/KC705_top_propImpl.xdc            |  17 -
  .../KC705_testing.runs/synth_1/.vivado.begin.rst   |   2 +-
  .../KC705_testing.runs/synth_1/.vivado.end.rst     |   0
- .../KC705_testing.runs/synth_1/KC705_top.dcp       | Bin 21975 -> 0 bytes
- .../KC705_testing.runs/synth_1/KC705_top.tcl       |   1 -
- .../KC705_testing.runs/synth_1/KC705_top.vds       | 417 +-------------------
+ .../KC705_testing.runs/synth_1/KC705_top.dcp       | Bin 21993 -> 0 bytes
+ .../KC705_testing.runs/synth_1/KC705_top.vds       | 344 +---------------
  .../synth_1/KC705_top_utilization_synth.pb         | Bin 291 -> 0 bytes
  .../synth_1/KC705_top_utilization_synth.rpt        | 187 ---------
  .../synth_1/__synthesis_is_complete__              |   0
- .../KC705_testing.runs/synth_1/gen_run.xml         |  21 +-
- .../KC705_testing.runs/synth_1/runme.log           | 438 +++------------------
+ .../KC705_testing.runs/synth_1/gen_run.xml         |   2 +-
+ .../synth_1/incr_synth_reason.pb                   |   1 -
+ .../KC705_testing.runs/synth_1/runme.log           | 433 +--------------------
  .../KC705_testing.runs/synth_1/vivado.jou          |   6 +-
- .../KC705_testing.runs/synth_1/vivado.pb           | Bin 48533 -> 2295 bytes
- .../KC705_testing/KC705_testing.runs/versions.txt  |   2 +-
- .../utils_1/imports/synth_1/KC705_top.dcp          | Bin 21959 -> 21975 bytes
- Projects/KC705_testing/KC705_testing.xpr           |   5 +-
- sources/hdl/KC705_top.vhd                          |   2 -
- 20 files changed, 92 insertions(+), 1019 deletions(-)
-CRITICAL WARNING: [Hog:Msg-0] Repository is not clean, will use current SHA (eea89a0) and create a dirty bitfile...
-INFO: [Hog:Msg-0] Git describe for 0000000 is: v0.0.2-EEA89A0-dirty
+ .../KC705_testing.runs/synth_1/vivado.pb           | Bin 43581 -> 2295 bytes
+ .../utils_1/imports/synth_1/KC705_top.dcp          | Bin 21975 -> 21993 bytes
+ Projects/KC705_testing/KC705_testing.xpr           |  87 ++---
+ 17 files changed, 58 insertions(+), 1035 deletions(-)
+CRITICAL WARNING: [Hog:Msg-0] Repository is not clean, will use current SHA (5382a30) and create a dirty bitfile...
+INFO: [Hog:Msg-0] Git describe for 0000000 is: v0.0.2-5382A30-dirty
 INFO: [Hog:Msg-0] Disabling multithreading to assure deterministic bitfile
 INFO: [Hog:WriteGenerics-0] Passing parameters/generics to project's top module...
 INFO: [Hog:WriteGenerics-0] Setting parameters/generics...
 INFO: [Hog:Msg-0] Opening version file /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/versions.txt...
  ------------------------- PRE SYNTHESIS -------------------------
- 18/12/2024 at 17:52:08
- Firmware date and time: 18122024, 00174324
- Global SHA: eea89a0, VER: 0.0.0
+ 18/12/2024 at 18:08:00
+ Firmware date and time: 18122024, 00180706
+ Global SHA: 5382a30, VER: 0.0.0
  Constraints SHA: 2993113, VER: 0.0.2
  Top SHA: 06d0215, VER: 0.0.2
  Hog SHA: 219f277, VER: 8.15.4
  --- Libraries ---
- xil_defaultlib SHA: 06d0215, VER: 0.0.2
+ xil_defaultlib SHA: 5382a30, VER: 0.0.2
  ips SHA: 2993113, VER: 0.0.2
  -----------------------------------------------------------------
 INFO: [Hog:CheckYmlRef-0] .gitlab-ci.yml not found in /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705. Skipping this step
@@ -100,15 +97,15 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 1 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 308339
+INFO: [Synth 8-7075] Helper process launched with PID 312495
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2277.859 ; gain = 403.711 ; free physical = 10631 ; free virtual = 16255
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2287.859 ; gain = 415.648 ; free physical = 10777 ; free virtual = 16479
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'KC705_top' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:45]
 	Parameter GLOBAL_DATE bound to: 32'b00011000000100100010000000100100 
-	Parameter GLOBAL_TIME bound to: 32'b00000000000101110100001100100100 
+	Parameter GLOBAL_TIME bound to: 32'b00000000000110000000011100000110 
 	Parameter GLOBAL_VER bound to: 32'b00000000000000000000000000000000 
-	Parameter GLOBAL_SHA bound to: 32'b00001110111010101000100110100000 
+	Parameter GLOBAL_SHA bound to: 32'b00000101001110000010101000110000 
 	Parameter TOP_VER bound to: 32'b00000000000000000000000000000010 
 	Parameter TOP_SHA bound to: 32'b00000000011011010000001000010101 
 	Parameter CON_VER bound to: 32'b00000000000000000000000000000010 
@@ -118,38 +115,38 @@ INFO: [Synth 8-638] synthesizing module 'KC705_top' [/home/fma_smits/documents/U
 	Parameter IPS_VER bound to: 32'b00000000000000000000000000000010 
 	Parameter IPS_SHA bound to: 32'b00000010100110010011000100010011 
 	Parameter XIL_DEFAULTLIB_VER bound to: 32'b00000000000000000000000000000010 
-	Parameter XIL_DEFAULTLIB_SHA bound to: 32'b00000000011011010000001000010101 
-INFO: [Synth 8-113] binding component instance 'IBUFDS_sys_clk' to cell 'IBUFDS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:286]
-INFO: [Synth 8-3491] module 'trans_wiz' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/trans_wiz_stub.vhdl:6' bound to instance 'trans_wiz_TxRx' of component 'trans_wiz' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:298]
-INFO: [Synth 8-638] synthesizing module 'trans_wiz' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/trans_wiz_stub.vhdl:68]
-INFO: [Synth 8-3491] module 'vio_DRP' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_DRP_stub.vhdl:6' bound to instance 'vio_DRP_settings' of component 'vio_DRP' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:381]
-INFO: [Synth 8-638] synthesizing module 'vio_DRP' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_DRP_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'vio_QPLL' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_QPLL_stub.vhdl:6' bound to instance 'vio_qppl_lck_pd' of component 'vio_QPLL' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:392]
-INFO: [Synth 8-638] synthesizing module 'vio_QPLL' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_QPLL_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'vio_TRANS' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_TRANS_stub.vhdl:6' bound to instance 'vio_TRANS_settings' of component 'vio_TRANS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:400]
-INFO: [Synth 8-638] synthesizing module 'vio_TRANS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_TRANS_stub.vhdl:19]
-INFO: [Synth 8-3491] module 'vio_RX' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_RX_stub.vhdl:6' bound to instance 'vio_rx_settings' of component 'vio_RX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:411]
-INFO: [Synth 8-638] synthesizing module 'vio_RX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_RX_stub.vhdl:26]
-INFO: [Synth 8-3491] module 'vio_TX' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_TX_stub.vhdl:6' bound to instance 'vio_tx_settings' of component 'vio_TX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:429]
-INFO: [Synth 8-638] synthesizing module 'vio_TX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_TX_stub.vhdl:20]
-INFO: [Synth 8-3491] module 'vio_misc' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_misc_stub.vhdl:6' bound to instance 'vio_misc_settings' of component 'vio_misc' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:441]
-INFO: [Synth 8-638] synthesizing module 'vio_misc' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/vio_misc_stub.vhdl:17]
-INFO: [Synth 8-3491] module 'ila_data_in' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/ila_data_in_stub.vhdl:6' bound to instance 'ila_data_inout' of component 'ila_data_in' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:450]
-INFO: [Synth 8-638] synthesizing module 'ila_data_in' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-308107-fmasmitsxps15/realtime/ila_data_in_stub.vhdl:15]
+	Parameter XIL_DEFAULTLIB_SHA bound to: 32'b00000101001110000010101000110000 
+INFO: [Synth 8-113] binding component instance 'IBUFGDS_sys_clk' to cell 'IBUFGDS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:286]
+INFO: [Synth 8-3491] module 'trans_wiz' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/trans_wiz_stub.vhdl:6' bound to instance 'trans_wiz_TxRx' of component 'trans_wiz' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:298]
+INFO: [Synth 8-638] synthesizing module 'trans_wiz' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/trans_wiz_stub.vhdl:68]
+INFO: [Synth 8-3491] module 'vio_DRP' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_DRP_stub.vhdl:6' bound to instance 'vio_DRP_settings' of component 'vio_DRP' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:381]
+INFO: [Synth 8-638] synthesizing module 'vio_DRP' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_DRP_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'vio_QPLL' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_QPLL_stub.vhdl:6' bound to instance 'vio_qppl_lck_pd' of component 'vio_QPLL' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:392]
+INFO: [Synth 8-638] synthesizing module 'vio_QPLL' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_QPLL_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'vio_TRANS' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_TRANS_stub.vhdl:6' bound to instance 'vio_TRANS_settings' of component 'vio_TRANS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:400]
+INFO: [Synth 8-638] synthesizing module 'vio_TRANS' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_TRANS_stub.vhdl:19]
+INFO: [Synth 8-3491] module 'vio_RX' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_RX_stub.vhdl:6' bound to instance 'vio_rx_settings' of component 'vio_RX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:411]
+INFO: [Synth 8-638] synthesizing module 'vio_RX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_RX_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'vio_TX' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_TX_stub.vhdl:6' bound to instance 'vio_tx_settings' of component 'vio_TX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:429]
+INFO: [Synth 8-638] synthesizing module 'vio_TX' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_TX_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'vio_misc' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_misc_stub.vhdl:6' bound to instance 'vio_misc_settings' of component 'vio_misc' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:441]
+INFO: [Synth 8-638] synthesizing module 'vio_misc' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/vio_misc_stub.vhdl:17]
+INFO: [Synth 8-3491] module 'ila_data_in' declared at '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/ila_data_in_stub.vhdl:6' bound to instance 'ila_data_inout' of component 'ila_data_in' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:450]
+INFO: [Synth 8-638] synthesizing module 'ila_data_in' [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/.Xil/Vivado-312339-fmasmitsxps15/realtime/ila_data_in_stub.vhdl:15]
 INFO: [Synth 8-256] done synthesizing module 'KC705_top' (0#1) [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/hdl/KC705_top.vhd:45]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2367.828 ; gain = 493.680 ; free physical = 10533 ; free virtual = 16158
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2367.828 ; gain = 495.617 ; free physical = 10689 ; free virtual = 16392
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2370.797 ; gain = 496.648 ; free physical = 10533 ; free virtual = 16158
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2376.734 ; gain = 504.523 ; free physical = 10681 ; free virtual = 16383
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2370.797 ; gain = 496.648 ; free physical = 10533 ; free virtual = 16158
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2376.734 ; gain = 504.523 ; free physical = 10681 ; free virtual = 16383
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2370.797 ; gain = 0.000 ; free physical = 10533 ; free virtual = 16158
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2380.734 ; gain = 0.000 ; free physical = 10677 ; free virtual = 16380
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -180,11 +177,12 @@ Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/
 Finished Parsing XDC File [/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/constraints/KC705_clocking.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2373.766 ; gain = 0.000 ; free physical = 10527 ; free virtual = 16152
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2383.703 ; gain = 0.000 ; free physical = 10673 ; free virtual = 16375
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  IBUFGDS => IBUFDS: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2373.766 ; gain = 0.000 ; free physical = 10527 ; free virtual = 16152
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2383.703 ; gain = 0.000 ; free physical = 10673 ; free virtual = 16375
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'ila_data_inout' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '16.667' specified during out-of-context synthesis of instance 'trans_wiz_TxRx' at clock pin 'sysclk_in' is different from the actual clock period '5.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'vio_DRP_settings' at clock pin 'clk' is different from the actual clock period '5.000', this can lead to different synthesis results.
@@ -196,14 +194,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10519 ; free virtual = 16144
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10674 ; free virtual = 16376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k325tffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10519 ; free virtual = 16144
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10674 ; free virtual = 16376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -217,10 +215,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for vio_misc_settings. (constraint fi
 Applied set_property KEEP_HIERARCHY = SOFT for vio_tx_settings. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for ila_data_inout. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10519 ; free virtual = 16144
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10674 ; free virtual = 16376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10517 ; free virtual = 16143
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10673 ; free virtual = 16376
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -243,25 +241,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10671 ; free virtual = 16378
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10516 ; free virtual = 16146
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10516 ; free virtual = 16146
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10516 ; free virtual = 16146
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -279,37 +277,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -342,33 +340,34 @@ Report Cell Usage:
 |7     |vio_TX_bbox      |     1|
 |8     |vio_misc_bbox    |     1|
 |9     |IBUF             |     4|
-|10    |IBUFDS           |     1|
+|10    |IBUFGDS          |     1|
 |11    |OBUF             |     2|
 +------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2373.766 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2383.703 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2373.766 ; gain = 496.648 ; free physical = 10514 ; free virtual = 16144
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2373.773 ; gain = 499.617 ; free physical = 10514 ; free virtual = 16144
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2383.703 ; gain = 504.523 ; free physical = 10668 ; free virtual = 16375
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2383.711 ; gain = 511.492 ; free physical = 10668 ; free virtual = 16375
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2373.773 ; gain = 0.000 ; free physical = 10514 ; free virtual = 16144
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2383.711 ; gain = 0.000 ; free physical = 10668 ; free virtual = 16375
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2373.773 ; gain = 0.000 ; free physical = 10815 ; free virtual = 16445
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2383.711 ; gain = 0.000 ; free physical = 10964 ; free virtual = 16671
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  IBUFGDS => IBUFDS: 1 instance 
 
-Synth Design complete | Checksum: 87392fd
+Synth Design complete | Checksum: 925ef699
 INFO: [Common 17-83] Releasing license: Synthesis
 69 Infos, 10 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:35 . Memory (MB): peak = 2373.773 ; gain = 863.250 ; free physical = 10815 ; free virtual = 16444
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2029.028; main = 1674.384; forked = 404.564
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3394.922; main = 2373.766; forked = 1021.156
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2373.773 ; gain = 0.000 ; free physical = 10815 ; free virtual = 16444
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:31 . Memory (MB): peak = 2383.711 ; gain = 874.094 ; free physical = 10880 ; free virtual = 16587
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2030.545; main = 1680.095; forked = 401.424
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3405.871; main = 2383.703; forked = 1022.168
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2383.711 ; gain = 0.000 ; free physical = 10956 ; free virtual = 16663
 INFO: [Common 17-1381] The checkpoint '/home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/KC705_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file KC705_top_utilization_synth.rpt -pb KC705_top_utilization_synth.pb
 source /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog/Tcl/integrated/post-synthesis.tcl
@@ -376,7 +375,7 @@ INFO: [Hog:Msg-0] Evaluating Git sha for KC705_testing...
 INFO: [Hog:GetRepoVersions-0] Hog submodule /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog clean.
 CRITICAL WARNING: [Hog:GetRepoVersions-0] Git working directory /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Top/KC705_testing not clean, commit hash, and version will be set to 0.
 INFO: [Hog:GetRepoVersions-0] This project does not use IPbus XMLs
-INFO: [Hog:Msg-0] Git describe set to: v0.0.2-EEA89A0-dirty
-INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.2-EEA89A0-dirty...
+INFO: [Hog:Msg-0] Git describe set to: v0.0.2-5382A30-dirty
+INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.2-5382A30-dirty...
 INFO: [Hog:Msg-0] All done.
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 17:52:47 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 18:08:35 2024...

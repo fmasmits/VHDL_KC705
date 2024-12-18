@@ -1,5 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../../../sources/ip/vio_TX/sim/vio_TX.vhd" \
-
-# Do not sort compile order
-nosort

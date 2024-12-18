@@ -155,13 +155,15 @@ architecture Behavioral of KC705_top is
     );
     end component;
     
-    component vio_RX
+    component vio_RxTx
     port (
         clk         : in    std_logic;
         probe_in0   : in    std_logic;
         probe_in1   : in    std_logic_vector(2 downto 0);
         probe_in2   : in    std_logic_vector(6 downto 0);
         probe_in3   : in    std_logic;
+        probe_in4   : in    std_logic_vector(1 downto 0);
+        probe_in5   : in    std_logic;
         probe_out0  : out   std_logic;
         probe_out1  : out   std_logic_vector(2 downto 0);
         probe_out2  : out   std_logic;
@@ -170,20 +172,11 @@ architecture Behavioral of KC705_top is
         probe_out5  : out   std_logic_vector(1 downto 0);
         probe_out6  : out   std_logic;
         probe_out7  : out   std_logic;
-        probe_out8  : out   std_logic 
-    );
-    end component;
-    
-    component vio_TX
-    port (
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic_vector(1 downto 0);
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic;
-        probe_out1  : out   std_logic;
-        probe_out2  : out   std_logic;
-        probe_out3  : out   std_logic_vector(2 downto 0);
-        probe_out4  : out   std_logic_vector(31 downto 0)
+        probe_out8  : out   std_logic;
+        probe_out9  : out   std_logic;
+        probe_out10 : out   std_logic;
+        probe_out11 : out   std_logic;
+        probe_out12 : out   std_logic_vector(2 downto 0)
     );
     end component;
     
@@ -408,13 +401,15 @@ begin
         probe_out3  => trans_valid_data
     );
     
-    vio_rx_settings : vio_RX
-     PORT MAP (
+    vio_rxtx_settings : vio_RxTx
+    port map (
         clk         => clk_sys,
         probe_in0   => rx_prbs_err,
         probe_in1   => rx_buf_stat,
         probe_in2   => rx_monitor,
         probe_in3   => rx_rst_done,
+        probe_in4   => tx_buf_stat,
+        probe_in5   => tx_rst_done,
         probe_out0  => rx_usr_rdy,
         probe_out1  => rx_prbs_sel,
         probe_out2  => rx_prbs_cntr_rst,
@@ -423,21 +418,13 @@ begin
         probe_out5  => rx_monitor_sel,
         probe_out6  => rx_gtrx_rst,
         probe_out7  => rx_pma_rst,
-        probe_out8  => rx_slide
-     );
-     
-    vio_tx_settings : vio_TX
-    port map (
-        clk         => clk_sys,
-        probe_in0   => tx_buf_stat,
-        probe_in1   => tx_rst_done,
-        probe_out0  => tx_gttx_rst,
-        probe_out1  => tx_usr_rdy,
-        probe_out2  => tx_prbs_frc_err,
-        probe_out3  => tx_prbs_sel,
-        probe_out4  => tx_data_out
+        probe_out8  => rx_slide,
+        probe_out9  => tx_gttx_rst,
+        probe_out10 => tx_usr_rdy,
+        probe_out11 => tx_prbs_frc_err,
+        probe_out12 => tx_prbs_sel
     );
-    
+
     vio_misc_settings : vio_misc
     port map (
         clk         => clk_sys,
