@@ -1,26 +1,16 @@
-#-----------------------------------------------------------
-# Vivado v2024.1.2 (64-bit)
-# SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
-# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
-# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
-# Start of session at: Wed Dec 18 17:35:36 2024
-# Process ID: 302990
-# Current directory: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1
-# Command line: vivado -log KC705_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source KC705_top.tcl
-# Log file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/KC705_top.vds
-# Journal file: /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.runs/synth_1/vivado.jou
-# Running On        :fmasmitsxps15
-# Platform          :Ubuntu
-# Operating System  :Ubuntu 20.04.6 LTS
-# Processor Detail  :13th Gen Intel(R) Core(TM) i7-13700H
-# CPU Frequency     :2918.400 MHz
-# CPU Physical cores:10
-# CPU Logical cores :20
-# Host memory       :16599 MB
-# Swap memory       :4294 MB
-# Total Virtual     :20894 MB
-# Available Virtual :14928 MB
-#-----------------------------------------------------------
+
+*** Running vivado
+    with args -log KC705_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source KC705_top.tcl
+
+
+****** Vivado v2024.1.2 (64-bit)
+  **** SW Build 5164865 on Thu Sep  5 14:36:28 MDT 2024
+  **** IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+  **** SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+  **** Start of session at: Wed Dec 18 17:35:36 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
 source KC705_top.tcl -notrace
 create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1412.672 ; gain = 0.023 ; free physical = 10147 ; free virtual = 15743
 source /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Hog/Tcl/integrated/pre-synthesis.tcl
@@ -451,5 +441,3 @@ CRITICAL WARNING: [Hog:GetRepoVersions-0] Git working directory /home/fma_smits/
 INFO: [Hog:GetRepoVersions-0] This project does not use IPbus XMLs
 INFO: [Hog:Msg-0] Git describe set to: v0.0.2-06D0215-dirty
 INFO: [Hog:Msg-0] Creating /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/bin/KC705_testing-v0.0.2-06D0215-dirty...
-INFO: [Hog:Msg-0] All done.
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 17:36:20 2024...

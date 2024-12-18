@@ -56,6 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
 set_msg_config  -string {{.*The IP file '.*' has been moved from its original location, as a result the outputs for this IP will now be generated in '.*'. Alternatively a copy of the IP can be imported into the project using one of the 'import_ip' or 'import_files' commands..*}}  -suppress  -regexp
 set_msg_config  -string {{.*File '.*.xci' referenced by design '.*' could not be found..*}}  -suppress  -regexp
 OPTRACE "Creating in-memory project" START { }

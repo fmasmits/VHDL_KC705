@@ -1,0 +1,12 @@
+## KC705_testing Synthesis Utilization report
+
+
+                                                                                                       
+| **Site Type**    |    **Used** |   **Fixed** |   **Prohibited** |   **Available** |    **Util%** |   
+| ---    |         ---  |        --- |         --- |              --- |             ---  |             
+| Slice  LUTs*     |    0        |   0         |   0              |   203800        |    0.00      |   
+| Slice  Registers |    0        |   0         |   0              |   407600        |    0.00      |   
+| Block  RAM       Tile |        0   |         0   |              0   |             445  |         0.00
+| DSPs   |         0    |        0   |         0   |              840 |             0.00 |             
+| Bonded IOB       |    8        |   0         |   0              |   500           |    1.60      |   
+                                                                                                       

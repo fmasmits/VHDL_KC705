@@ -1,10 +1,10 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (lin64) Build 5164865 Thu Sep  5 14:36:28 MDT 2024
-| Date         : Wed Dec 18 17:36:19 2024
+| Date         : Wed Dec 18 15:31:05 2024
 | Host         : fmasmitsxps15 running 64-bit Ubuntu 20.04.6 LTS
-| Command      : report_utilization -file KC705_top_utilization_synth.rpt -pb KC705_top_utilization_synth.pb
-| Design       : KC705_top
+| Command      : report_utilization -file trans_wiz_utilization_synth.rpt -pb trans_wiz_utilization_synth.pb
+| Design       : trans_wiz
 | Device       : xc7k325tffg900-2
 | Speed File   : -2
 | Design State : Synthesized
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |    0 |     0 |          0 |    203800 |  0.00 |
-|   LUT as Logic          |    0 |     0 |          0 |    203800 |  0.00 |
+| Slice LUTs*             |  176 |     0 |          0 |    203800 |  0.09 |
+|   LUT as Logic          |  176 |     0 |          0 |    203800 |  0.09 |
 |   LUT as Memory         |    0 |     0 |          0 |     64000 |  0.00 |
-| Slice Registers         |    0 |     0 |          0 |    407600 |  0.00 |
-|   Register as Flip Flop |    0 |     0 |          0 |    407600 |  0.00 |
+| Slice Registers         |  269 |     0 |          0 |    407600 |  0.07 |
+|   Register as Flip Flop |  269 |     0 |          0 |    407600 |  0.07 |
 |   Register as Latch     |    0 |     0 |          0 |    407600 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |    101900 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     50950 |  0.00 |
@@ -58,9 +58,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 0     |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 0     |          Yes |       Reset |            - |
+| 14    |          Yes |           - |        Reset |
+| 8     |          Yes |         Set |            - |
+| 247   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -93,22 +93,22 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    8 |     0 |          0 |       500 |  1.60 |
-| Bonded IPADs                |    0 |     0 |          0 |        50 |  0.00 |
+| Bonded IOB                  |    0 |     0 |          0 |       500 |  0.00 |
+| Bonded IPADs                |    2 |     0 |          0 |        50 |  4.00 |
 | Bonded OPADs                |    0 |     0 |          0 |        32 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |        10 |  0.00 |
 | PHASER_REF                  |    0 |     0 |          0 |        10 |  0.00 |
 | OUT_FIFO                    |    0 |     0 |          0 |        40 |  0.00 |
 | IN_FIFO                     |    0 |     0 |          0 |        40 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |          0 |        10 |  0.00 |
-| IBUFDS                      |    1 |     0 |          0 |       480 |  0.21 |
-| GTXE2_COMMON                |    0 |     0 |          0 |         4 |  0.00 |
-| GTXE2_CHANNEL               |    0 |     0 |          0 |        16 |  0.00 |
+| IBUFDS                      |    0 |     0 |          0 |       480 |  0.00 |
+| GTXE2_COMMON                |    1 |     0 |          0 |         4 | 25.00 |
+| GTXE2_CHANNEL               |    1 |     0 |          0 |        16 |  6.25 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        40 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        40 |  0.00 |
 | IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |          0 |       500 |  0.00 |
 | ODELAYE2/ODELAYE2_FINEDELAY |    0 |     0 |          0 |       150 |  0.00 |
-| IBUFDS_GTE2                 |    0 |     0 |          0 |         8 |  0.00 |
+| IBUFDS_GTE2                 |    1 |     0 |          0 |         8 | 12.50 |
 | ILOGIC                      |    0 |     0 |          0 |       500 |  0.00 |
 | OLOGIC                      |    0 |     0 |          0 |       500 |  0.00 |
 +-----------------------------+------+-------+------------+-----------+-------+
@@ -120,7 +120,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |          0 |        32 |  0.00 |
+| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |          0 |        40 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |        10 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |        10 |  0.00 |
@@ -151,30 +151,32 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| IBUF     |    4 |                  IO |
-| OBUF     |    2 |                  IO |
-| IBUFDS   |    1 |                  IO |
-+----------+------+---------------------+
++---------------+------+---------------------+
+|    Ref Name   | Used | Functional Category |
++---------------+------+---------------------+
+| FDRE          |  247 |        Flop & Latch |
+| LUT6          |   71 |                 LUT |
+| LUT2          |   48 |                 LUT |
+| LUT4          |   31 |                 LUT |
+| LUT5          |   30 |                 LUT |
+| CARRY4        |   26 |          CarryLogic |
+| LUT3          |   21 |                 LUT |
+| LUT1          |   17 |                 LUT |
+| FDCE          |   14 |        Flop & Latch |
+| FDSE          |    8 |        Flop & Latch |
+| IBUFDS_GTE2   |    1 |                  IO |
+| GTXE2_COMMON  |    1 |                  IO |
+| GTXE2_CHANNEL |    1 |                  IO |
+| BUFG          |    1 |               Clock |
++---------------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+-------------+------+
-|   Ref Name  | Used |
-+-------------+------+
-| vio_misc    |    1 |
-| vio_TX      |    1 |
-| vio_TRANS   |    1 |
-| vio_RX      |    1 |
-| vio_QPLL    |    1 |
-| vio_DRP     |    1 |
-| trans_wiz   |    1 |
-| ila_data_in |    1 |
-+-------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists
