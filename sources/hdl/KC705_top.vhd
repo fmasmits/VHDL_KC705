@@ -283,14 +283,12 @@ architecture Behavioral of KC705_top is
  
 begin
 
-    IBUFDS_sys_clk : IBUFDS
+    IBUFGDS_sys_clk : IBUFGDS
     port map (
         I   => clk_sys_diff(0),
         IB  => clk_sys_diff(1),
         O   => clk_sys
     );
-
-
 
     ----------------------------------
     --           Components         --
