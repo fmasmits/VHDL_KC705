@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (lin64) Build 5164865 Thu Sep  5 14:36:28 MDT 2024
-| Date         : Thu Dec 19 09:35:24 2024
+| Date         : Thu Dec 19 10:14:09 2024
 | Host         : fmasmitsxps15 running 64-bit Ubuntu 20.04.6 LTS
 | Command      : report_utilization -file KC705_top_utilization_synth.rpt -pb KC705_top_utilization_synth.pb
 | Design       : KC705_top
@@ -167,11 +167,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------+------+
 |   Ref Name  | Used |
 +-------------+------+
-| vio_misc    |    1 |
-| vio_TRANS   |    1 |
+| vio_tra_set |    1 |
 | vio_RxTx    |    1 |
-| vio_QPLL    |    1 |
-| vio_DRP     |    1 |
 | trans_wiz   |    1 |
 | ila_data_in |    1 |
 +-------------+------+

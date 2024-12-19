@@ -3,3 +3,8 @@
     <Process Command="vivado" Owner="fma_smits" Host="fmasmitsxps15" Pid="2411" HostCore="20" HostMemory="16210284">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="fma_smits" Host="fmasmitsxps15" Pid="13018" HostCore="20" HostMemory="16210284">
+    </Process>
+</ProcessHandle>
