@@ -18,11 +18,11 @@
 # - the last subdirectory has the same name as the IP and that
 # - only .xci files are committed.
 #
-source/ip/*/*
-!source/ip/*/*.xci*
+sources/ip/*/*
+!sources/ip/*/*.xci*
 
-source/bd/*
-!source/bd/*.bd
+sources/bd/*
+!sources/bd/*.bd
 
 ## OS
 .DS_Store
@@ -41,6 +41,7 @@ gitk
 **.pyc
 Doc/*
 **.log
+**.cache
 
 ## CERNbox
 ._*

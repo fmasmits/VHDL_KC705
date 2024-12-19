@@ -541,7 +541,7 @@
           <ReportConfigOutputOption Name="pb" Type="string" Value="KC705_top_bus_skew_postroute_physopted.pb"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value="KC705_top_bus_skew_postroute_physopted.rpx"/>
         </ReportConfig>
-        <ReportConfig DisplayName="implementation_log" Name="impl_1_bitstream_implementation_log_0" Spec="" RunStep="write_bitstream">
+        <ReportConfig DisplayName="implementation_log" Name="impl_1_bitstream_implementation_log_0" Spec="" RunStep="write_bitstream" ReportFile="KC705_top.vdi">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
       </ReportStrategy>
