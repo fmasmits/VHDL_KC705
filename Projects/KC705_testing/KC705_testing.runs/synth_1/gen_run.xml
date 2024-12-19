@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734541661" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7k325tffg900-2" LaunchTime="1734597270" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/KC705_top.dcp">
   <File Type="VDS-TIMING-PB" Name="KC705_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="KC705_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="KC705_top.dcp"/>
@@ -108,12 +108,11 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design" PreStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/pre-synthesis.tcl" PostStepTclHook="$PPRDIR/../../Hog/Tcl/integrated/post-synthesis.tcl"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="vio_TX"/>
+  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
+  <BlockFileSet Type="BlockSrcs" Name="vio_RxTx"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_misc"/>
-  <BlockFileSet Type="BlockSrcs" Name="vio_RX"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_TRANS"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_QPLL"/>
   <BlockFileSet Type="BlockSrcs" Name="vio_DRP"/>
-  <BlockFileSet Type="BlockSrcs" Name="ila_data_in"/>
   <BlockFileSet Type="BlockSrcs" Name="trans_wiz"/>
 </GenRun>

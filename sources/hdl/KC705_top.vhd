@@ -103,55 +103,29 @@ architecture Behavioral of KC705_top is
     
     ----------------------------------
     --           Components         --
-    ----------------------------------
-    component mmcm_sys_clk_wiz
-    port
-    (
-        clk_in          : in     std_logic;
-        clk_out_trans   : out    std_logic;
-        reset           : in     std_logic;
-        locked          : out    std_logic
-    );
-    end component;
-    
-    component vio_mmcm
+    ---------------------------------- 
+    component vio_tra_set
     port (
         clk         : in    std_logic;
-        probe_in0   : in    std_logic;
-        probe_out0  : out   std_logic 
-    );
-    end component;
-    
-    component vio_DRP
-    port (
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic_vector(15 downto 0);
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic_vector(8  downto 0);
-        probe_out1  : out   std_logic_vector(15 downto 0);
-        probe_out2  : out   std_logic;
-        probe_out3  : out   std_logic
-    );
-    end component;
-    
-    component vio_TRANS
-    port (
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic;
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic;
-        probe_out1  : out   std_logic;
-        probe_out2  : out   std_logic;
-        probe_out3  : out   std_logic
-    );
-    end component;
-    
-    component vio_QPLL
-    port (
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic;
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic 
+        probe_in0   : in    std_logic;                      -- trans
+        probe_in1   : in    std_logic;                      -- trans
+        probe_in2   : in    std_logic_vector(15 downto 0);  -- drp
+        probe_in3   : in    std_logic;                      -- drp
+        probe_in4   : in    std_logic;                      -- qpll
+        probe_in5   : in    std_logic;                      -- qpll   
+        probe_in6   : in    std_logic_vector(7 downto 0);   -- misc
+        probe_in7   : in    std_logic;                      -- misc
+        probe_out0  : out   std_logic;                      -- trans
+        probe_out1  : out   std_logic;                      -- trans
+        probe_out2  : out   std_logic;                      -- trans
+        probe_out3  : out   std_logic;                      -- trans
+        probe_out4  : out   std_logic_vector(8  downto 0);  -- drp
+        probe_out5  : out   std_logic_vector(15 downto 0);  -- drp
+        probe_out6  : out   std_logic;                      -- drp
+        probe_out7  : out   std_logic;                      -- drp
+        probe_out8  : out   std_logic;                      -- qpll 
+        probe_out9  : out   std_logic;                      -- misc   
+        probe_out10 : out   std_logic                       -- misc   
     );
     end component;
     
@@ -177,16 +151,6 @@ architecture Behavioral of KC705_top is
         probe_out10 : out   std_logic;
         probe_out11 : out   std_logic;
         probe_out12 : out   std_logic_vector(2 downto 0)
-    );
-    end component;
-    
-    component vio_misc
-    port (
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic_vector(7 downto 0);
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic;
-        probe_out1  : out   std_logic
     );
     end component;
     
@@ -369,36 +333,30 @@ begin
 
     ----------------------------------
     --            VIO's             --
-    ----------------------------------
-    
-    vio_DRP_settings : vio_DRP
-    port map (
-        clk         => clk_sys,
-        probe_in0   => drp_dout,
-        probe_in1   => drp_rdy,
-        probe_out0  => drp_addr,
-        probe_out1  => drp_din,
-        probe_out2  => drp_wen,
-        probe_out3  => drp_en
-    );
-    
-    vio_qppl_lck_pd : vio_QPLL
-    port map (
-        clk         => clk_sys,
-        probe_in0   => qpll_lckd,
-        probe_in1   => qpll_ref_lost,
-        probe_out0  => qpll_pd
-    );
-    
-    vio_TRANS_settings : vio_TRANS
+    ---------------------------------- 
+
+    vio_transceiver_settings : vio_tra_set
     port map (
         clk         => clk_sys,
         probe_in0   => trans_rx_done,
         probe_in1   => trans_tx_done,
+        probe_in2   => drp_dout,
+        probe_in3   => drp_rdy,
+        probe_in4   => qpll_lckd,
+        probe_in5   => qpll_ref_lost,
+        probe_in6   => digital_monitor,
+        probe_in7   => eye_data_err,
         probe_out0  => trans_rx_rst,
         probe_out1  => trans_tx_rst,
         probe_out2  => trans_rst_on_err,
-        probe_out3  => trans_valid_data
+        probe_out3  => trans_valid_data,
+        probe_out4  => drp_addr,
+        probe_out5  => drp_din,
+        probe_out6  => drp_wen,
+        probe_out7  => drp_en,
+        probe_out8  => qpll_pd,
+        probe_out9  => eye_scan_rst,
+        probe_out10 => eye_scan_trig
     );
     
     vio_rxtx_settings : vio_RxTx
@@ -423,15 +381,6 @@ begin
         probe_out10 => tx_usr_rdy,
         probe_out11 => tx_prbs_frc_err,
         probe_out12 => tx_prbs_sel
-    );
-
-    vio_misc_settings : vio_misc
-    port map (
-        clk         => clk_sys,
-        probe_in0   => digital_monitor,
-        probe_in1   => eye_data_err,
-        probe_out0  => eye_scan_rst,
-        probe_out1  => eye_scan_trig
     );
     
     ila_data_inout : ila_data_in

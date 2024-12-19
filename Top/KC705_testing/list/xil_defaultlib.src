@@ -1,8 +1,5 @@
 sources/hdl/KC705_top.vhd                                                   top=KC705_top
 sources/ip/trans_wiz/trans_wiz.xci
 sources/ip/ila_data_in/ila_data_in.xci
-sources/ip/vio_DRP/vio_DRP.xci
-sources/ip/vio_misc/vio_misc.xci
-sources/ip/vio_QPLL/vio_QPLL.xci
-sources/ip/vio_TRANS/vio_TRANS.xci
-sources/ip/vio_Rxtx/vio_RxTx.xci
+sources/ip/vio_tra_set/vio_tra_set.xci
+sources/ip/vio_RxTx/vio_RxTx.xci

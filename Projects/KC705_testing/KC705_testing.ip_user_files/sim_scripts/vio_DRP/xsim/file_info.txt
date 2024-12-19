@@ -1,2 +1,0 @@
-vio_DRP.vhd,vhdl,xil_defaultlib,../../../../../../sources/ip/vio_DRP/sim/vio_DRP.vhd,incdir="../../../../../../sources/ip/vio_DRP/hdl/verilog"incdir="../../../../../../sources/ip/vio_DRP/hdl"
-glbl.v,Verilog,xil_defaultlib,glbl.v

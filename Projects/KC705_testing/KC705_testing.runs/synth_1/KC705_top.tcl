@@ -102,23 +102,19 @@ read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_TRANS/vio_TRANS.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_TRANS/vio_TRANS_ooc.xdc]
 
-read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.srcs/sources_1/ip/vio_RX/vio_RX.xci
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.gen/sources_1/ip/vio_RX/vio_RX.xdc]
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/Projects/KC705_testing/KC705_testing.gen/sources_1/ip/vio_RX/vio_RX_ooc.xdc]
-
 read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_misc/vio_misc.xci
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_misc/vio_misc.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_misc/vio_misc_ooc.xdc]
-
-read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_TX/vio_TX.xci
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_TX/vio_TX.xdc]
-set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_TX/vio_TX_ooc.xdc]
 
 read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/ila_data_in/ila_data_in.xci
 set_property used_in_synthesis false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/ila_data_in/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/ila_data_in/ila_v6_2/constraints/ila_impl.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/ila_data_in/ila_v6_2/constraints/ila.xdc]
 set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/ila_data_in/ila_data_in_ooc.xdc]
+
+read_ip -quiet /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_RxTx/vio_RxTx.xci
+set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_RxTx/vio_RxTx.xdc]
+set_property used_in_implementation false [get_files -all /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_RxTx/vio_RxTx_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
