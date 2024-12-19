@@ -1,17 +1,6 @@
 sources/ip/*/*
 !sources/ip/*/*.xci*
 
-sources/bd/*
-!sources/bd/*.bd
-
-## OS
-.DS_Store
-.DS_Store?
-.Trashes
-**.Trashes
-ehthumbs.db
-Thumbs.db
-
 ## MISCELLANEA
 **.tmp
 !/.gitignore
@@ -21,7 +10,6 @@ gitk
 **.pyc
 Doc/*
 **.log
-**.cache
 
 ## CERNbox
 ._*
@@ -39,17 +27,3 @@ credentials.sh
 VivadoProject
 SimulationLib
 profpga
-
-## Intel Quartus Prime
-Projects
-SimulationLib_quartus
-*.bak
-
-## Software building
-**.depend
-**.layout
-**.o
-bin*/
-obj/
-compile*
-*.out
