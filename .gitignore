@@ -47,17 +47,12 @@ Doc/*
 ._*
 **._*
 
-## Sigasi Studio
-.library_mapping.xml
-.project
-.settings
-
 ## Xilinx Vivado
 **.str
 **.jou
 .Xil/
 .Xilinx/
-Projects/
+Projects/*
 output/
 lastbuilt.txt
 credentials.sh
@@ -78,21 +73,3 @@ bin*/
 obj/
 compile*
 *.out
-
-## ModelSim, UVVM
-transcript*
-work/
-.cxl*
-
-# .cxl.modelsim.version # .cxl.ip/
-_Alert.txt
-_Log.txt
-_info
-**.mti
-**.mtp
-**.mpf
-**.wlf
-**.ini
-**.qdb
-**.qpg
-**.qtl
