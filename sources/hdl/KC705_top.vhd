@@ -332,7 +332,7 @@ begin
 
     vio_transceiver_settings : vio_tra_set
     port map (
-        clk         => clk_sys_div2,
+        clk         => clk_sys,
         probe_in0   => trans_rx_done,
         probe_in1   => trans_tx_done,
         probe_in2   => drp_dout,
@@ -356,7 +356,7 @@ begin
     
     vio_rxtx_settings : vio_RxTx
     port map (
-        clk         => clk_sys_div2,
+        clk         => clk_sys,
         probe_in0   => rx_prbs_err,
         probe_in1   => rx_buf_stat,
         probe_in2   => rx_monitor,
@@ -380,7 +380,7 @@ begin
     
     ila_data_inout : ila_data_in
     port map (
-        clk => clk_sys_div2,
+        clk => clk_sys,
         probe0 => rx_data_in,
         probe1 => tx_data_out
     );
