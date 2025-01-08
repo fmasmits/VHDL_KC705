@@ -148,7 +148,8 @@ architecture Behavioral of KC705_top is
         probe_out9  : out   std_logic;
         probe_out10 : out   std_logic;
         probe_out11 : out   std_logic;
-        probe_out12 : out   std_logic_vector(2 downto 0)
+        probe_out12 : out   std_logic_vector(2 downto 0);
+        probe_out13 : out   std_logic_vector(31 downto 0)
     );
     end component;
     
@@ -376,6 +377,7 @@ begin
         probe_out10 => tx_usr_rdy,
         probe_out11 => tx_prbs_frc_err,
         probe_out12 => tx_prbs_sel
+        probe_out13 => tx_data_out
     );
     
     ila_data_inout : ila_data_in
