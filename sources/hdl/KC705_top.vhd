@@ -376,7 +376,7 @@ begin
         probe_out9  => tx_gttx_rst,
         probe_out10 => tx_usr_rdy,
         probe_out11 => tx_prbs_frc_err,
-        probe_out12 => tx_prbs_sel
+        probe_out12 => tx_prbs_sel,
         probe_out13 => tx_data_out
     );
     
