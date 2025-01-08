@@ -1,5 +1,5 @@
 -- (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
--- (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+-- (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of AMD and is protected under U.S. and international copyright
@@ -72,7 +72,8 @@ COMPONENT vio_RxTx
     probe_out9 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out10 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out11 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe_out12 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0) 
+    probe_out12 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
+    probe_out13 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -102,7 +103,8 @@ your_instance_name : vio_RxTx
     probe_out9 => probe_out9,
     probe_out10 => probe_out10,
     probe_out11 => probe_out11,
-    probe_out12 => probe_out12
+    probe_out12 => probe_out12,
+    probe_out13 => probe_out13
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 

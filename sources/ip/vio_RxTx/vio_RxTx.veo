@@ -1,5 +1,5 @@
 // (c) Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-// (c) Copyright 2022-2024 Advanced Micro Devices, Inc. All rights reserved.
+// (c) Copyright 2022-2025 Advanced Micro Devices, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of AMD and is protected under U.S. and international copyright
@@ -74,7 +74,8 @@ vio_RxTx your_instance_name (
   .probe_out9(probe_out9),    // output wire [0 : 0] probe_out9
   .probe_out10(probe_out10),  // output wire [0 : 0] probe_out10
   .probe_out11(probe_out11),  // output wire [0 : 0] probe_out11
-  .probe_out12(probe_out12)  // output wire [2 : 0] probe_out12
+  .probe_out12(probe_out12),  // output wire [2 : 0] probe_out12
+  .probe_out13(probe_out13)  // output wire [31 : 0] probe_out13
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
