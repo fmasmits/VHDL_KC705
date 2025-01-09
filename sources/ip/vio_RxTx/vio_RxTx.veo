@@ -62,6 +62,7 @@ vio_RxTx your_instance_name (
   .probe_in3(probe_in3),      // input wire [0 : 0] probe_in3
   .probe_in4(probe_in4),      // input wire [1 : 0] probe_in4
   .probe_in5(probe_in5),      // input wire [0 : 0] probe_in5
+  .probe_in6(probe_in6),      // input wire [15 : 0] probe_in6
   .probe_out0(probe_out0),    // output wire [0 : 0] probe_out0
   .probe_out1(probe_out1),    // output wire [2 : 0] probe_out1
   .probe_out2(probe_out2),    // output wire [0 : 0] probe_out2
@@ -74,7 +75,8 @@ vio_RxTx your_instance_name (
   .probe_out9(probe_out9),    // output wire [0 : 0] probe_out9
   .probe_out10(probe_out10),  // output wire [0 : 0] probe_out10
   .probe_out11(probe_out11),  // output wire [0 : 0] probe_out11
-  .probe_out12(probe_out12)  // output wire [31 : 0] probe_out12
+  .probe_out12(probe_out12),  // output wire [31 : 0] probe_out12
+  .probe_out13(probe_out13)  // output wire [0 : 0] probe_out13
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 
