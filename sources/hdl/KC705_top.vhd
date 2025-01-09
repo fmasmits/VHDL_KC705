@@ -75,7 +75,7 @@ architecture Behavioral of KC705_top is
     signal rx_buf_stat      : std_logic_vector(2 downto 0);
     signal rx_monitor       : std_logic_vector(6 downto 0);
     signal rx_rst_done      : std_logic;
-    signal rx_prbs_sel      : std_logic_vector(2 downto 0);
+    signal prbs_sel         : std_logic_vector(2 downto 0);
     signal rx_prbs_cntr_rst : std_logic;
     signal rx_buf_rst       : std_logic;
     signal rx_dfe_lpm_rst   : std_logic;
@@ -87,7 +87,6 @@ architecture Behavioral of KC705_top is
     signal tx_buf_stat      : std_logic_vector(1 downto 0);
     signal tx_rst_done      : std_logic;
     signal tx_usr_rdy       : std_logic;
-    signal tx_prbs_sel      : std_logic_vector(2 downto 0);
     signal tx_prbs_frc_err  : std_logic;
     signal tx_gttx_rst      : std_logic;
     
@@ -98,6 +97,8 @@ architecture Behavioral of KC705_top is
     
     signal rx_data_in       : std_logic_vector(31 downto 0);
     signal tx_data_out      : std_logic_vector(31 downto 0);
+    
+    signal error_count      : integer;
     
     ----------------------------------
     --           Components         --
@@ -148,8 +149,7 @@ architecture Behavioral of KC705_top is
         probe_out9  : out   std_logic;
         probe_out10 : out   std_logic;
         probe_out11 : out   std_logic;
-        probe_out12 : out   std_logic_vector(2 downto 0);
-        probe_out13 : out   std_logic_vector(31 downto 0)
+        probe_out12 : out   std_logic_vector(31 downto 0)
     );
     end component;
     
@@ -238,6 +238,17 @@ architecture Behavioral of KC705_top is
     end component;
  
 begin
+    
+    -- get an error count and reset if needed
+    process(rx_prbs_err) is
+    begin
+        error_count <= error_count + 1;
+        if error_count mod 100 = 0 then
+            report "Errors: " & integer'image(error_count);
+        end if;
+    end process;
+
+
 
     ----------------------------------
     --           Components         --
@@ -288,7 +299,7 @@ begin
             --------------------------------- RX Ports ---------------------------------
             gt0_rxuserrdy_in                => rx_usr_rdy,
             gt0_rxprbserr_out               => rx_prbs_err,
-            gt0_rxprbssel_in                => rx_prbs_sel,
+            gt0_rxprbssel_in                => prbs_sel,
             gt0_rxprbscntreset_in           => rx_prbs_cntr_rst,
             gt0_rxdata_out                  => rx_data_in,
             gt0_gtxrxp_in                   => data_in_diff(0),
@@ -315,7 +326,7 @@ begin
             gt0_txoutclkfabric_out          => open,
             gt0_txoutclkpcs_out             => open,
             gt0_txresetdone_out             => tx_rst_done,
-            gt0_txprbssel_in                => tx_prbs_sel,
+            gt0_txprbssel_in                => prbs_sel,
     
             --____________________________COMMON PORTS________________________________
             GT0_QPLLPD_IN                   => qpll_pd,                   
@@ -365,7 +376,7 @@ begin
         probe_in4   => tx_buf_stat,
         probe_in5   => tx_rst_done,
         probe_out0  => rx_usr_rdy,
-        probe_out1  => rx_prbs_sel,
+        probe_out1  => prbs_sel,
         probe_out2  => rx_prbs_cntr_rst,
         probe_out3  => rx_buf_rst,
         probe_out4  => rx_dfe_lpm_rst,
@@ -376,8 +387,7 @@ begin
         probe_out9  => tx_gttx_rst,
         probe_out10 => tx_usr_rdy,
         probe_out11 => tx_prbs_frc_err,
-        probe_out12 => tx_prbs_sel,
-        probe_out13 => tx_data_out
+        probe_out12 => tx_data_out
     );
     
     ila_data_inout : ila_data_in

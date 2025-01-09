@@ -72,8 +72,7 @@ COMPONENT vio_RxTx
     probe_out9 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out10 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out11 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe_out12 : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-    probe_out13 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
+    probe_out12 : OUT STD_LOGIC_VECTOR(30 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
@@ -103,8 +102,7 @@ your_instance_name : vio_RxTx
     probe_out9 => probe_out9,
     probe_out10 => probe_out10,
     probe_out11 => probe_out11,
-    probe_out12 => probe_out12,
-    probe_out13 => probe_out13
+    probe_out12 => probe_out12
   );
 -- INST_TAG_END ------ End INSTANTIATION Template ---------
 
