@@ -72,7 +72,7 @@ COMPONENT vio_RxTx
     probe_out9 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out10 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
     probe_out11 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
-    probe_out12 : OUT STD_LOGIC_VECTOR(30 DOWNTO 0) 
+    probe_out12 : OUT STD_LOGIC_VECTOR(31 DOWNTO 0) 
   );
 END COMPONENT;
 -- COMP_TAG_END ------ End COMPONENT Declaration ------------
