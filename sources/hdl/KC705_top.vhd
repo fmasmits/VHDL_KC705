@@ -139,7 +139,6 @@ architecture Behavioral of KC705_top is
         probe_in3   : in    std_logic;
         probe_in4   : in    std_logic_vector(1 downto 0);
         probe_in5   : in    std_logic;
-        probe_in6   : in    unsigned(0 to 15);
         probe_out0  : out   std_logic;
         probe_out1  : out   std_logic_vector(2 downto 0);
         probe_out2  : out   std_logic;
@@ -152,8 +151,7 @@ architecture Behavioral of KC705_top is
         probe_out9  : out   std_logic;
         probe_out10 : out   std_logic;
         probe_out11 : out   std_logic;
-        probe_out12 : out   std_logic_vector(31 downto 0);
-        probe_out13 : out   std_logic
+        probe_out12 : out   std_logic_vector(31 downto 0)
     );
     end component;
     
@@ -243,19 +241,6 @@ architecture Behavioral of KC705_top is
  
 begin
     
-    -- get an error count and reset if needed
-    process(rx_prbs_err, clk_sys, err_count_rst) is
-    begin
-    
-        if rx_prbs_err = '1' then
-            err_count <= err_count + 1;
-        elsif err_count_rst = '1' then
-            err_count <= "0000000000000000";            -- setting each bit of the 16 bit counter to 0
-        end if;
-        
-    end process;
-
-
 
     ----------------------------------
     --           Components         --
@@ -382,7 +367,6 @@ begin
         probe_in3   => rx_rst_done,
         probe_in4   => tx_buf_stat,
         probe_in5   => tx_rst_done,
-        probe_in6   => err_count,
         probe_out0  => rx_usr_rdy,
         probe_out1  => prbs_sel,
         probe_out2  => rx_prbs_cntr_rst,
@@ -395,8 +379,7 @@ begin
         probe_out9  => tx_gttx_rst,
         probe_out10 => tx_usr_rdy,
         probe_out11 => tx_prbs_frc_err,
-        probe_out12 => tx_data_out,
-        probe_out13 => err_count_rst
+        probe_out12 => tx_data_out
     );
     
     ila_data_inout : ila_data_in
