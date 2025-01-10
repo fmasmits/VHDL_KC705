@@ -49,7 +49,6 @@ architecture Behavioral of KC705_top is
     --            Signals           --
     ----------------------------------
     signal clk_sys          : std_logic;            -- 200 MHz clock
-    signal clk_sys_div2     : std_logic;            -- 100 MHz clock
     
     --         vio signals          --
     signal drp_rst          : std_logic;   
@@ -203,7 +202,7 @@ architecture Behavioral of KC705_top is
         gt0_rxdata_out                          : out  std_logic_vector(31 downto 0);       -- rx Data na parallelisering
         gt0_rxprbserr_out                       : out  std_logic;                           -- rx prbs error                indicator
         gt0_rxprbssel_in                        : in   std_logic_vector(2 downto 0);        -- rx prbs select
-        gt0_rxprbscntreset_in                   : in   std_logic;                           -- rx prbs control reset
+        gt0_rxprbscntreset_in                   : in   std_logic;                           -- rx prbs counter reset
         gt0_gtxrxp_in                           : in   std_logic;                           -- rx differential - p data input
         gt0_gtxrxn_in                           : in   std_logic;                           -- rx differential - n data input
         gt0_rxbufreset_in                       : in   std_logic;                           -- rx buffer reset
