@@ -150,7 +150,7 @@ architecture RTL of trans_wiz_common is
        end if;
     end function;
 
-    constant   QPLL_FBDIV_TOP   : integer  := 100;
+    constant   QPLL_FBDIV_TOP   : integer  := 80;
     constant   QPLL_FBDIV_IN    :   bit_vector(9 downto 0) := conv_qpll_fbdiv_top(QPLL_FBDIV_TOP);
     constant   QPLL_FBDIV_RATIO :   bit := conv_qpll_fbdiv_ratio(QPLL_FBDIV_TOP);
 
