@@ -48,7 +48,9 @@ architecture Behavioral of KC705_top is
     ----------------------------------
     --            Signals           --
     ----------------------------------
+    signal clk_sys_in       : std_logic;            -- 200 MHz clock
     signal clk_sys          : std_logic;            -- 200 MHz clock
+    signal clk_sys_div2     : std_logic;            -- 100 MHz clock
     
     --         vio signals          --
     signal drp_rst          : std_logic;   
@@ -104,6 +106,18 @@ architecture Behavioral of KC705_top is
     ----------------------------------
     --           Components         --
     ---------------------------------- 
+    
+    component pll_div2_clk_generator
+    port(
+      clk_sys           : out    std_logic;
+      clk_sys_div2      : out    std_logic;
+      reset             : in     std_logic;
+      locked            : out    std_logic;
+      clk_sys_in        : in     std_logic
+    );
+    end component;
+
+
     component vio_tra_set
     port (
         clk         : in    std_logic;
@@ -161,6 +175,7 @@ architecture Behavioral of KC705_top is
         probe1      : in std_logic_vector(31 downto 0)    
     );
     end component;
+    
     
     component trans_wiz 
     port (
@@ -248,8 +263,20 @@ begin
     port map (
         I   => clk_sys_diff(0),
         IB  => clk_sys_diff(1),
-        O   => clk_sys
+        O   => clk_sys_in
     );
+    
+    your_instance_name : pll_div2_clk_generator
+    port map( 
+        clk_sys      => clk_sys,    
+        clk_sys_div2 => clk_sys_div2,             
+        reset        => '0',
+        locked       => open,
+        clk_sys_in   => clk_sys_in
+     );
+    
+    
+    
     
     trans_wiz_TxRx : trans_wiz
     port map (
@@ -261,7 +288,7 @@ begin
             GT0_RX_FSM_RESET_DONE_OUT       => trans_rx_done,
             GT0_DATA_VALID_IN               => trans_valid_data,
             
-            SYSCLK_IN                       => clk_sys,
+            SYSCLK_IN                       => clk_sys_div2,
             Q0_CLK0_GTREFCLK_PAD_P_IN       => clk_trans_diff(0),
             Q0_CLK0_GTREFCLK_PAD_N_IN       => clk_trans_diff(1),
             GT0_TXUSRCLK_OUT                => open,
@@ -335,7 +362,7 @@ begin
 
     vio_transceiver_settings : vio_tra_set
     port map (
-        clk         => clk_sys,
+        clk         => clk_sys_div2,
         probe_in0   => trans_rx_done,
         probe_in1   => trans_tx_done,
         probe_in2   => drp_dout,
@@ -359,7 +386,7 @@ begin
     
     vio_rxtx_settings : vio_RxTx
     port map (
-        clk         => clk_sys,
+        clk         => clk_sys_div2,
         probe_in0   => rx_prbs_err,
         probe_in1   => rx_buf_stat,
         probe_in2   => rx_monitor,
@@ -383,7 +410,7 @@ begin
     
     ila_data_inout : ila_data_in
     port map (
-        clk => clk_sys,
+        clk => clk_sys_div2,
         probe0 => rx_data_in,
         probe1 => tx_data_out
     );

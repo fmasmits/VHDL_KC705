@@ -174,7 +174,7 @@ component trans_wiz_support
 generic
 (
     EXAMPLE_SIM_GTRESET_SPEEDUP             : string    := "TRUE";     -- simulation setting for GT SecureIP model
-    STABLE_CLOCK_PERIOD                     : integer   := 16  
+    STABLE_CLOCK_PERIOD                     : integer   := 10  
 
 );
 port
@@ -277,7 +277,7 @@ begin
     generic map
 (
         EXAMPLE_SIM_GTRESET_SPEEDUP   => "TRUE",
-        STABLE_CLOCK_PERIOD           => 16
+        STABLE_CLOCK_PERIOD           => 10
 )
 port map
 (

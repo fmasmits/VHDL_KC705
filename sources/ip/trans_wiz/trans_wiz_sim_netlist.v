@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1.2 (lin64) Build 5164865 Thu Sep  5 14:36:28 MDT 2024
-// Date        : Wed Dec 18 15:31:06 2024
+// Date        : Fri Jan 10 10:02:49 2025
 // Host        : fmasmitsxps15 running 64-bit Ubuntu 20.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/trans_wiz/trans_wiz_sim_netlist.v
@@ -183,7 +183,7 @@ module trans_wiz
   wire sysclk_in;
 
   (* EXAMPLE_SIM_GTRESET_SPEEDUP = "TRUE" *) 
-  (* STABLE_CLOCK_PERIOD = "16" *) 
+  (* STABLE_CLOCK_PERIOD = "10" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
   trans_wiz_support U0
        (.DONT_RESET_ON_DATA_ERROR_IN(DONT_RESET_ON_DATA_ERROR_IN),
@@ -550,7 +550,7 @@ module trans_wiz_GT
     .RXSLIDE_MODE("PCS"),
     .RX_BIAS_CFG(12'b000000000100),
     .RX_BUFFER_CFG(6'b000000),
-    .RX_CLK25_DIV(5),
+    .RX_CLK25_DIV(4),
     .RX_CLKMUX_PD(1'b1),
     .RX_CM_SEL(2'b11),
     .RX_CM_TRIM(3'b010),
@@ -609,7 +609,7 @@ module trans_wiz_GT
     .TXPH_CFG(16'h0780),
     .TXPH_MONITOR_SEL(5'b00000),
     .TXPMARESET_TIME(5'b00001),
-    .TX_CLK25_DIV(5),
+    .TX_CLK25_DIV(4),
     .TX_CLKMUX_PD(1'b1),
     .TX_DATA_WIDTH(32),
     .TX_DEEMPH0(5'b00000),
@@ -957,7 +957,7 @@ module trans_wiz_RX_STARTUP_FSM
   wire \adapt_wait_hw.adapt_count[0]_i_4_n_0 ;
   wire \adapt_wait_hw.adapt_count[0]_i_5_n_0 ;
   wire \adapt_wait_hw.adapt_count[0]_i_6_n_0 ;
-  wire [17:0]\adapt_wait_hw.adapt_count_reg ;
+  wire [18:0]\adapt_wait_hw.adapt_count_reg ;
   wire \adapt_wait_hw.adapt_count_reg[0]_i_2_n_0 ;
   wire \adapt_wait_hw.adapt_count_reg[0]_i_2_n_1 ;
   wire \adapt_wait_hw.adapt_count_reg[0]_i_2_n_2 ;
@@ -974,7 +974,9 @@ module trans_wiz_RX_STARTUP_FSM
   wire \adapt_wait_hw.adapt_count_reg[12]_i_1_n_5 ;
   wire \adapt_wait_hw.adapt_count_reg[12]_i_1_n_6 ;
   wire \adapt_wait_hw.adapt_count_reg[12]_i_1_n_7 ;
+  wire \adapt_wait_hw.adapt_count_reg[16]_i_1_n_2 ;
   wire \adapt_wait_hw.adapt_count_reg[16]_i_1_n_3 ;
+  wire \adapt_wait_hw.adapt_count_reg[16]_i_1_n_5 ;
   wire \adapt_wait_hw.adapt_count_reg[16]_i_1_n_6 ;
   wire \adapt_wait_hw.adapt_count_reg[16]_i_1_n_7 ;
   wire \adapt_wait_hw.adapt_count_reg[4]_i_1_n_0 ;
@@ -1007,11 +1009,11 @@ module trans_wiz_RX_STARTUP_FSM
   wire gt0_txuserrdy_t;
   wire gtrxreset_i;
   wire gtrxreset_i_i_1_n_0;
-  wire init_wait_count;
   wire \init_wait_count[0]_i_1__1_n_0 ;
+  wire \init_wait_count[5]_i_1__1_n_0 ;
   wire [5:0]init_wait_count_reg;
   wire init_wait_done_i_1__1_n_0;
-  wire init_wait_done_i_2__0_n_0;
+  wire init_wait_done_i_2__1_n_0;
   wire init_wait_done_reg_n_0;
   wire \mmcm_lock_count[7]_i_2__0_n_0 ;
   wire [7:0]mmcm_lock_count_reg;
@@ -1044,21 +1046,18 @@ module trans_wiz_RX_STARTUP_FSM
   wire time_out_100us_i_1_n_0;
   wire time_out_100us_i_2_n_0;
   wire time_out_100us_i_3_n_0;
+  wire time_out_100us_i_4_n_0;
   wire time_out_100us_reg_n_0;
   wire time_out_1us_i_1_n_0;
   wire time_out_1us_i_2_n_0;
-  wire time_out_1us_i_3_n_0;
   wire time_out_1us_reg_n_0;
   wire time_out_2ms_i_1_n_0;
-  wire time_out_2ms_i_2__0_n_0;
+  wire time_out_2ms_i_2_n_0;
   wire time_out_2ms_i_3_n_0;
-  wire time_out_2ms_i_4_n_0;
-  wire time_out_2ms_i_5_n_0;
   wire time_out_2ms_reg_n_0;
   wire time_out_counter;
-  wire \time_out_counter[0]_i_3__0_n_0 ;
-  wire \time_out_counter[0]_i_4_n_0 ;
-  wire [16:0]time_out_counter_reg;
+  wire \time_out_counter[0]_i_3_n_0 ;
+  wire [17:0]time_out_counter_reg;
   wire \time_out_counter_reg[0]_i_2__0_n_0 ;
   wire \time_out_counter_reg[0]_i_2__0_n_1 ;
   wire \time_out_counter_reg[0]_i_2__0_n_2 ;
@@ -1075,6 +1074,8 @@ module trans_wiz_RX_STARTUP_FSM
   wire \time_out_counter_reg[12]_i_1__0_n_5 ;
   wire \time_out_counter_reg[12]_i_1__0_n_6 ;
   wire \time_out_counter_reg[12]_i_1__0_n_7 ;
+  wire \time_out_counter_reg[16]_i_1__0_n_3 ;
+  wire \time_out_counter_reg[16]_i_1__0_n_6 ;
   wire \time_out_counter_reg[16]_i_1__0_n_7 ;
   wire \time_out_counter_reg[4]_i_1__0_n_0 ;
   wire \time_out_counter_reg[4]_i_1__0_n_1 ;
@@ -1107,12 +1108,12 @@ module trans_wiz_RX_STARTUP_FSM
   wire time_tlock_max1_carry__0_i_4_n_0;
   wire time_tlock_max1_carry__0_i_5_n_0;
   wire time_tlock_max1_carry__0_i_6_n_0;
-  wire time_tlock_max1_carry__0_i_7_n_0;
   wire time_tlock_max1_carry__0_n_0;
   wire time_tlock_max1_carry__0_n_1;
   wire time_tlock_max1_carry__0_n_2;
   wire time_tlock_max1_carry__0_n_3;
   wire time_tlock_max1_carry__1_i_1_n_0;
+  wire time_tlock_max1_carry__1_i_2_n_0;
   wire time_tlock_max1_carry_i_1_n_0;
   wire time_tlock_max1_carry_i_2_n_0;
   wire time_tlock_max1_carry_i_3_n_0;
@@ -1159,10 +1160,10 @@ module trans_wiz_RX_STARTUP_FSM
   wire \wait_time_cnt[6]_i_2__0_n_0 ;
   wire \wait_time_cnt[6]_i_4__0_n_0 ;
   wire [6:0]wait_time_cnt_reg;
-  wire [3:1]\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_CO_UNCONNECTED ;
-  wire [3:2]\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_O_UNCONNECTED ;
-  wire [3:0]\NLW_time_out_counter_reg[16]_i_1__0_CO_UNCONNECTED ;
-  wire [3:1]\NLW_time_out_counter_reg[16]_i_1__0_O_UNCONNECTED ;
+  wire [3:2]\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:3]\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_O_UNCONNECTED ;
+  wire [3:1]\NLW_time_out_counter_reg[16]_i_1__0_CO_UNCONNECTED ;
+  wire [3:2]\NLW_time_out_counter_reg[16]_i_1__0_O_UNCONNECTED ;
   wire [3:0]NLW_time_tlock_max1_carry_O_UNCONNECTED;
   wire [3:0]NLW_time_tlock_max1_carry__0_O_UNCONNECTED;
   wire [3:1]NLW_time_tlock_max1_carry__1_CO_UNCONNECTED;
@@ -1197,7 +1198,7 @@ module trans_wiz_RX_STARTUP_FSM
         .I4(rx_state[0]),
         .I5(\FSM_sequential_rx_state[2]_i_2_n_0 ),
         .O(rx_state__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \FSM_sequential_rx_state[2]_i_2 
@@ -1318,42 +1319,43 @@ module trans_wiz_RX_STARTUP_FSM
         .D(RXUSERRDY_i_1_n_0),
         .Q(gt0_rxuserrdy_t),
         .R(SOFT_RESET_RX_IN));
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT4 #(
+    .INIT(16'hFFEF)) 
     \adapt_wait_hw.adapt_count[0]_i_1 
        (.I0(\adapt_wait_hw.adapt_count[0]_i_3_n_0 ),
         .I1(\adapt_wait_hw.adapt_count[0]_i_4_n_0 ),
-        .I2(\adapt_wait_hw.adapt_count[0]_i_5_n_0 ),
+        .I2(\adapt_wait_hw.adapt_count_reg [0]),
+        .I3(\adapt_wait_hw.adapt_count[0]_i_5_n_0 ),
         .O(adapt_count));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF7F)) 
+    .INIT(64'hFFFFFFEFFFFFFFFF)) 
     \adapt_wait_hw.adapt_count[0]_i_3 
-       (.I0(\adapt_wait_hw.adapt_count_reg [16]),
-        .I1(\adapt_wait_hw.adapt_count_reg [17]),
-        .I2(\adapt_wait_hw.adapt_count_reg [15]),
-        .I3(\adapt_wait_hw.adapt_count_reg [14]),
-        .I4(\adapt_wait_hw.adapt_count_reg [13]),
-        .I5(\adapt_wait_hw.adapt_count_reg [12]),
-        .O(\adapt_wait_hw.adapt_count[0]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFDFFFFFFFFFFF)) 
-    \adapt_wait_hw.adapt_count[0]_i_4 
-       (.I0(\adapt_wait_hw.adapt_count_reg [10]),
-        .I1(\adapt_wait_hw.adapt_count_reg [11]),
-        .I2(\adapt_wait_hw.adapt_count_reg [8]),
+       (.I0(\adapt_wait_hw.adapt_count_reg [11]),
+        .I1(\adapt_wait_hw.adapt_count_reg [12]),
+        .I2(\adapt_wait_hw.adapt_count_reg [10]),
         .I3(\adapt_wait_hw.adapt_count_reg [9]),
         .I4(\adapt_wait_hw.adapt_count_reg [7]),
-        .I5(\adapt_wait_hw.adapt_count_reg [6]),
+        .I5(\adapt_wait_hw.adapt_count_reg [8]),
+        .O(\adapt_wait_hw.adapt_count[0]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFDFFFFFFFFFFFFF)) 
+    \adapt_wait_hw.adapt_count[0]_i_4 
+       (.I0(\adapt_wait_hw.adapt_count_reg [6]),
+        .I1(\adapt_wait_hw.adapt_count_reg [5]),
+        .I2(\adapt_wait_hw.adapt_count_reg [3]),
+        .I3(\adapt_wait_hw.adapt_count_reg [4]),
+        .I4(\adapt_wait_hw.adapt_count_reg [2]),
+        .I5(\adapt_wait_hw.adapt_count_reg [1]),
         .O(\adapt_wait_hw.adapt_count[0]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFDFFFFFFFF)) 
+    .INIT(64'hFFFFDFFFFFFFFFFF)) 
     \adapt_wait_hw.adapt_count[0]_i_5 
-       (.I0(\adapt_wait_hw.adapt_count_reg [4]),
-        .I1(\adapt_wait_hw.adapt_count_reg [5]),
-        .I2(\adapt_wait_hw.adapt_count_reg [2]),
-        .I3(\adapt_wait_hw.adapt_count_reg [3]),
-        .I4(\adapt_wait_hw.adapt_count_reg [1]),
-        .I5(\adapt_wait_hw.adapt_count_reg [0]),
+       (.I0(\adapt_wait_hw.adapt_count_reg [18]),
+        .I1(\adapt_wait_hw.adapt_count_reg [17]),
+        .I2(\adapt_wait_hw.adapt_count_reg [15]),
+        .I3(\adapt_wait_hw.adapt_count_reg [16]),
+        .I4(\adapt_wait_hw.adapt_count_reg [14]),
+        .I5(\adapt_wait_hw.adapt_count_reg [13]),
         .O(\adapt_wait_hw.adapt_count[0]_i_5_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
@@ -1443,11 +1445,11 @@ module trans_wiz_RX_STARTUP_FSM
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \adapt_wait_hw.adapt_count_reg[16]_i_1 
        (.CI(\adapt_wait_hw.adapt_count_reg[12]_i_1_n_0 ),
-        .CO({\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_CO_UNCONNECTED [3:1],\adapt_wait_hw.adapt_count_reg[16]_i_1_n_3 }),
+        .CO({\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_CO_UNCONNECTED [3:2],\adapt_wait_hw.adapt_count_reg[16]_i_1_n_2 ,\adapt_wait_hw.adapt_count_reg[16]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_O_UNCONNECTED [3:2],\adapt_wait_hw.adapt_count_reg[16]_i_1_n_6 ,\adapt_wait_hw.adapt_count_reg[16]_i_1_n_7 }),
-        .S({1'b0,1'b0,\adapt_wait_hw.adapt_count_reg [17:16]}));
+        .O({\NLW_adapt_wait_hw.adapt_count_reg[16]_i_1_O_UNCONNECTED [3],\adapt_wait_hw.adapt_count_reg[16]_i_1_n_5 ,\adapt_wait_hw.adapt_count_reg[16]_i_1_n_6 ,\adapt_wait_hw.adapt_count_reg[16]_i_1_n_7 }),
+        .S({1'b0,\adapt_wait_hw.adapt_count_reg [18:16]}));
   FDRE #(
     .INIT(1'b0)) 
     \adapt_wait_hw.adapt_count_reg[17] 
@@ -1455,6 +1457,14 @@ module trans_wiz_RX_STARTUP_FSM
         .CE(adapt_count),
         .D(\adapt_wait_hw.adapt_count_reg[16]_i_1_n_6 ),
         .Q(\adapt_wait_hw.adapt_count_reg [17]),
+        .R(adapt_count_reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \adapt_wait_hw.adapt_count_reg[18] 
+       (.C(sysclk_in),
+        .CE(adapt_count),
+        .D(\adapt_wait_hw.adapt_count_reg[16]_i_1_n_5 ),
+        .Q(\adapt_wait_hw.adapt_count_reg [18]),
         .R(adapt_count_reset));
   FDRE #(
     .INIT(1'b0)) 
@@ -1544,44 +1554,45 @@ module trans_wiz_RX_STARTUP_FSM
         .D(\adapt_wait_hw.adapt_count_reg[8]_i_1_n_6 ),
         .Q(\adapt_wait_hw.adapt_count_reg [9]),
         .R(adapt_count_reset));
-  LUT5 #(
-    .INIT(32'h0000EAAA)) 
+  LUT6 #(
+    .INIT(64'h00000000EAAAAAAA)) 
     \adapt_wait_hw.time_out_adapt_i_1 
        (.I0(\adapt_wait_hw.time_out_adapt_reg_n_0 ),
         .I1(\adapt_wait_hw.time_out_adapt_i_2_n_0 ),
         .I2(\adapt_wait_hw.time_out_adapt_i_3_n_0 ),
-        .I3(\adapt_wait_hw.time_out_adapt_i_4_n_0 ),
-        .I4(adapt_count_reset),
+        .I3(\adapt_wait_hw.adapt_count_reg [0]),
+        .I4(\adapt_wait_hw.time_out_adapt_i_4_n_0 ),
+        .I5(adapt_count_reset),
         .O(\adapt_wait_hw.time_out_adapt_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000008000000000)) 
+    .INIT(64'h0000000000000020)) 
     \adapt_wait_hw.time_out_adapt_i_2 
-       (.I0(\adapt_wait_hw.adapt_count_reg [8]),
+       (.I0(\adapt_wait_hw.adapt_count_reg [10]),
         .I1(\adapt_wait_hw.adapt_count_reg [9]),
-        .I2(\adapt_wait_hw.adapt_count_reg [6]),
+        .I2(\adapt_wait_hw.adapt_count_reg [8]),
         .I3(\adapt_wait_hw.adapt_count_reg [7]),
-        .I4(\adapt_wait_hw.adapt_count_reg [11]),
-        .I5(\adapt_wait_hw.adapt_count_reg [10]),
+        .I4(\adapt_wait_hw.adapt_count_reg [12]),
+        .I5(\adapt_wait_hw.adapt_count_reg [11]),
         .O(\adapt_wait_hw.time_out_adapt_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0002000000000000)) 
+    .INIT(64'h0000200000000000)) 
     \adapt_wait_hw.time_out_adapt_i_3 
-       (.I0(\adapt_wait_hw.adapt_count_reg [15]),
-        .I1(\adapt_wait_hw.adapt_count_reg [14]),
-        .I2(\adapt_wait_hw.adapt_count_reg [12]),
-        .I3(\adapt_wait_hw.adapt_count_reg [13]),
-        .I4(\adapt_wait_hw.adapt_count_reg [17]),
-        .I5(\adapt_wait_hw.adapt_count_reg [16]),
+       (.I0(\adapt_wait_hw.adapt_count_reg [3]),
+        .I1(\adapt_wait_hw.adapt_count_reg [4]),
+        .I2(\adapt_wait_hw.adapt_count_reg [1]),
+        .I3(\adapt_wait_hw.adapt_count_reg [2]),
+        .I4(\adapt_wait_hw.adapt_count_reg [5]),
+        .I5(\adapt_wait_hw.adapt_count_reg [6]),
         .O(\adapt_wait_hw.time_out_adapt_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0000001000000000)) 
+    .INIT(64'h0000008000000000)) 
     \adapt_wait_hw.time_out_adapt_i_4 
-       (.I0(\adapt_wait_hw.adapt_count_reg [2]),
-        .I1(\adapt_wait_hw.adapt_count_reg [3]),
-        .I2(\adapt_wait_hw.adapt_count_reg [0]),
-        .I3(\adapt_wait_hw.adapt_count_reg [1]),
-        .I4(\adapt_wait_hw.adapt_count_reg [5]),
-        .I5(\adapt_wait_hw.adapt_count_reg [4]),
+       (.I0(\adapt_wait_hw.adapt_count_reg [15]),
+        .I1(\adapt_wait_hw.adapt_count_reg [16]),
+        .I2(\adapt_wait_hw.adapt_count_reg [13]),
+        .I3(\adapt_wait_hw.adapt_count_reg [14]),
+        .I4(\adapt_wait_hw.adapt_count_reg [17]),
+        .I5(\adapt_wait_hw.adapt_count_reg [18]),
         .O(\adapt_wait_hw.time_out_adapt_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -1627,20 +1638,19 @@ module trans_wiz_RX_STARTUP_FSM
         .D(gtrxreset_i_i_1_n_0),
         .Q(SR),
         .R(SOFT_RESET_RX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \init_wait_count[0]_i_1__1 
        (.I0(init_wait_count_reg[0]),
         .O(\init_wait_count[0]_i_1__1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \init_wait_count[1]_i_1__1 
        (.I0(init_wait_count_reg[0]),
         .I1(init_wait_count_reg[1]),
         .O(p_0_in__1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \init_wait_count[2]_i_1__1 
@@ -1668,30 +1678,30 @@ module trans_wiz_RX_STARTUP_FSM
         .I4(init_wait_count_reg[4]),
         .O(p_0_in__1[4]));
   LUT6 #(
-    .INIT(64'hFFFFEFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFF7FFF)) 
     \init_wait_count[5]_i_1__1 
-       (.I0(init_wait_count_reg[2]),
-        .I1(init_wait_count_reg[1]),
-        .I2(init_wait_count_reg[0]),
-        .I3(init_wait_count_reg[3]),
-        .I4(init_wait_count_reg[4]),
-        .I5(init_wait_count_reg[5]),
-        .O(init_wait_count));
-  LUT6 #(
-    .INIT(64'h6CCCCCCCCCCCCCCC)) 
-    \init_wait_count[5]_i_2__0 
        (.I0(init_wait_count_reg[4]),
         .I1(init_wait_count_reg[5]),
         .I2(init_wait_count_reg[2]),
-        .I3(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[3]),
         .I4(init_wait_count_reg[1]),
-        .I5(init_wait_count_reg[3]),
+        .I5(init_wait_count_reg[0]),
+        .O(\init_wait_count[5]_i_1__1_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \init_wait_count[5]_i_2__0 
+       (.I0(init_wait_count_reg[4]),
+        .I1(init_wait_count_reg[2]),
+        .I2(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[1]),
+        .I4(init_wait_count_reg[3]),
+        .I5(init_wait_count_reg[5]),
         .O(p_0_in__1[5]));
   FDCE #(
     .INIT(1'b0)) 
     \init_wait_count_reg[0] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(\init_wait_count[0]_i_1__1_n_0 ),
         .Q(init_wait_count_reg[0]));
@@ -1699,7 +1709,7 @@ module trans_wiz_RX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[1] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(p_0_in__1[1]),
         .Q(init_wait_count_reg[1]));
@@ -1707,7 +1717,7 @@ module trans_wiz_RX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[2] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(p_0_in__1[2]),
         .Q(init_wait_count_reg[2]));
@@ -1715,7 +1725,7 @@ module trans_wiz_RX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[3] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(p_0_in__1[3]),
         .Q(init_wait_count_reg[3]));
@@ -1723,7 +1733,7 @@ module trans_wiz_RX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[4] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(p_0_in__1[4]),
         .Q(init_wait_count_reg[4]));
@@ -1731,27 +1741,26 @@ module trans_wiz_RX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[5] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__1_n_0 ),
         .CLR(SOFT_RESET_RX_IN),
         .D(p_0_in__1[5]),
         .Q(init_wait_count_reg[5]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00001000)) 
+    .INIT(64'hFFFFFFFF02000000)) 
     init_wait_done_i_1__1
-       (.I0(init_wait_done_i_2__0_n_0),
-        .I1(init_wait_count_reg[2]),
-        .I2(init_wait_count_reg[3]),
-        .I3(init_wait_count_reg[5]),
-        .I4(init_wait_count_reg[4]),
+       (.I0(init_wait_done_i_2__1_n_0),
+        .I1(init_wait_count_reg[1]),
+        .I2(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[3]),
+        .I4(init_wait_count_reg[2]),
         .I5(init_wait_done_reg_n_0),
         .O(init_wait_done_i_1__1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
-    .INIT(4'hB)) 
-    init_wait_done_i_2__0
-       (.I0(init_wait_count_reg[1]),
-        .I1(init_wait_count_reg[0]),
-        .O(init_wait_done_i_2__0_n_0));
+    .INIT(4'h8)) 
+    init_wait_done_i_2__1
+       (.I0(init_wait_count_reg[4]),
+        .I1(init_wait_count_reg[5]),
+        .O(init_wait_done_i_2__1_n_0));
   FDCE #(
     .INIT(1'b0)) 
     init_wait_done_reg
@@ -1765,14 +1774,14 @@ module trans_wiz_RX_STARTUP_FSM
     \mmcm_lock_count[0]_i_1__0 
        (.I0(mmcm_lock_count_reg[0]),
         .O(p_0_in__2[0]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \mmcm_lock_count[1]_i_1__0 
        (.I0(mmcm_lock_count_reg[0]),
         .I1(mmcm_lock_count_reg[1]),
         .O(p_0_in__2[1]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \mmcm_lock_count[2]_i_1__0 
@@ -1809,7 +1818,7 @@ module trans_wiz_RX_STARTUP_FSM
         .I4(mmcm_lock_count_reg[3]),
         .I5(mmcm_lock_count_reg[5]),
         .O(p_0_in__2[5]));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \mmcm_lock_count[6]_i_1__0 
@@ -1823,7 +1832,7 @@ module trans_wiz_RX_STARTUP_FSM
         .I1(mmcm_lock_count_reg[6]),
         .I2(mmcm_lock_count_reg[7]),
         .O(\mmcm_lock_count[7]_i_2__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hD2)) 
     \mmcm_lock_count[7]_i_3__0 
@@ -1981,7 +1990,6 @@ module trans_wiz_RX_STARTUP_FSM
         .D(data_out),
         .Q(run_phase_alignment_int_s3_reg_n_0),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT2 #(
     .INIT(4'h2)) 
     rx_fsm_reset_done_int_i_2
@@ -2077,32 +2085,41 @@ module trans_wiz_RX_STARTUP_FSM
        (.data_in(time_out_wait_bypass_reg_n_0),
         .data_out(time_out_wait_bypass_s2),
         .sysclk_in(sysclk_in));
-  LUT6 #(
-    .INIT(64'hFFFFFFFF00000002)) 
+  LUT4 #(
+    .INIT(16'hFF02)) 
     time_out_100us_i_1
        (.I0(time_out_100us_i_2_n_0),
-        .I1(time_out_2ms_i_4_n_0),
-        .I2(time_out_counter_reg[0]),
-        .I3(time_out_counter_reg[8]),
-        .I4(time_out_counter_reg[9]),
-        .I5(time_out_100us_reg_n_0),
+        .I1(time_out_100us_i_3_n_0),
+        .I2(time_out_2ms_i_3_n_0),
+        .I3(time_out_100us_reg_n_0),
         .O(time_out_100us_i_1_n_0));
   LUT6 #(
-    .INIT(64'h0100000000000000)) 
+    .INIT(64'h0000000004000000)) 
     time_out_100us_i_2
-       (.I0(time_out_100us_i_3_n_0),
+       (.I0(time_out_100us_i_4_n_0),
         .I1(time_out_counter_reg[13]),
-        .I2(time_out_counter_reg[16]),
-        .I3(time_out_counter_reg[1]),
-        .I4(time_out_counter_reg[5]),
-        .I5(time_out_counter_reg[12]),
+        .I2(time_out_counter_reg[11]),
+        .I3(time_out_counter_reg[4]),
+        .I4(time_out_counter_reg[9]),
+        .I5(time_out_counter_reg[6]),
         .O(time_out_100us_i_2_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
     time_out_100us_i_3
        (.I0(time_out_counter_reg[14]),
         .I1(time_out_counter_reg[15]),
+        .I2(time_out_counter_reg[0]),
+        .I3(time_out_counter_reg[1]),
+        .I4(time_out_counter_reg[12]),
+        .I5(time_out_counter_reg[7]),
         .O(time_out_100us_i_3_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    time_out_100us_i_4
+       (.I0(time_out_counter_reg[16]),
+        .I1(time_out_counter_reg[17]),
+        .O(time_out_100us_i_4_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_100us_reg
@@ -2111,35 +2128,26 @@ module trans_wiz_RX_STARTUP_FSM
         .D(time_out_100us_i_1_n_0),
         .Q(time_out_100us_reg_n_0),
         .R(reset_time_out_reg_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
-  LUT4 #(
-    .INIT(16'hFF08)) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  LUT5 #(
+    .INIT(32'hFFFF0004)) 
     time_out_1us_i_1
-       (.I0(time_out_1us_i_2_n_0),
-        .I1(time_out_1us_i_3_n_0),
-        .I2(time_out_2ms_i_3_n_0),
-        .I3(time_out_1us_reg_n_0),
+       (.I0(time_out_2ms_i_2_n_0),
+        .I1(time_out_1us_i_2_n_0),
+        .I2(time_out_counter_reg[17]),
+        .I3(time_out_counter_reg[16]),
+        .I4(time_out_1us_reg_n_0),
         .O(time_out_1us_i_1_n_0));
   LUT6 #(
-    .INIT(64'h4000000000000000)) 
+    .INIT(64'h0000000000000020)) 
     time_out_1us_i_2
-       (.I0(time_out_100us_i_3_n_0),
-        .I1(time_out_counter_reg[4]),
-        .I2(time_out_counter_reg[5]),
-        .I3(time_out_counter_reg[1]),
-        .I4(time_out_counter_reg[2]),
-        .I5(time_out_counter_reg[3]),
+       (.I0(time_out_counter_reg[5]),
+        .I1(time_out_counter_reg[8]),
+        .I2(time_out_counter_reg[2]),
+        .I3(time_out_counter_reg[3]),
+        .I4(time_out_counter_reg[11]),
+        .I5(time_out_counter_reg[10]),
         .O(time_out_1us_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
-    time_out_1us_i_3
-       (.I0(time_out_counter_reg[10]),
-        .I1(time_out_counter_reg[11]),
-        .I2(time_out_counter_reg[6]),
-        .I3(time_out_counter_reg[7]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_out_counter_reg[13]),
-        .O(time_out_1us_i_3_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_1us_reg
@@ -2148,48 +2156,34 @@ module trans_wiz_RX_STARTUP_FSM
         .D(time_out_1us_i_1_n_0),
         .Q(time_out_1us_reg_n_0),
         .R(reset_time_out_reg_n_0));
-  LUT4 #(
-    .INIT(16'hFF02)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFF00004000)) 
     time_out_2ms_i_1
-       (.I0(time_out_2ms_i_2__0_n_0),
-        .I1(time_out_2ms_i_3_n_0),
-        .I2(time_out_2ms_i_4_n_0),
-        .I3(time_out_2ms_reg_n_0),
+       (.I0(time_out_2ms_i_2_n_0),
+        .I1(time_out_counter_reg[16]),
+        .I2(time_out_counter_reg[17]),
+        .I3(time_out_counter_reg[11]),
+        .I4(time_out_2ms_i_3_n_0),
+        .I5(time_out_2ms_reg_n_0),
         .O(time_out_2ms_i_1_n_0));
-  LUT6 #(
-    .INIT(64'h0008000000000000)) 
-    time_out_2ms_i_2__0
-       (.I0(time_out_counter_reg[13]),
-        .I1(time_out_counter_reg[14]),
-        .I2(time_out_counter_reg[1]),
-        .I3(time_out_counter_reg[5]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_out_counter_reg[15]),
-        .O(time_out_2ms_i_2__0_n_0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
+  LUT5 #(
+    .INIT(32'hFFFFFEFF)) 
+    time_out_2ms_i_2
+       (.I0(time_out_counter_reg[9]),
+        .I1(time_out_counter_reg[13]),
+        .I2(time_out_counter_reg[4]),
+        .I3(time_out_counter_reg[6]),
+        .I4(time_out_100us_i_3_n_0),
+        .O(time_out_2ms_i_2_n_0));
+  LUT5 #(
+    .INIT(32'hFEFFFFFF)) 
     time_out_2ms_i_3
-       (.I0(time_out_counter_reg[0]),
-        .I1(time_out_counter_reg[8]),
-        .I2(time_out_counter_reg[9]),
-        .I3(time_out_counter_reg[12]),
+       (.I0(time_out_counter_reg[5]),
+        .I1(time_out_counter_reg[2]),
+        .I2(time_out_counter_reg[3]),
+        .I3(time_out_counter_reg[10]),
+        .I4(time_out_counter_reg[8]),
         .O(time_out_2ms_i_3_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFBFF)) 
-    time_out_2ms_i_4
-       (.I0(time_out_counter_reg[7]),
-        .I1(time_out_counter_reg[6]),
-        .I2(time_out_counter_reg[2]),
-        .I3(time_out_counter_reg[3]),
-        .I4(time_out_counter_reg[4]),
-        .I5(time_out_2ms_i_5_n_0),
-        .O(time_out_2ms_i_4_n_0));
-  LUT2 #(
-    .INIT(4'hB)) 
-    time_out_2ms_i_5
-       (.I0(time_out_counter_reg[10]),
-        .I1(time_out_counter_reg[11]),
-        .O(time_out_2ms_i_5_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_2ms_reg
@@ -2198,28 +2192,20 @@ module trans_wiz_RX_STARTUP_FSM
         .D(time_out_2ms_i_1_n_0),
         .Q(time_out_2ms_reg_n_0),
         .R(reset_time_out_reg_n_0));
-  LUT3 #(
-    .INIT(8'hFE)) 
+  LUT5 #(
+    .INIT(32'hFFFFBFFF)) 
     \time_out_counter[0]_i_1 
-       (.I0(time_out_2ms_i_4_n_0),
-        .I1(time_out_counter_reg[1]),
-        .I2(\time_out_counter[0]_i_3__0_n_0 ),
-        .O(time_out_counter));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFF7FFF)) 
-    \time_out_counter[0]_i_3__0 
-       (.I0(time_out_counter_reg[15]),
+       (.I0(time_out_2ms_i_3_n_0),
         .I1(time_out_counter_reg[16]),
-        .I2(time_out_counter_reg[13]),
-        .I3(time_out_counter_reg[14]),
-        .I4(time_out_2ms_i_3_n_0),
-        .I5(time_out_counter_reg[5]),
-        .O(\time_out_counter[0]_i_3__0_n_0 ));
+        .I2(time_out_counter_reg[17]),
+        .I3(time_out_counter_reg[11]),
+        .I4(time_out_2ms_i_2_n_0),
+        .O(time_out_counter));
   LUT1 #(
     .INIT(2'h1)) 
-    \time_out_counter[0]_i_4 
+    \time_out_counter[0]_i_3 
        (.I0(time_out_counter_reg[0]),
-        .O(\time_out_counter[0]_i_4_n_0 ));
+        .O(\time_out_counter[0]_i_3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[0] 
@@ -2235,7 +2221,7 @@ module trans_wiz_RX_STARTUP_FSM
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\time_out_counter_reg[0]_i_2__0_n_4 ,\time_out_counter_reg[0]_i_2__0_n_5 ,\time_out_counter_reg[0]_i_2__0_n_6 ,\time_out_counter_reg[0]_i_2__0_n_7 }),
-        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_4_n_0 }));
+        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_3_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[10] 
@@ -2303,11 +2289,19 @@ module trans_wiz_RX_STARTUP_FSM
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \time_out_counter_reg[16]_i_1__0 
        (.CI(\time_out_counter_reg[12]_i_1__0_n_0 ),
-        .CO(\NLW_time_out_counter_reg[16]_i_1__0_CO_UNCONNECTED [3:0]),
+        .CO({\NLW_time_out_counter_reg[16]_i_1__0_CO_UNCONNECTED [3:1],\time_out_counter_reg[16]_i_1__0_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_time_out_counter_reg[16]_i_1__0_O_UNCONNECTED [3:1],\time_out_counter_reg[16]_i_1__0_n_7 }),
-        .S({1'b0,1'b0,1'b0,time_out_counter_reg[16]}));
+        .O({\NLW_time_out_counter_reg[16]_i_1__0_O_UNCONNECTED [3:2],\time_out_counter_reg[16]_i_1__0_n_6 ,\time_out_counter_reg[16]_i_1__0_n_7 }),
+        .S({1'b0,1'b0,time_out_counter_reg[17:16]}));
+  FDRE #(
+    .INIT(1'b0)) 
+    \time_out_counter_reg[17] 
+       (.C(sysclk_in),
+        .CE(time_out_counter),
+        .D(\time_out_counter_reg[16]_i_1__0_n_6 ),
+        .Q(time_out_counter_reg[17]),
+        .R(reset_time_out_reg_n_0));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[1] 
@@ -2452,7 +2446,7 @@ module trans_wiz_RX_STARTUP_FSM
        (.CI(1'b0),
         .CO({time_tlock_max1_carry_n_0,time_tlock_max1_carry_n_1,time_tlock_max1_carry_n_2,time_tlock_max1_carry_n_3}),
         .CYINIT(1'b0),
-        .DI({time_out_counter_reg[7],time_tlock_max1_carry_i_1_n_0,time_tlock_max1_carry_i_2_n_0,time_tlock_max1_carry_i_3_n_0}),
+        .DI({time_tlock_max1_carry_i_1_n_0,time_out_counter_reg[5],time_tlock_max1_carry_i_2_n_0,time_tlock_max1_carry_i_3_n_0}),
         .O(NLW_time_tlock_max1_carry_O_UNCONNECTED[3:0]),
         .S({time_tlock_max1_carry_i_4_n_0,time_tlock_max1_carry_i_5_n_0,time_tlock_max1_carry_i_6_n_0,time_tlock_max1_carry_i_7_n_0}));
   (* COMPARATOR_THRESHOLD = "11" *) 
@@ -2460,9 +2454,9 @@ module trans_wiz_RX_STARTUP_FSM
        (.CI(time_tlock_max1_carry_n_0),
         .CO({time_tlock_max1_carry__0_n_0,time_tlock_max1_carry__0_n_1,time_tlock_max1_carry__0_n_2,time_tlock_max1_carry__0_n_3}),
         .CYINIT(1'b0),
-        .DI({time_tlock_max1_carry__0_i_1_n_0,time_out_counter_reg[13],time_tlock_max1_carry__0_i_2_n_0,time_tlock_max1_carry__0_i_3_n_0}),
+        .DI({time_tlock_max1_carry__0_i_1_n_0,time_tlock_max1_carry__0_i_2_n_0,time_out_counter_reg[11],1'b0}),
         .O(NLW_time_tlock_max1_carry__0_O_UNCONNECTED[3:0]),
-        .S({time_tlock_max1_carry__0_i_4_n_0,time_tlock_max1_carry__0_i_5_n_0,time_tlock_max1_carry__0_i_6_n_0,time_tlock_max1_carry__0_i_7_n_0}));
+        .S({time_tlock_max1_carry__0_i_3_n_0,time_tlock_max1_carry__0_i_4_n_0,time_tlock_max1_carry__0_i_5_n_0,time_tlock_max1_carry__0_i_6_n_0}));
   LUT2 #(
     .INIT(4'hE)) 
     time_tlock_max1_carry__0_i_1
@@ -2472,72 +2466,73 @@ module trans_wiz_RX_STARTUP_FSM
   LUT2 #(
     .INIT(4'h8)) 
     time_tlock_max1_carry__0_i_2
-       (.I0(time_out_counter_reg[10]),
-        .I1(time_out_counter_reg[11]),
+       (.I0(time_out_counter_reg[12]),
+        .I1(time_out_counter_reg[13]),
         .O(time_tlock_max1_carry__0_i_2_n_0));
   LUT2 #(
-    .INIT(4'hE)) 
-    time_tlock_max1_carry__0_i_3
-       (.I0(time_out_counter_reg[8]),
-        .I1(time_out_counter_reg[9]),
-        .O(time_tlock_max1_carry__0_i_3_n_0));
-  LUT2 #(
     .INIT(4'h1)) 
-    time_tlock_max1_carry__0_i_4
+    time_tlock_max1_carry__0_i_3
        (.I0(time_out_counter_reg[15]),
         .I1(time_out_counter_reg[14]),
+        .O(time_tlock_max1_carry__0_i_3_n_0));
+  LUT2 #(
+    .INIT(4'h2)) 
+    time_tlock_max1_carry__0_i_4
+       (.I0(time_out_counter_reg[13]),
+        .I1(time_out_counter_reg[12]),
         .O(time_tlock_max1_carry__0_i_4_n_0));
   LUT2 #(
     .INIT(4'h2)) 
     time_tlock_max1_carry__0_i_5
-       (.I0(time_out_counter_reg[12]),
-        .I1(time_out_counter_reg[13]),
+       (.I0(time_out_counter_reg[10]),
+        .I1(time_out_counter_reg[11]),
         .O(time_tlock_max1_carry__0_i_5_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h8)) 
     time_tlock_max1_carry__0_i_6
-       (.I0(time_out_counter_reg[11]),
-        .I1(time_out_counter_reg[10]),
+       (.I0(time_out_counter_reg[8]),
+        .I1(time_out_counter_reg[9]),
         .O(time_tlock_max1_carry__0_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
-    time_tlock_max1_carry__0_i_7
-       (.I0(time_out_counter_reg[9]),
-        .I1(time_out_counter_reg[8]),
-        .O(time_tlock_max1_carry__0_i_7_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 time_tlock_max1_carry__1
        (.CI(time_tlock_max1_carry__0_n_0),
         .CO({NLW_time_tlock_max1_carry__1_CO_UNCONNECTED[3:1],time_tlock_max1}),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,time_out_counter_reg[16]}),
+        .DI({1'b0,1'b0,1'b0,time_tlock_max1_carry__1_i_1_n_0}),
         .O(NLW_time_tlock_max1_carry__1_O_UNCONNECTED[3:0]),
-        .S({1'b0,1'b0,1'b0,time_tlock_max1_carry__1_i_1_n_0}));
-  LUT1 #(
-    .INIT(2'h1)) 
+        .S({1'b0,1'b0,1'b0,time_tlock_max1_carry__1_i_2_n_0}));
+  LUT2 #(
+    .INIT(4'hE)) 
     time_tlock_max1_carry__1_i_1
        (.I0(time_out_counter_reg[16]),
+        .I1(time_out_counter_reg[17]),
         .O(time_tlock_max1_carry__1_i_1_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'h1)) 
+    time_tlock_max1_carry__1_i_2
+       (.I0(time_out_counter_reg[17]),
+        .I1(time_out_counter_reg[16]),
+        .O(time_tlock_max1_carry__1_i_2_n_0));
+  LUT2 #(
+    .INIT(4'hE)) 
     time_tlock_max1_carry_i_1
-       (.I0(time_out_counter_reg[4]),
-        .I1(time_out_counter_reg[5]),
+       (.I0(time_out_counter_reg[6]),
+        .I1(time_out_counter_reg[7]),
         .O(time_tlock_max1_carry_i_1_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'hE)) 
     time_tlock_max1_carry_i_2
        (.I0(time_out_counter_reg[2]),
         .I1(time_out_counter_reg[3]),
         .O(time_tlock_max1_carry_i_2_n_0));
   LUT2 #(
-    .INIT(4'h8)) 
+    .INIT(4'hE)) 
     time_tlock_max1_carry_i_3
        (.I0(time_out_counter_reg[0]),
         .I1(time_out_counter_reg[1]),
         .O(time_tlock_max1_carry_i_3_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h1)) 
     time_tlock_max1_carry_i_4
        (.I0(time_out_counter_reg[6]),
         .I1(time_out_counter_reg[7]),
@@ -2545,22 +2540,22 @@ module trans_wiz_RX_STARTUP_FSM
   LUT2 #(
     .INIT(4'h2)) 
     time_tlock_max1_carry_i_5
-       (.I0(time_out_counter_reg[5]),
-        .I1(time_out_counter_reg[4]),
+       (.I0(time_out_counter_reg[4]),
+        .I1(time_out_counter_reg[5]),
         .O(time_tlock_max1_carry_i_5_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h1)) 
     time_tlock_max1_carry_i_6
        (.I0(time_out_counter_reg[3]),
         .I1(time_out_counter_reg[2]),
         .O(time_tlock_max1_carry_i_6_n_0));
   LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(4'h1)) 
     time_tlock_max1_carry_i_7
        (.I0(time_out_counter_reg[1]),
         .I1(time_out_counter_reg[0]),
         .O(time_tlock_max1_carry_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hF8)) 
     time_tlock_max_i_1
@@ -2728,13 +2723,13 @@ module trans_wiz_RX_STARTUP_FSM
         .D(\wait_bypass_count_reg[8]_i_1__0_n_6 ),
         .Q(wait_bypass_count_reg[9]),
         .R(\wait_bypass_count[0]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \wait_time_cnt[0]_i_1__0 
        (.I0(wait_time_cnt_reg[0]),
         .O(wait_time_cnt0__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \wait_time_cnt[1]_i_1__0 
@@ -2908,11 +2903,11 @@ module trans_wiz_TX_STARTUP_FSM
   wire gt0_txresetdone_out;
   wire gt0_txuserrdy_t;
   wire gttxreset_i_i_1_n_0;
-  wire init_wait_count;
   wire \init_wait_count[0]_i_1__0_n_0 ;
+  wire \init_wait_count[5]_i_1__0_n_0 ;
   wire [5:0]init_wait_count_reg;
   wire init_wait_done_i_1__0_n_0;
-  wire init_wait_done_i_2_n_0;
+  wire init_wait_done_i_2__0_n_0;
   wire init_wait_done_reg_n_0;
   wire \mmcm_lock_count[7]_i_2_n_0 ;
   wire [7:0]mmcm_lock_count_reg;
@@ -2935,15 +2930,18 @@ module trans_wiz_TX_STARTUP_FSM
   wire sync_mmcm_lock_reclocked_n_0;
   wire sysclk_in;
   wire time_out_2ms_i_1_n_0;
-  wire time_out_2ms_i_2_n_0;
+  wire time_out_2ms_i_2__0_n_0;
   wire time_out_2ms_i_3__0_n_0;
+  wire time_out_2ms_i_4_n_0;
+  wire time_out_2ms_i_5_n_0;
   wire time_out_2ms_reg_n_0;
   wire time_out_500us_i_1_n_0;
   wire time_out_500us_i_2_n_0;
   wire time_out_500us_reg_n_0;
   wire time_out_counter;
-  wire \time_out_counter[0]_i_3_n_0 ;
-  wire [16:0]time_out_counter_reg;
+  wire \time_out_counter[0]_i_3__0_n_0 ;
+  wire \time_out_counter[0]_i_4_n_0 ;
+  wire [17:0]time_out_counter_reg;
   wire \time_out_counter_reg[0]_i_2_n_0 ;
   wire \time_out_counter_reg[0]_i_2_n_1 ;
   wire \time_out_counter_reg[0]_i_2_n_2 ;
@@ -2960,6 +2958,8 @@ module trans_wiz_TX_STARTUP_FSM
   wire \time_out_counter_reg[12]_i_1_n_5 ;
   wire \time_out_counter_reg[12]_i_1_n_6 ;
   wire \time_out_counter_reg[12]_i_1_n_7 ;
+  wire \time_out_counter_reg[16]_i_1_n_3 ;
+  wire \time_out_counter_reg[16]_i_1_n_6 ;
   wire \time_out_counter_reg[16]_i_1_n_7 ;
   wire \time_out_counter_reg[4]_i_1_n_0 ;
   wire \time_out_counter_reg[4]_i_1_n_1 ;
@@ -3036,8 +3036,8 @@ module trans_wiz_TX_STARTUP_FSM
   wire \wait_time_cnt[6]_i_1__0_n_0 ;
   wire \wait_time_cnt[6]_i_4_n_0 ;
   wire [6:0]wait_time_cnt_reg;
-  wire [3:0]\NLW_time_out_counter_reg[16]_i_1_CO_UNCONNECTED ;
-  wire [3:1]\NLW_time_out_counter_reg[16]_i_1_O_UNCONNECTED ;
+  wire [3:1]\NLW_time_out_counter_reg[16]_i_1_CO_UNCONNECTED ;
+  wire [3:2]\NLW_time_out_counter_reg[16]_i_1_O_UNCONNECTED ;
   wire [3:3]\NLW_wait_bypass_count_reg[12]_i_1_CO_UNCONNECTED ;
 
   LUT6 #(
@@ -3058,7 +3058,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I2(tx_state[2]),
         .I3(time_out_2ms_reg_n_0),
         .O(\FSM_sequential_tx_state[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'h000F00D0)) 
     \FSM_sequential_tx_state[1]_i_1 
@@ -3115,21 +3115,21 @@ module trans_wiz_TX_STARTUP_FSM
         .I4(time_tlock_max_reg_n_0),
         .I5(mmcm_lock_reclocked),
         .O(\FSM_sequential_tx_state[3]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \FSM_sequential_tx_state[3]_i_6 
        (.I0(tx_state[0]),
         .I1(tx_state[3]),
         .O(\FSM_sequential_tx_state[3]_i_6_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \FSM_sequential_tx_state[3]_i_7 
        (.I0(tx_state[1]),
         .I1(tx_state[2]),
         .O(\FSM_sequential_tx_state[3]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \FSM_sequential_tx_state[3]_i_8 
@@ -3183,7 +3183,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I4(QPLL_RESET_i_2_n_0),
         .I5(GT0_QPLLRESET_OUT),
         .O(QPLL_RESET_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT2 #(
     .INIT(4'hB)) 
     QPLL_RESET_i_2
@@ -3198,7 +3198,7 @@ module trans_wiz_TX_STARTUP_FSM
         .D(QPLL_RESET_i_1_n_0),
         .Q(GT0_QPLLRESET_OUT),
         .R(SOFT_RESET_TX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT5 #(
     .INIT(32'hFFFB4000)) 
     TXUSERRDY_i_1
@@ -3216,7 +3216,7 @@ module trans_wiz_TX_STARTUP_FSM
         .D(TXUSERRDY_i_1_n_0),
         .Q(gt0_txuserrdy_t),
         .R(SOFT_RESET_TX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT5 #(
     .INIT(32'hFEFF0004)) 
     gttxreset_i_i_1
@@ -3234,20 +3234,19 @@ module trans_wiz_TX_STARTUP_FSM
         .D(gttxreset_i_i_1_n_0),
         .Q(gt0_gttxreset_t),
         .R(SOFT_RESET_TX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \init_wait_count[0]_i_1__0 
        (.I0(init_wait_count_reg[0]),
         .O(\init_wait_count[0]_i_1__0_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \init_wait_count[1]_i_1__0 
        (.I0(init_wait_count_reg[0]),
         .I1(init_wait_count_reg[1]),
         .O(p_0_in[1]));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \init_wait_count[2]_i_1__0 
@@ -3255,7 +3254,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I1(init_wait_count_reg[0]),
         .I2(init_wait_count_reg[2]),
         .O(p_0_in[2]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \init_wait_count[3]_i_1__0 
@@ -3264,7 +3263,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I2(init_wait_count_reg[1]),
         .I3(init_wait_count_reg[3]),
         .O(p_0_in[3]));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \init_wait_count[4]_i_1__0 
@@ -3275,30 +3274,30 @@ module trans_wiz_TX_STARTUP_FSM
         .I4(init_wait_count_reg[4]),
         .O(p_0_in[4]));
   LUT6 #(
-    .INIT(64'hFFFFEFFFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFF7FFF)) 
     \init_wait_count[5]_i_1__0 
-       (.I0(init_wait_count_reg[2]),
-        .I1(init_wait_count_reg[1]),
-        .I2(init_wait_count_reg[0]),
-        .I3(init_wait_count_reg[3]),
-        .I4(init_wait_count_reg[4]),
-        .I5(init_wait_count_reg[5]),
-        .O(init_wait_count));
-  LUT6 #(
-    .INIT(64'h6CCCCCCCCCCCCCCC)) 
-    \init_wait_count[5]_i_2 
        (.I0(init_wait_count_reg[4]),
         .I1(init_wait_count_reg[5]),
         .I2(init_wait_count_reg[2]),
-        .I3(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[3]),
         .I4(init_wait_count_reg[1]),
-        .I5(init_wait_count_reg[3]),
+        .I5(init_wait_count_reg[0]),
+        .O(\init_wait_count[5]_i_1__0_n_0 ));
+  LUT6 #(
+    .INIT(64'h7FFFFFFF80000000)) 
+    \init_wait_count[5]_i_2 
+       (.I0(init_wait_count_reg[4]),
+        .I1(init_wait_count_reg[2]),
+        .I2(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[1]),
+        .I4(init_wait_count_reg[3]),
+        .I5(init_wait_count_reg[5]),
         .O(p_0_in[5]));
   FDCE #(
     .INIT(1'b0)) 
     \init_wait_count_reg[0] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(\init_wait_count[0]_i_1__0_n_0 ),
         .Q(init_wait_count_reg[0]));
@@ -3306,7 +3305,7 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[1] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(p_0_in[1]),
         .Q(init_wait_count_reg[1]));
@@ -3314,7 +3313,7 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[2] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(p_0_in[2]),
         .Q(init_wait_count_reg[2]));
@@ -3322,7 +3321,7 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[3] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(p_0_in[3]),
         .Q(init_wait_count_reg[3]));
@@ -3330,7 +3329,7 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[4] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(p_0_in[4]),
         .Q(init_wait_count_reg[4]));
@@ -3338,27 +3337,26 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(1'b0)) 
     \init_wait_count_reg[5] 
        (.C(sysclk_in),
-        .CE(init_wait_count),
+        .CE(\init_wait_count[5]_i_1__0_n_0 ),
         .CLR(SOFT_RESET_TX_IN),
         .D(p_0_in[5]),
         .Q(init_wait_count_reg[5]));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00001000)) 
+    .INIT(64'hFFFFFFFF02000000)) 
     init_wait_done_i_1__0
-       (.I0(init_wait_done_i_2_n_0),
-        .I1(init_wait_count_reg[2]),
-        .I2(init_wait_count_reg[3]),
-        .I3(init_wait_count_reg[5]),
-        .I4(init_wait_count_reg[4]),
+       (.I0(init_wait_done_i_2__0_n_0),
+        .I1(init_wait_count_reg[1]),
+        .I2(init_wait_count_reg[0]),
+        .I3(init_wait_count_reg[3]),
+        .I4(init_wait_count_reg[2]),
         .I5(init_wait_done_reg_n_0),
         .O(init_wait_done_i_1__0_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
-    .INIT(4'hB)) 
-    init_wait_done_i_2
-       (.I0(init_wait_count_reg[1]),
-        .I1(init_wait_count_reg[0]),
-        .O(init_wait_done_i_2_n_0));
+    .INIT(4'h8)) 
+    init_wait_done_i_2__0
+       (.I0(init_wait_count_reg[4]),
+        .I1(init_wait_count_reg[5]),
+        .O(init_wait_done_i_2__0_n_0));
   FDCE #(
     .INIT(1'b0)) 
     init_wait_done_reg
@@ -3372,14 +3370,14 @@ module trans_wiz_TX_STARTUP_FSM
     \mmcm_lock_count[0]_i_1 
        (.I0(mmcm_lock_count_reg[0]),
         .O(p_0_in__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \mmcm_lock_count[1]_i_1 
        (.I0(mmcm_lock_count_reg[0]),
         .I1(mmcm_lock_count_reg[1]),
         .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \mmcm_lock_count[2]_i_1 
@@ -3387,7 +3385,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I1(mmcm_lock_count_reg[0]),
         .I2(mmcm_lock_count_reg[2]),
         .O(p_0_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \mmcm_lock_count[3]_i_1 
@@ -3396,7 +3394,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I2(mmcm_lock_count_reg[1]),
         .I3(mmcm_lock_count_reg[3]),
         .O(p_0_in__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
     \mmcm_lock_count[4]_i_1 
@@ -3416,7 +3414,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I4(mmcm_lock_count_reg[3]),
         .I5(mmcm_lock_count_reg[5]),
         .O(p_0_in__0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \mmcm_lock_count[6]_i_1 
@@ -3430,7 +3428,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I1(mmcm_lock_count_reg[6]),
         .I2(mmcm_lock_count_reg[7]),
         .O(\mmcm_lock_count[7]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT3 #(
     .INIT(8'hD2)) 
     \mmcm_lock_count[7]_i_3 
@@ -3565,7 +3563,7 @@ module trans_wiz_TX_STARTUP_FSM
         .D(sync_QPLLLOCK_n_1),
         .Q(reset_time_out),
         .R(SOFT_RESET_TX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT5 #(
     .INIT(32'hFFFB0002)) 
     run_phase_alignment_int_i_1
@@ -3633,27 +3631,45 @@ module trans_wiz_TX_STARTUP_FSM
     .INIT(16'h00AE)) 
     time_out_2ms_i_1
        (.I0(time_out_2ms_reg_n_0),
-        .I1(time_out_2ms_i_2_n_0),
+        .I1(time_out_2ms_i_2__0_n_0),
         .I2(time_out_2ms_i_3__0_n_0),
         .I3(reset_time_out),
         .O(time_out_2ms_i_1_n_0));
-  LUT5 #(
-    .INIT(32'h00000008)) 
-    time_out_2ms_i_2
-       (.I0(time_out_counter_reg[15]),
-        .I1(time_out_counter_reg[16]),
-        .I2(time_out_counter_reg[1]),
-        .I3(time_out_counter_reg[12]),
-        .I4(time_tlock_max_i_3_n_0),
-        .O(time_out_2ms_i_2_n_0));
+  LUT6 #(
+    .INIT(64'h0000000000000800)) 
+    time_out_2ms_i_2__0
+       (.I0(time_out_counter_reg[16]),
+        .I1(time_out_counter_reg[17]),
+        .I2(time_out_counter_reg[9]),
+        .I3(time_out_counter_reg[11]),
+        .I4(time_out_counter_reg[4]),
+        .I5(time_tlock_max_i_3_n_0),
+        .O(time_out_2ms_i_2__0_n_0));
   LUT4 #(
-    .INIT(16'hFFBF)) 
+    .INIT(16'hFFFD)) 
     time_out_2ms_i_3__0
-       (.I0(time_out_counter_reg[5]),
+       (.I0(time_out_counter_reg[6]),
         .I1(time_out_counter_reg[13]),
-        .I2(time_out_counter_reg[14]),
-        .I3(time_tlock_max_i_2_n_0),
+        .I2(time_out_2ms_i_4_n_0),
+        .I3(time_out_2ms_i_5_n_0),
         .O(time_out_2ms_i_3__0_n_0));
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    time_out_2ms_i_4
+       (.I0(time_out_counter_reg[7]),
+        .I1(time_out_counter_reg[5]),
+        .I2(time_out_counter_reg[8]),
+        .I3(time_out_counter_reg[12]),
+        .O(time_out_2ms_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    time_out_2ms_i_5
+       (.I0(time_out_counter_reg[1]),
+        .I1(time_out_counter_reg[0]),
+        .I2(time_out_counter_reg[3]),
+        .I3(time_out_counter_reg[2]),
+        .O(time_out_2ms_i_5_n_0));
   FDRE #(
     .INIT(1'b0)) 
     time_out_2ms_reg
@@ -3663,24 +3679,24 @@ module trans_wiz_TX_STARTUP_FSM
         .Q(time_out_2ms_reg_n_0),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'h00000000AAAAAAEA)) 
+    .INIT(64'h00000000AAAAEAAA)) 
     time_out_500us_i_1
        (.I0(time_out_500us_reg_n_0),
         .I1(time_out_500us_i_2_n_0),
-        .I2(time_out_counter_reg[1]),
-        .I3(time_out_counter_reg[3]),
+        .I2(time_out_counter_reg[4]),
+        .I3(time_out_counter_reg[9]),
         .I4(time_out_2ms_i_3__0_n_0),
         .I5(reset_time_out),
         .O(time_out_500us_i_1_n_0));
   LUT6 #(
-    .INIT(64'h0000000000000080)) 
+    .INIT(64'h0000000000000008)) 
     time_out_500us_i_2
-       (.I0(time_out_counter_reg[9]),
-        .I1(time_out_counter_reg[12]),
-        .I2(time_out_counter_reg[4]),
-        .I3(time_out_counter_reg[6]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_out_counter_reg[15]),
+       (.I0(time_out_counter_reg[14]),
+        .I1(time_out_counter_reg[15]),
+        .I2(time_out_counter_reg[10]),
+        .I3(time_out_counter_reg[11]),
+        .I4(time_out_counter_reg[17]),
+        .I5(time_out_counter_reg[16]),
         .O(time_out_500us_i_2_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -3691,20 +3707,26 @@ module trans_wiz_TX_STARTUP_FSM
         .Q(time_out_500us_reg_n_0),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFEFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFBFFFF)) 
     \time_out_counter[0]_i_1__0 
-       (.I0(time_out_counter_reg[1]),
-        .I1(time_out_counter_reg[12]),
-        .I2(time_out_2ms_i_3__0_n_0),
-        .I3(time_out_counter_reg[15]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_tlock_max_i_3_n_0),
+       (.I0(time_out_2ms_i_3__0_n_0),
+        .I1(time_out_counter_reg[11]),
+        .I2(time_tlock_max_i_3_n_0),
+        .I3(time_out_counter_reg[9]),
+        .I4(\time_out_counter[0]_i_3__0_n_0 ),
+        .I5(time_out_counter_reg[4]),
         .O(time_out_counter));
+  LUT2 #(
+    .INIT(4'h8)) 
+    \time_out_counter[0]_i_3__0 
+       (.I0(time_out_counter_reg[16]),
+        .I1(time_out_counter_reg[17]),
+        .O(\time_out_counter[0]_i_3__0_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
-    \time_out_counter[0]_i_3 
+    \time_out_counter[0]_i_4 
        (.I0(time_out_counter_reg[0]),
-        .O(\time_out_counter[0]_i_3_n_0 ));
+        .O(\time_out_counter[0]_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[0] 
@@ -3720,7 +3742,7 @@ module trans_wiz_TX_STARTUP_FSM
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b1}),
         .O({\time_out_counter_reg[0]_i_2_n_4 ,\time_out_counter_reg[0]_i_2_n_5 ,\time_out_counter_reg[0]_i_2_n_6 ,\time_out_counter_reg[0]_i_2_n_7 }),
-        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_3_n_0 }));
+        .S({time_out_counter_reg[3:1],\time_out_counter[0]_i_4_n_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[10] 
@@ -3788,11 +3810,19 @@ module trans_wiz_TX_STARTUP_FSM
   (* ADDER_THRESHOLD = "11" *) 
   CARRY4 \time_out_counter_reg[16]_i_1 
        (.CI(\time_out_counter_reg[12]_i_1_n_0 ),
-        .CO(\NLW_time_out_counter_reg[16]_i_1_CO_UNCONNECTED [3:0]),
+        .CO({\NLW_time_out_counter_reg[16]_i_1_CO_UNCONNECTED [3:1],\time_out_counter_reg[16]_i_1_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_time_out_counter_reg[16]_i_1_O_UNCONNECTED [3:1],\time_out_counter_reg[16]_i_1_n_7 }),
-        .S({1'b0,1'b0,1'b0,time_out_counter_reg[16]}));
+        .O({\NLW_time_out_counter_reg[16]_i_1_O_UNCONNECTED [3:2],\time_out_counter_reg[16]_i_1_n_6 ,\time_out_counter_reg[16]_i_1_n_7 }),
+        .S({1'b0,1'b0,time_out_counter_reg[17:16]}));
+  FDRE #(
+    .INIT(1'b0)) 
+    \time_out_counter_reg[17] 
+       (.C(sysclk_in),
+        .CE(time_out_counter),
+        .D(\time_out_counter_reg[16]_i_1_n_6 ),
+        .Q(time_out_counter_reg[17]),
+        .R(reset_time_out));
   FDRE #(
     .INIT(1'b0)) 
     \time_out_counter_reg[1] 
@@ -3950,38 +3980,37 @@ module trans_wiz_TX_STARTUP_FSM
     time_tlock_max_i_1
        (.I0(time_tlock_max_reg_n_0),
         .I1(time_tlock_max_i_2_n_0),
-        .I2(time_out_counter_reg[1]),
+        .I2(time_out_counter_reg[4]),
         .I3(time_tlock_max_i_3_n_0),
         .I4(time_tlock_max_i_4_n_0),
         .I5(reset_time_out),
         .O(time_tlock_max_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFB)) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
     time_tlock_max_i_2
-       (.I0(time_out_counter_reg[10]),
-        .I1(time_out_counter_reg[11]),
-        .I2(time_out_counter_reg[7]),
-        .I3(time_out_counter_reg[8]),
-        .I4(time_out_counter_reg[2]),
-        .I5(time_out_counter_reg[0]),
+       (.I0(time_out_counter_reg[2]),
+        .I1(time_out_counter_reg[3]),
+        .I2(time_out_counter_reg[0]),
+        .I3(time_out_counter_reg[1]),
+        .I4(time_out_2ms_i_4_n_0),
         .O(time_tlock_max_i_2_n_0));
-  LUT4 #(
-    .INIT(16'hFFDF)) 
+  LUT3 #(
+    .INIT(8'hEF)) 
     time_tlock_max_i_3
-       (.I0(time_out_counter_reg[3]),
-        .I1(time_out_counter_reg[4]),
-        .I2(time_out_counter_reg[6]),
-        .I3(time_out_counter_reg[9]),
+       (.I0(time_out_counter_reg[15]),
+        .I1(time_out_counter_reg[14]),
+        .I2(time_out_counter_reg[10]),
         .O(time_tlock_max_i_3_n_0));
   LUT6 #(
-    .INIT(64'h0000000000001000)) 
+    .INIT(64'h0000000000000020)) 
     time_tlock_max_i_4
        (.I0(time_out_counter_reg[13]),
-        .I1(time_out_counter_reg[14]),
-        .I2(time_out_counter_reg[5]),
-        .I3(time_out_counter_reg[12]),
-        .I4(time_out_counter_reg[16]),
-        .I5(time_out_counter_reg[15]),
+        .I1(time_out_counter_reg[11]),
+        .I2(time_out_counter_reg[9]),
+        .I3(time_out_counter_reg[6]),
+        .I4(time_out_counter_reg[17]),
+        .I5(time_out_counter_reg[16]),
         .O(time_tlock_max_i_4_n_0));
   FDRE #(
     .INIT(1'b0)) 
@@ -4200,13 +4229,13 @@ module trans_wiz_TX_STARTUP_FSM
         .D(\wait_bypass_count_reg[8]_i_1_n_6 ),
         .Q(wait_bypass_count_reg[9]),
         .R(clear));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \wait_time_cnt[0]_i_1 
        (.I0(wait_time_cnt_reg[0]),
         .O(wait_time_cnt0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \wait_time_cnt[1]_i_1 
@@ -4220,7 +4249,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I1(wait_time_cnt_reg[0]),
         .I2(wait_time_cnt_reg[1]),
         .O(wait_time_cnt0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \wait_time_cnt[3]_i_1 
@@ -4229,7 +4258,7 @@ module trans_wiz_TX_STARTUP_FSM
         .I2(wait_time_cnt_reg[0]),
         .I3(wait_time_cnt_reg[2]),
         .O(wait_time_cnt0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'hAAAAAAA9)) 
     \wait_time_cnt[4]_i_1 
@@ -4383,7 +4412,7 @@ module trans_wiz_common
     .QPLL_CP(10'b0000011111),
     .QPLL_CP_MONITOR_EN(1'b0),
     .QPLL_DMONITOR_SEL(1'b0),
-    .QPLL_FBDIV(10'b0100100000),
+    .QPLL_FBDIV(10'b0101110000),
     .QPLL_FBDIV_MONITOR_EN(1'b0),
     .QPLL_FBDIV_RATIO(1'b1),
     .QPLL_INIT_CFG(24'h000006),
@@ -4451,17 +4480,16 @@ module trans_wiz_common_reset
   wire \init_wait_count[7]_i_1_n_0 ;
   wire \init_wait_count[7]_i_3_n_0 ;
   wire \init_wait_count[7]_i_4_n_0 ;
-  wire \init_wait_count[7]_i_5_n_0 ;
   wire [7:0]init_wait_count_reg;
   wire init_wait_done;
   wire init_wait_done_i_1_n_0;
-  wire init_wait_done_i_2__1_n_0;
+  wire init_wait_done_i_2_n_0;
   wire [7:0]plusOp;
   wire state;
   wire state_i_1_n_0;
   wire sysclk_in;
 
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h74)) 
     COMMON_RESET_i_1
@@ -4477,7 +4505,7 @@ module trans_wiz_common_reset
         .D(COMMON_RESET_i_1_n_0),
         .Q(COMMON_RESET),
         .R(SOFT_RESET_TX_IN));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'hE)) 
     common_reset_asserted_i_1
@@ -4503,14 +4531,14 @@ module trans_wiz_common_reset
     \init_wait_count[0]_i_1 
        (.I0(init_wait_count_reg[0]),
         .O(plusOp[0]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \init_wait_count[1]_i_1 
        (.I0(init_wait_count_reg[0]),
         .I1(init_wait_count_reg[1]),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \init_wait_count[2]_i_1 
@@ -4547,54 +4575,48 @@ module trans_wiz_common_reset
         .I4(init_wait_count_reg[3]),
         .I5(init_wait_count_reg[5]),
         .O(plusOp[5]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \init_wait_count[6]_i_1 
-       (.I0(\init_wait_count[7]_i_5_n_0 ),
+       (.I0(\init_wait_count[7]_i_4_n_0 ),
         .I1(init_wait_count_reg[6]),
         .O(plusOp[6]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFDF)) 
+  LUT3 #(
+    .INIT(8'hFE)) 
     \init_wait_count[7]_i_1 
        (.I0(\init_wait_count[7]_i_3_n_0 ),
-        .I1(init_wait_count_reg[4]),
-        .I2(init_wait_count_reg[5]),
-        .I3(init_wait_count_reg[7]),
-        .I4(init_wait_count_reg[6]),
-        .I5(\init_wait_count[7]_i_4_n_0 ),
+        .I1(init_wait_count_reg[1]),
+        .I2(init_wait_count_reg[0]),
         .O(\init_wait_count[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
     .INIT(8'hD2)) 
     \init_wait_count[7]_i_2 
        (.I0(init_wait_count_reg[6]),
-        .I1(\init_wait_count[7]_i_5_n_0 ),
+        .I1(\init_wait_count[7]_i_4_n_0 ),
         .I2(init_wait_count_reg[7]),
         .O(plusOp[7]));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT6 #(
+    .INIT(64'hEFFFFFFFFFFFFFFF)) 
     \init_wait_count[7]_i_3 
-       (.I0(init_wait_count_reg[3]),
-        .I1(init_wait_count_reg[2]),
+       (.I0(init_wait_count_reg[6]),
+        .I1(init_wait_count_reg[7]),
+        .I2(init_wait_count_reg[4]),
+        .I3(init_wait_count_reg[5]),
+        .I4(init_wait_count_reg[3]),
+        .I5(init_wait_count_reg[2]),
         .O(\init_wait_count[7]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT2 #(
-    .INIT(4'hB)) 
-    \init_wait_count[7]_i_4 
-       (.I0(init_wait_count_reg[1]),
-        .I1(init_wait_count_reg[0]),
-        .O(\init_wait_count[7]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'h7FFFFFFFFFFFFFFF)) 
-    \init_wait_count[7]_i_5 
+    \init_wait_count[7]_i_4 
        (.I0(init_wait_count_reg[4]),
         .I1(init_wait_count_reg[2]),
         .I2(init_wait_count_reg[0]),
         .I3(init_wait_count_reg[1]),
         .I4(init_wait_count_reg[3]),
         .I5(init_wait_count_reg[5]),
-        .O(\init_wait_count[7]_i_5_n_0 ));
+        .O(\init_wait_count[7]_i_4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \init_wait_count_reg[0] 
@@ -4659,25 +4681,24 @@ module trans_wiz_common_reset
         .D(plusOp[7]),
         .Q(init_wait_count_reg[7]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
-    .INIT(16'hFF40)) 
+    .INIT(16'hFF02)) 
     init_wait_done_i_1
-       (.I0(init_wait_count_reg[1]),
+       (.I0(init_wait_done_i_2_n_0),
         .I1(init_wait_count_reg[0]),
-        .I2(init_wait_done_i_2__1_n_0),
+        .I2(init_wait_count_reg[1]),
         .I3(init_wait_done),
         .O(init_wait_done_i_1_n_0));
   LUT6 #(
-    .INIT(64'h0000000000000020)) 
-    init_wait_done_i_2__1
-       (.I0(init_wait_count_reg[5]),
-        .I1(init_wait_count_reg[4]),
-        .I2(init_wait_count_reg[3]),
-        .I3(init_wait_count_reg[2]),
+    .INIT(64'h0000000000008000)) 
+    init_wait_done_i_2
+       (.I0(init_wait_count_reg[4]),
+        .I1(init_wait_count_reg[5]),
+        .I2(init_wait_count_reg[2]),
+        .I3(init_wait_count_reg[3]),
         .I4(init_wait_count_reg[7]),
         .I5(init_wait_count_reg[6]),
-        .O(init_wait_done_i_2__1_n_0));
+        .O(init_wait_done_i_2_n_0));
   FDRE #(
     .INIT(1'b0)) 
     init_wait_done_reg
@@ -4830,10 +4851,10 @@ module trans_wiz_init
   wire gt0_gtxtxn_out;
   wire gt0_gtxtxp_out;
   wire [9:0]gt0_rx_cdrlock_counter;
-  wire \gt0_rx_cdrlock_counter[0]_i_1_n_0 ;
-  wire \gt0_rx_cdrlock_counter[1]_i_2_n_0 ;
+  wire \gt0_rx_cdrlock_counter[0]_i_2_n_0 ;
+  wire \gt0_rx_cdrlock_counter[5]_i_1_n_0 ;
   wire \gt0_rx_cdrlock_counter[9]_i_2_n_0 ;
-  wire [9:1]gt0_rx_cdrlock_counter_0;
+  wire [9:0]gt0_rx_cdrlock_counter_0;
   wire gt0_rx_cdrlocked_i_1_n_0;
   wire gt0_rx_cdrlocked_reg_n_0;
   wire gt0_rxbufreset_in;
@@ -4861,60 +4882,57 @@ module trans_wiz_init
   wire gt0_txuserrdy_t;
   wire sysclk_in;
 
-  LUT5 #(
-    .INIT(32'h33333373)) 
+  LUT6 #(
+    .INIT(64'h5555555554555555)) 
     \gt0_rx_cdrlock_counter[0]_i_1 
-       (.I0(gt0_rx_cdrlock_counter[7]),
-        .I1(gt0_rx_cdrlock_counter[0]),
-        .I2(gt0_rx_cdrlock_counter[9]),
-        .I3(gt0_rx_cdrlock_counter[3]),
-        .I4(\gt0_rx_cdrlock_counter[1]_i_2_n_0 ),
-        .O(\gt0_rx_cdrlock_counter[0]_i_1_n_0 ));
+       (.I0(gt0_rx_cdrlock_counter[0]),
+        .I1(\gt0_rx_cdrlock_counter[0]_i_2_n_0 ),
+        .I2(gt0_rx_cdrlock_counter[4]),
+        .I3(gt0_rx_cdrlock_counter[9]),
+        .I4(gt0_rx_cdrlock_counter[3]),
+        .I5(gt0_rx_cdrlock_counter[2]),
+        .O(gt0_rx_cdrlock_counter_0[0]));
   LUT6 #(
-    .INIT(64'h33333333CCCCCC8C)) 
-    \gt0_rx_cdrlock_counter[1]_i_1 
-       (.I0(gt0_rx_cdrlock_counter[7]),
-        .I1(gt0_rx_cdrlock_counter[0]),
-        .I2(gt0_rx_cdrlock_counter[9]),
-        .I3(gt0_rx_cdrlock_counter[3]),
-        .I4(\gt0_rx_cdrlock_counter[1]_i_2_n_0 ),
+    .INIT(64'hFFFFFFFFFFFF7FFF)) 
+    \gt0_rx_cdrlock_counter[0]_i_2 
+       (.I0(gt0_rx_cdrlock_counter[5]),
+        .I1(gt0_rx_cdrlock_counter[6]),
+        .I2(gt0_rx_cdrlock_counter[8]),
+        .I3(gt0_rx_cdrlock_counter[7]),
+        .I4(gt0_rx_cdrlock_counter[0]),
         .I5(gt0_rx_cdrlock_counter[1]),
+        .O(\gt0_rx_cdrlock_counter[0]_i_2_n_0 ));
+  LUT2 #(
+    .INIT(4'h6)) 
+    \gt0_rx_cdrlock_counter[1]_i_1 
+       (.I0(gt0_rx_cdrlock_counter[1]),
+        .I1(gt0_rx_cdrlock_counter[0]),
         .O(gt0_rx_cdrlock_counter_0[1]));
-  LUT6 #(
-    .INIT(64'hFFFFFFF7FFFFFFFF)) 
-    \gt0_rx_cdrlock_counter[1]_i_2 
-       (.I0(gt0_rx_cdrlock_counter[6]),
-        .I1(gt0_rx_cdrlock_counter[5]),
-        .I2(gt0_rx_cdrlock_counter[1]),
-        .I3(gt0_rx_cdrlock_counter[8]),
-        .I4(gt0_rx_cdrlock_counter[2]),
-        .I5(gt0_rx_cdrlock_counter[4]),
-        .O(\gt0_rx_cdrlock_counter[1]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
-    .INIT(8'h6A)) 
+    .INIT(8'h78)) 
     \gt0_rx_cdrlock_counter[2]_i_1 
-       (.I0(gt0_rx_cdrlock_counter[2]),
+       (.I0(gt0_rx_cdrlock_counter[1]),
+        .I1(gt0_rx_cdrlock_counter[0]),
+        .I2(gt0_rx_cdrlock_counter[2]),
+        .O(gt0_rx_cdrlock_counter_0[2]));
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  LUT4 #(
+    .INIT(16'h6AAA)) 
+    \gt0_rx_cdrlock_counter[3]_i_1 
+       (.I0(gt0_rx_cdrlock_counter[3]),
         .I1(gt0_rx_cdrlock_counter[1]),
         .I2(gt0_rx_cdrlock_counter[0]),
-        .O(gt0_rx_cdrlock_counter_0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
-  LUT4 #(
-    .INIT(16'h7F80)) 
-    \gt0_rx_cdrlock_counter[3]_i_1 
-       (.I0(gt0_rx_cdrlock_counter[0]),
-        .I1(gt0_rx_cdrlock_counter[1]),
-        .I2(gt0_rx_cdrlock_counter[2]),
-        .I3(gt0_rx_cdrlock_counter[3]),
+        .I3(gt0_rx_cdrlock_counter[2]),
         .O(gt0_rx_cdrlock_counter_0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \gt0_rx_cdrlock_counter[4]_i_1 
        (.I0(gt0_rx_cdrlock_counter[4]),
-        .I1(gt0_rx_cdrlock_counter[0]),
-        .I2(gt0_rx_cdrlock_counter[1]),
-        .I3(gt0_rx_cdrlock_counter[2]),
+        .I1(gt0_rx_cdrlock_counter[2]),
+        .I2(gt0_rx_cdrlock_counter[0]),
+        .I3(gt0_rx_cdrlock_counter[1]),
         .I4(gt0_rx_cdrlock_counter[3]),
         .O(gt0_rx_cdrlock_counter_0[4]));
   LUT6 #(
@@ -4922,30 +4940,30 @@ module trans_wiz_init
     \gt0_rx_cdrlock_counter[5]_i_1 
        (.I0(gt0_rx_cdrlock_counter[5]),
         .I1(gt0_rx_cdrlock_counter[3]),
-        .I2(gt0_rx_cdrlock_counter[2]),
-        .I3(gt0_rx_cdrlock_counter[1]),
-        .I4(gt0_rx_cdrlock_counter[0]),
+        .I2(gt0_rx_cdrlock_counter[1]),
+        .I3(gt0_rx_cdrlock_counter[0]),
+        .I4(gt0_rx_cdrlock_counter[2]),
         .I5(gt0_rx_cdrlock_counter[4]),
-        .O(gt0_rx_cdrlock_counter_0[5]));
+        .O(\gt0_rx_cdrlock_counter[5]_i_1_n_0 ));
   LUT3 #(
-    .INIT(8'h6A)) 
+    .INIT(8'h9A)) 
     \gt0_rx_cdrlock_counter[6]_i_1 
        (.I0(gt0_rx_cdrlock_counter[6]),
         .I1(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ),
         .I2(gt0_rx_cdrlock_counter[5]),
         .O(gt0_rx_cdrlock_counter_0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT4 #(
-    .INIT(16'h6AAA)) 
+    .INIT(16'hAA6A)) 
     \gt0_rx_cdrlock_counter[7]_i_1 
        (.I0(gt0_rx_cdrlock_counter[7]),
         .I1(gt0_rx_cdrlock_counter[5]),
         .I2(gt0_rx_cdrlock_counter[6]),
         .I3(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ),
         .O(gt0_rx_cdrlock_counter_0[7]));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
-    .INIT(32'h6AAAAAAA)) 
+    .INIT(32'h9AAAAAAA)) 
     \gt0_rx_cdrlock_counter[8]_i_1 
        (.I0(gt0_rx_cdrlock_counter[8]),
         .I1(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ),
@@ -4954,23 +4972,23 @@ module trans_wiz_init
         .I4(gt0_rx_cdrlock_counter[7]),
         .O(gt0_rx_cdrlock_counter_0[8]));
   LUT6 #(
-    .INIT(64'h6AAAAAAAAAAAAAAA)) 
+    .INIT(64'hAA6AAAAAAAAAAAAA)) 
     \gt0_rx_cdrlock_counter[9]_i_1 
        (.I0(gt0_rx_cdrlock_counter[9]),
-        .I1(gt0_rx_cdrlock_counter[7]),
-        .I2(gt0_rx_cdrlock_counter[5]),
-        .I3(gt0_rx_cdrlock_counter[6]),
-        .I4(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ),
-        .I5(gt0_rx_cdrlock_counter[8]),
+        .I1(gt0_rx_cdrlock_counter[8]),
+        .I2(gt0_rx_cdrlock_counter[7]),
+        .I3(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ),
+        .I4(gt0_rx_cdrlock_counter[6]),
+        .I5(gt0_rx_cdrlock_counter[5]),
         .O(gt0_rx_cdrlock_counter_0[9]));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
-    .INIT(32'h80000000)) 
+    .INIT(32'h7FFFFFFF)) 
     \gt0_rx_cdrlock_counter[9]_i_2 
        (.I0(gt0_rx_cdrlock_counter[4]),
-        .I1(gt0_rx_cdrlock_counter[0]),
-        .I2(gt0_rx_cdrlock_counter[1]),
-        .I3(gt0_rx_cdrlock_counter[2]),
+        .I1(gt0_rx_cdrlock_counter[2]),
+        .I2(gt0_rx_cdrlock_counter[0]),
+        .I3(gt0_rx_cdrlock_counter[1]),
         .I4(gt0_rx_cdrlock_counter[3]),
         .O(\gt0_rx_cdrlock_counter[9]_i_2_n_0 ));
   FDRE #(
@@ -4978,7 +4996,7 @@ module trans_wiz_init
     \gt0_rx_cdrlock_counter_reg[0] 
        (.C(sysclk_in),
         .CE(1'b1),
-        .D(\gt0_rx_cdrlock_counter[0]_i_1_n_0 ),
+        .D(gt0_rx_cdrlock_counter_0[0]),
         .Q(gt0_rx_cdrlock_counter[0]),
         .R(gt0_gtrxreset_t));
   FDRE #(
@@ -5018,7 +5036,7 @@ module trans_wiz_init
     \gt0_rx_cdrlock_counter_reg[5] 
        (.C(sysclk_in),
         .CE(1'b1),
-        .D(gt0_rx_cdrlock_counter_0[5]),
+        .D(\gt0_rx_cdrlock_counter[5]_i_1_n_0 ),
         .Q(gt0_rx_cdrlock_counter[5]),
         .R(gt0_gtrxreset_t));
   FDRE #(
@@ -5054,13 +5072,13 @@ module trans_wiz_init
         .Q(gt0_rx_cdrlock_counter[9]),
         .R(gt0_gtrxreset_t));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00000040)) 
+    .INIT(64'hFFFFFFFF00001000)) 
     gt0_rx_cdrlocked_i_1
-       (.I0(gt0_rx_cdrlock_counter[7]),
-        .I1(gt0_rx_cdrlock_counter[0]),
+       (.I0(\gt0_rx_cdrlock_counter[0]_i_2_n_0 ),
+        .I1(gt0_rx_cdrlock_counter[4]),
         .I2(gt0_rx_cdrlock_counter[9]),
         .I3(gt0_rx_cdrlock_counter[3]),
-        .I4(\gt0_rx_cdrlock_counter[1]_i_2_n_0 ),
+        .I4(gt0_rx_cdrlock_counter[2]),
         .I5(gt0_rx_cdrlocked_reg_n_0),
         .O(gt0_rx_cdrlocked_i_1_n_0));
   FDRE gt0_rx_cdrlocked_reg
@@ -5323,7 +5341,7 @@ module trans_wiz_multi_gt
         .sysclk_in(sysclk_in));
 endmodule
 
-(* EXAMPLE_SIM_GTRESET_SPEEDUP = "TRUE" *) (* STABLE_CLOCK_PERIOD = "16" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* EXAMPLE_SIM_GTRESET_SPEEDUP = "TRUE" *) (* STABLE_CLOCK_PERIOD = "10" *) (* downgradeipidentifiedwarnings = "yes" *) 
 module trans_wiz_support
    (SOFT_RESET_TX_IN,
     SOFT_RESET_RX_IN,
@@ -6791,7 +6809,7 @@ module trans_wiz_sync_block_7
         .I3(Q[1]),
         .I4(Q[3]),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h00000020)) 
     \FSM_sequential_rx_state[0]_i_3 
@@ -6996,7 +7014,7 @@ module trans_wiz_sync_block_7
         .I4(Q[0]),
         .I5(Q[1]),
         .O(rx_fsm_reset_done_int_i_3_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'hFF10)) 
     rx_fsm_reset_done_int_i_4

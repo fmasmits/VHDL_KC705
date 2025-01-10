@@ -314,8 +314,8 @@ begin
         TERM_RCAL_CFG                           =>     ("10000"),
         TERM_RCAL_OVRD                          =>     ('0'),
         TST_RSV                                 =>     (x"00000000"),
-        RX_CLK25_DIV                            =>     (5),
-        TX_CLK25_DIV                            =>     (5),
+        RX_CLK25_DIV                            =>     (4),
+        TX_CLK25_DIV                            =>     (4),
         UCODEER_CLR                             =>     ('0'),
 
        ---------------------------PCI Express Attributes----------------------------

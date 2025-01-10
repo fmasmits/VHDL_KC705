@@ -75,7 +75,7 @@ entity trans_wiz_support is
 generic
 (
     EXAMPLE_SIM_GTRESET_SPEEDUP             : string    := "TRUE";     -- simulation setting for GT SecureIP model
-    STABLE_CLOCK_PERIOD                     : integer   := 16  
+    STABLE_CLOCK_PERIOD                     : integer   := 10  
 
 );
 port
