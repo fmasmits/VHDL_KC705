@@ -34,7 +34,7 @@ entity KC705_top is
     FLAVOUR            : integer                       := 0
     );
 
-    Port ( 
+    port ( 
         clk_sys_diff            : in    std_logic_vector(1 downto 0);       -- 200 MHz clock
         clk_trans_diff          : in    std_logic_vector(1 downto 0);       -- 125 MHz clock
         data_out_diff           : out   std_logic_vector(1 downto 0);
@@ -48,9 +48,9 @@ architecture Behavioral of KC705_top is
     ----------------------------------
     --            Signals           --
     ----------------------------------
-    signal clk_sys_in       : std_logic;            -- 200 MHz clock
     signal clk_sys          : std_logic;            -- 200 MHz clock
     signal clk_sys_div2     : std_logic;            -- 100 MHz clock
+    signal clk_fabric_rx    : std_logic;            -- recovered clk from received data
     
     --         vio signals          --
     signal drp_rst          : std_logic;   
@@ -107,14 +107,14 @@ architecture Behavioral of KC705_top is
     --           Components         --
     ---------------------------------- 
     
-    component pll_div2_clk_generator
+    component ck_wiz
     port(
-      clk_sys           : out    std_logic;
-      clk_sys_div2      : out    std_logic;
+      clk_out_div2      : out    std_logic;
       reset             : in     std_logic;
       locked            : out    std_logic;
-      clk_sys_in        : in     std_logic
-    );
+      clk_in1_p         : in     std_logic;
+      clk_in1_n         : in     std_logic
+     );
     end component;
 
 
@@ -123,35 +123,39 @@ architecture Behavioral of KC705_top is
         clk         : in    std_logic;
         probe_in0   : in    std_logic;                      -- trans
         probe_in1   : in    std_logic;                      -- trans
-        probe_in2   : in    std_logic_vector(15 downto 0);  -- drp
-        probe_in3   : in    std_logic;                      -- drp
-        probe_in4   : in    std_logic;                      -- qpll
-        probe_in5   : in    std_logic;                      -- qpll   
-        probe_in6   : in    std_logic_vector(7 downto 0);   -- misc
-        probe_in7   : in    std_logic;                      -- misc
+        probe_in2   : in    std_logic;                      -- qpll
+        probe_in3   : in    std_logic;                      -- qpll   
+        probe_in4   : in    std_logic_vector(7 downto 0);   -- misc
+        probe_in5   : in    std_logic;                      -- misc
         probe_out0  : out   std_logic;                      -- trans
         probe_out1  : out   std_logic;                      -- trans
         probe_out2  : out   std_logic;                      -- trans
         probe_out3  : out   std_logic;                      -- trans
-        probe_out4  : out   std_logic_vector(8  downto 0);  -- drp
-        probe_out5  : out   std_logic_vector(15 downto 0);  -- drp
-        probe_out6  : out   std_logic;                      -- drp
-        probe_out7  : out   std_logic;                      -- drp
-        probe_out8  : out   std_logic;                      -- qpll 
-        probe_out9  : out   std_logic;                      -- misc   
-        probe_out10 : out   std_logic                       -- misc   
+        probe_out4  : out   std_logic;                      -- qpll 
+        probe_out5  : out   std_logic;                      -- misc   
+        probe_out6  : out   std_logic                       -- misc   
     );
     end component;
     
-    component vio_RxTx
-    port (
+    component vio_drp
+    port(
+        clk         : in    std_logic;
+        probe_in0   : in    std_logic_vector(15 downto 0);
+        probe_in1   : in    std_logic;
+        probe_out0  : out   std_logic_vector(8 downto 0);
+        probe_out1  : out   std_logic_vector(15 downto 0);
+        probe_out2  : out   std_logic;
+        probe_out3  : out   std_logic 
+    );
+    end component;
+    
+    component vio_Rx
+    port(
         clk         : in    std_logic;
         probe_in0   : in    std_logic;
         probe_in1   : in    std_logic_vector(2 downto 0);
         probe_in2   : in    std_logic_vector(6 downto 0);
         probe_in3   : in    std_logic;
-        probe_in4   : in    std_logic_vector(1 downto 0);
-        probe_in5   : in    std_logic;
         probe_out0  : out   std_logic;
         probe_out1  : out   std_logic_vector(2 downto 0);
         probe_out2  : out   std_logic;
@@ -160,21 +164,29 @@ architecture Behavioral of KC705_top is
         probe_out5  : out   std_logic_vector(1 downto 0);
         probe_out6  : out   std_logic;
         probe_out7  : out   std_logic;
-        probe_out8  : out   std_logic;
-        probe_out9  : out   std_logic;
-        probe_out10 : out   std_logic;
-        probe_out11 : out   std_logic;
-        probe_out12 : out   std_logic_vector(31 downto 0)
+        probe_out8  : out   std_logic 
     );
     end component;
     
-    component ila_data_in
-    port (
-        clk         : in std_logic;
-        probe0      : in std_logic_vector(31 downto 0);
-        probe1      : in std_logic_vector(31 downto 0)    
+    component vio_Tx
+    port(
+        clk         : in    std_logic;
+        probe_in0   : in    std_logic_vector(1 downto 0);
+        probe_in1   : in    std_logic;
+        probe_out0  : out   std_logic_vector(2 downto 0);
+        probe_out1  : out   std_logic;
+        probe_out2  : out   std_logic;
+        probe_out3  : out   std_logic;
+        probe_out4  : out   std_logic_vector(31 downto 0)
     );
     end component;
+    
+    COMPONENT ila_Rx_data
+    port (
+        clk         : IN STD_LOGIC;
+        probe0      : IN STD_LOGIC_VECTOR(31 DOWNTO 0)
+    );
+    END COMPONENT;
     
     
     component trans_wiz 
@@ -259,26 +271,18 @@ begin
     ----------------------------------
     --           Components         --
     ----------------------------------
-    IBUFGDS_sys_clk : IBUFGDS
-    port map (
-        I   => clk_sys_diff(0),
-        IB  => clk_sys_diff(1),
-        O   => clk_sys_in
+    
+    
+    i_clk_wiz : ck_wiz
+      port map ( 
+      clk_out_div2 => clk_sys_div2,              
+      reset        => '0',
+      locked       => open,
+      clk_in1_p    => clk_sys_diff(0),
+      clk_in1_n    => clk_sys_diff(1)
     );
     
-    your_instance_name : pll_div2_clk_generator
-    port map( 
-        clk_sys      => clk_sys,    
-        clk_sys_div2 => clk_sys_div2,             
-        reset        => '0',
-        locked       => open,
-        clk_sys_in   => clk_sys_in
-     );
-    
-    
-    
-    
-    trans_wiz_TxRx : trans_wiz
+    i_trans_wiz : trans_wiz
     port map (
             SOFT_RESET_TX_IN                => trans_tx_rst,
             SOFT_RESET_RX_IN                => trans_rx_rst,
@@ -327,7 +331,7 @@ begin
             gt0_rxdfelpmreset_in            => rx_dfe_lpm_rst,
             gt0_rxmonitorout_out            => rx_monitor,
             gt0_rxmonitorsel_in             => rx_monitor_sel,
-            gt0_rxoutclkfabric_out          => open,
+            gt0_rxoutclkfabric_out          => clk_fabric_rx,
             gt0_gtrxreset_in                => rx_gtrx_rst,
             gt0_rxpmareset_in               => rx_pma_rst,
             gt0_rxslide_in                  => rx_slide,
@@ -360,59 +364,69 @@ begin
     --            VIO's             --
     ---------------------------------- 
 
-    vio_transceiver_settings : vio_tra_set
+    i_vio_tra_set : vio_tra_set
     port map (
         clk         => clk_sys_div2,
         probe_in0   => trans_rx_done,
         probe_in1   => trans_tx_done,
-        probe_in2   => drp_dout,
-        probe_in3   => drp_rdy,
-        probe_in4   => qpll_lckd,
-        probe_in5   => qpll_ref_lost,
-        probe_in6   => digital_monitor,
-        probe_in7   => eye_data_err,
+        probe_in2   => qpll_lckd,
+        probe_in3   => qpll_ref_lost,
+        probe_in4   => digital_monitor,
+        probe_in5   => eye_data_err,
         probe_out0  => trans_rx_rst,
         probe_out1  => trans_tx_rst,
         probe_out2  => trans_rst_on_err,
         probe_out3  => trans_valid_data,
-        probe_out4  => drp_addr,
-        probe_out5  => drp_din,
-        probe_out6  => drp_wen,
-        probe_out7  => drp_en,
-        probe_out8  => qpll_pd,
-        probe_out9  => eye_scan_rst,
-        probe_out10 => eye_scan_trig
+        probe_out4  => qpll_pd,
+        probe_out5  => eye_scan_rst,
+        probe_out6  => eye_scan_trig
     );
     
-    vio_rxtx_settings : vio_RxTx
+    i_vio_drp : vio_drp
     port map (
-        clk         => clk_sys_div2,
-        probe_in0   => rx_prbs_err,
-        probe_in1   => rx_buf_stat,
-        probe_in2   => rx_monitor,
-        probe_in3   => rx_rst_done,
-        probe_in4   => tx_buf_stat,
-        probe_in5   => tx_rst_done,
-        probe_out0  => rx_usr_rdy,
-        probe_out1  => prbs_sel,
-        probe_out2  => rx_prbs_cntr_rst,
-        probe_out3  => rx_buf_rst,
-        probe_out4  => rx_dfe_lpm_rst,
-        probe_out5  => rx_monitor_sel,
-        probe_out6  => rx_gtrx_rst,
-        probe_out7  => rx_pma_rst,
-        probe_out8  => rx_slide,
-        probe_out9  => tx_gttx_rst,
-        probe_out10 => tx_usr_rdy,
-        probe_out11 => tx_prbs_frc_err,
-        probe_out12 => tx_data_out
+      clk => clk_sys_div2,
+      probe_in0   => drp_dout,
+      probe_in1   => drp_rdy,
+      probe_out0  => drp_addr,
+      probe_out1  => drp_din,
+      probe_out2  => drp_wen,
+      probe_out3  => drp_en
     );
-    
-    ila_data_inout : ila_data_in
+   
+    i_vio_rx : vio_Rx
     port map (
-        clk => clk_sys_div2,
-        probe0 => rx_data_in,
-        probe1 => tx_data_out
+      clk => clk_sys_div2,
+      probe_in0   => rx_prbs_err,
+      probe_in1   => rx_buf_stat,
+      probe_in2   => rx_monitor,
+      probe_in3   => rx_rst_done,
+      probe_out0  => rx_usr_rdy,
+      probe_out1  => prbs_sel,
+      probe_out2  => rx_prbs_cntr_rst,
+      probe_out3  => rx_buf_rst,
+      probe_out4  => rx_dfe_lpm_rst,
+      probe_out5  => rx_monitor_sel,
+      probe_out6  => rx_gtrx_rst,
+      probe_out7  => rx_pma_rst,
+      probe_out8  => rx_slide
+    );
+      
+    i_ila_rx_data : ila_Rx_data
+    port map (
+        clk => clk_fabric_rx,
+        probe0 => rx_data_in
+    );
+        
+    i_vio_tx : vio_Tx
+    port map (
+      clk => clk_sys_div2,
+      probe_in0   => tx_buf_stat,
+      probe_in1   => tx_rst_done,
+      probe_out0  => prbs_sel,
+      probe_out1  => tx_gttx_rst,
+      probe_out2  => tx_usr_rdy,
+      probe_out3  => tx_prbs_frc_err,
+      probe_out4  => tx_data_out
     );
     
     
