@@ -157,14 +157,13 @@ architecture Behavioral of KC705_top is
         probe_in2   : in    std_logic_vector(6 downto 0);
         probe_in3   : in    std_logic;
         probe_out0  : out   std_logic;
-        probe_out1  : out   std_logic_vector(2 downto 0);
+        probe_out1  : out   std_logic;
         probe_out2  : out   std_logic;
         probe_out3  : out   std_logic;
-        probe_out4  : out   std_logic;
-        probe_out5  : out   std_logic_vector(1 downto 0);
+        probe_out4  : out   std_logic_vector(1 downto 0);
+        probe_out5  : out   std_logic;
         probe_out6  : out   std_logic;
-        probe_out7  : out   std_logic;
-        probe_out8  : out   std_logic 
+        probe_out7  : out   std_logic 
     );
     end component;
     
@@ -401,14 +400,13 @@ begin
       probe_in2   => rx_monitor,
       probe_in3   => rx_rst_done,
       probe_out0  => rx_usr_rdy,
-      probe_out1  => prbs_sel,
-      probe_out2  => rx_prbs_cntr_rst,
-      probe_out3  => rx_buf_rst,
-      probe_out4  => rx_dfe_lpm_rst,
-      probe_out5  => rx_monitor_sel,
-      probe_out6  => rx_gtrx_rst,
-      probe_out7  => rx_pma_rst,
-      probe_out8  => rx_slide
+      probe_out1  => rx_prbs_cntr_rst,
+      probe_out2  => rx_buf_rst,
+      probe_out3  => rx_dfe_lpm_rst,
+      probe_out4  => rx_monitor_sel,
+      probe_out5  => rx_gtrx_rst,
+      probe_out6  => rx_pma_rst,
+      probe_out7  => rx_slide
     );
       
     i_ila_rx_data : ila_Rx_data
