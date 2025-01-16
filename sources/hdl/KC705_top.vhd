@@ -264,7 +264,7 @@ begin
           INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
           SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
           SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
-          WIDTH          => 37
+          WIDTH          => 38
     ) port map (
           dest_out => vio_tx_in_sync,  
           dest_clk => clk_fabric_tx,      -- 1-bit input: Clock signal for the destination clock domain.
