@@ -313,6 +313,7 @@ begin
           src_clk  => clk_fabric_rx,     -- 1-bit input: optional; required when SRC_INPUT_REG = 1
           src_in   => vio_rx_out        
     );
+    
     ----------------------------------
     --           Components         --
     ----------------------------------
