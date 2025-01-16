@@ -81,14 +81,15 @@ architecture Behavioral of KC705_top is
     signal eye_scan_trig    : std_logic;
 
     --signals for cdc
-    signal vio_in           : std_logic_vector(14 downto 0);
-    signal vio_in_sync      : std_logic_vector(14 downto 0);
-    signal vio_out          : std_logic_vector(14 downto 0);
-    signal vio_out_sync     : std_logic_vector(14 downto 0);
-    signal rx_data_in       : std_logic_vector(31 downto 0);
-    signal rx_data_in_sync  : std_logic_vector(31 downto 0);
-    signal tx_data_out      : std_logic_vector(31 downto 0);
-    signal tx_data_out_sync : std_logic_vector(31 downto 0);
+    signal vio_rx_in        : std_logic_vector(11 downto 0);
+    signal vio_rx_in_sync   : std_logic_vector(11 downto 0);
+    signal vio_rx_out       : std_logic_vector(43 downto 0);
+    signal vio_rx_out_sync  : std_logic_vector(43 downto 0);
+    
+    signal vio_tx_in        : std_logic_vector(37 downto 0);
+    signal vio_tx_in_sync   : std_logic_vector(37 downto 0);
+    signal vio_tx_out       : std_logic_vector(2 downto 0);
+    signal vio_tx_out_sync  : std_logic_vector(2 downto 0);
     
     ----------------------------------
     --           Components         --
@@ -144,13 +145,14 @@ architecture Behavioral of KC705_top is
         probe_in2   : in    std_logic_vector(6 downto 0);
         probe_in3   : in    std_logic;
         probe_out0  : out   std_logic;
-        probe_out1  : out   std_logic;
+        probe_out1  : out   std_logic_vector(2 downto 0);
         probe_out2  : out   std_logic;
         probe_out3  : out   std_logic;
-        probe_out4  : out   std_logic_vector(1 downto 0);
-        probe_out5  : out   std_logic;
+        probe_out4  : out   std_logic;
+        probe_out5  : out   std_logic_vector(1 downto 0);
         probe_out6  : out   std_logic;
-        probe_out7  : out   std_logic 
+        probe_out7  : out   std_logic;
+        probe_out8  : out   std_logic 
     );
     end component;
     
@@ -159,17 +161,11 @@ architecture Behavioral of KC705_top is
         clk         : in    std_logic;
         probe_in0   : in    std_logic_vector(1 downto 0);
         probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic_vector(2 downto 0);
+        probe_out0  : out   std_logic;
         probe_out1  : out   std_logic;
         probe_out2  : out   std_logic;
-        probe_out3  : out   std_logic
-    );
-    end component;
-    
-    component vio_Tx_data
-    port (
-        clk         : in  std_logic;
-        probe_out0  : out std_logic_vector(31 downto 0)
+        probe_out3  : out   std_logic_vector(2 downto 0);
+        probe_out4  : out   std_logic_vector(31 downto 0)
     );
     end component;
     
@@ -262,60 +258,60 @@ begin
     ----------------------------------
     --    Clock domain crossing     --
     ----------------------------------
-    i_xpm_cdc_vio_in : xpm_cdc_array_single
+    i_xpm_cdc_vio_tx_in : xpm_cdc_array_single
     generic map (
           DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
           INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
           SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
           SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
-          WIDTH          => 15
+          WIDTH          => 37
     ) port map (
-          dest_out => vio_in_sync,  
+          dest_out => vio_tx_in_sync,  
+          dest_clk => clk_fabric_tx,      -- 1-bit input: Clock signal for the destination clock domain.
+          src_clk  => clk_sys_div2,      -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+          src_in   => vio_tx_in        
+    );
+    
+    i_xpm_cdc_vio_tx_out : xpm_cdc_array_single
+    generic map (
+          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
+          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
+          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
+          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
+          WIDTH          => 3
+    ) port map (
+          dest_out => vio_tx_out_sync,  
+          dest_clk => clk_sys_div2,      -- 1-bit input: Clock signal for the destination clock domain.
+          src_clk  => clk_fabric_tx,     -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+          src_in   => vio_tx_out        
+    );
+    
+    i_xpm_cdc_vio_rx_in : xpm_cdc_array_single
+    generic map (
+          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
+          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
+          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
+          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
+          WIDTH          => 12
+    ) port map (
+          dest_out => vio_rx_in_sync,  
           dest_clk => clk_fabric_rx,      -- 1-bit input: Clock signal for the destination clock domain.
           src_clk  => clk_sys_div2,      -- 1-bit input: optional; required when SRC_INPUT_REG = 1
-          src_in   => vio_in        
+          src_in   => vio_rx_in        
     );
     
-    i_xpm_cdc_vio_out : xpm_cdc_array_single
+    i_xpm_cdc_vio_rx_out : xpm_cdc_array_single
     generic map (
           DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
           INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
           SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
           SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
-          WIDTH          => 32
+          WIDTH          => 44
     ) port map (
-          dest_out => tx_data_out_sync,  
+          dest_out => vio_rx_out_sync,  
           dest_clk => clk_sys_div2,      -- 1-bit input: Clock signal for the destination clock domain.
           src_clk  => clk_fabric_rx,     -- 1-bit input: optional; required when SRC_INPUT_REG = 1
-          src_in   => tx_data_out        
-    );
-    
-    i_xpm_cdc_vio_in_data : xpm_cdc_array_single
-    generic map (
-          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
-          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
-          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
-          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
-          WIDTH          => 32
-    ) port map (
-          dest_out => rx_data_in_sync,  
-          dest_clk => clk_sys_div2,      -- 1-bit input: Clock signal for the destination clock domain.
-          src_clk  => clk_fabric_rx,      -- 1-bit input: optional; required when SRC_INPUT_REG = 1
-          src_in   => rx_data_in        
-    );
-    
-    i_xpm_cdc_vio_out_data : xpm_cdc_array_single
-    generic map (
-          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
-          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
-          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
-          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
-          WIDTH          => 15
-    ) port map (
-          dest_out => vio_out_sync,  
-          dest_clk => clk_sys_div2,      -- 1-bit input: Clock signal for the destination clock domain.
-          src_clk  => clk_fabric_rx,     -- 1-bit input: optional; required when SRC_INPUT_REG = 1
-          src_in   => vio_out        
+          src_in   => vio_rx_out        
     );
     ----------------------------------
     --           Components         --
@@ -369,36 +365,36 @@ begin
             gt0_eyescantrigger_in           => eye_scan_trig,
             
             --------------------------------- RX Ports ---------------------------------
-            gt0_rxuserrdy_in                => vio_in_sync(0),
-            gt0_rxprbserr_out               => vio_out(0),
-            gt0_rxprbssel_in                => vio_in_sync(3 downto 1),
-            gt0_rxprbscntreset_in           => vio_in_sync(4),
-            gt0_rxdata_out                  => rx_data_in,
+            gt0_rxuserrdy_in                => vio_rx_in_sync(0),
+            gt0_rxprbserr_out               => vio_rx_out(0),
+            gt0_rxprbssel_in                => vio_rx_in_sync(3 downto 1),
+            gt0_rxprbscntreset_in           => vio_rx_in_sync(4),
+            gt0_rxdata_out                  => vio_rx_out(43 downto 12),
             gt0_gtxrxp_in                   => data_in_diff(0),
             gt0_gtxrxn_in                   => data_in_diff(1),
-            gt0_rxbufreset_in               => vio_in_sync(5),
-            gt0_rxbufstatus_out             => vio_out(3 downto 1),
-            gt0_rxdfelpmreset_in            => vio_in_sync(6),
-            gt0_rxmonitorout_out            => vio_out(10 downto 4),
-            gt0_rxmonitorsel_in             => vio_in_sync(8 downto 7),
+            gt0_rxbufreset_in               => vio_rx_in_sync(5),
+            gt0_rxbufstatus_out             => vio_rx_out(3 downto 1),
+            gt0_rxdfelpmreset_in            => vio_rx_in_sync(6),
+            gt0_rxmonitorout_out            => vio_rx_out(10 downto 4),
+            gt0_rxmonitorsel_in             => vio_rx_in_sync(8 downto 7),
             gt0_rxoutclkfabric_out          => clk_fabric_rx,
-            gt0_gtrxreset_in                => vio_in_sync(9),
-            gt0_rxpmareset_in               => vio_in_sync(10),
-            gt0_rxslide_in                  => vio_in_sync(11),
-            gt0_rxresetdone_out             => vio_out(11),
+            gt0_gtrxreset_in                => vio_rx_in_sync(9),
+            gt0_rxpmareset_in               => vio_rx_in_sync(10),
+            gt0_rxslide_in                  => vio_rx_in_sync(11),
+            gt0_rxresetdone_out             => vio_rx_out(11),
             
             --------------------------------- TX Ports ---------------------------------
-            gt0_gttxreset_in                => vio_in_sync(12),
-            gt0_txuserrdy_in                => vio_in_sync(13),
-            gt0_txprbsforceerr_in           => vio_in_sync(14),
-            gt0_txbufstatus_out             => vio_out(13 downto 12),
-            gt0_txdata_in                   => tx_data_out_sync,
+            gt0_gttxreset_in                => vio_tx_in_sync(0),
+            gt0_txuserrdy_in                => vio_tx_in_sync(1),
+            gt0_txprbsforceerr_in           => vio_tx_in_sync(2),
+            gt0_txbufstatus_out             => vio_tx_out(1 downto 0),
+            gt0_txdata_in                   => vio_tx_in_sync(37 downto 6),
             gt0_gtxtxn_out                  => data_out_diff(1),
             gt0_gtxtxp_out                  => data_out_diff(0),
             gt0_txoutclkfabric_out          => clk_fabric_tx,
             gt0_txoutclkpcs_out             => open,
-            gt0_txresetdone_out             => vio_out(14),
-            gt0_txprbssel_in                => vio_in_sync(3 downto 1),
+            gt0_txresetdone_out             => vio_tx_out(2),
+            gt0_txprbssel_in                => vio_tx_in_sync(5 downto 3),
             
             --____________________________COMMON PORTS________________________________
             GT0_QPLLPD_IN                   => qpll_pd,                   
@@ -434,7 +430,7 @@ begin
     
     i_vio_drp : vio_drp
     port map (
-      clk => clk_sys_div2,
+      clk         => clk_sys_div2,
       probe_in0   => drp_dout,
       probe_in1   => drp_rdy,
       probe_out0  => drp_addr,
@@ -446,43 +442,38 @@ begin
     i_vio_rx : vio_Rx
     port map (
       clk         => clk_sys_div2,
-      probe_in0   => vio_out_sync(0),
-      probe_in1   => vio_out_sync(3 downto 1),
-      probe_in2   => vio_out_sync(10 downto 4),
-      probe_in3   => vio_out_sync(11),
-      probe_out0  => vio_in(0),
-      probe_out1  => vio_in(1),
-      probe_out2  => vio_in(2),
-      probe_out3  => vio_in(3),
-      probe_out4  => vio_in(5 downto 4),
-      probe_out5  => vio_in(6),
-      probe_out6  => vio_in(7),
-      probe_out7  => vio_in(8)
+      probe_in0   => vio_rx_out_sync(0),
+      probe_in1   => vio_rx_out_sync(3 downto 1),
+      probe_in2   => vio_rx_out_sync(10 downto 4),
+      probe_in3   => vio_rx_out_sync(11),
+      probe_out0  => vio_rx_in(0),
+      probe_out1  => vio_rx_in(3 downto 1),
+      probe_out2  => vio_rx_in(4),
+      probe_out3  => vio_rx_in(5),
+      probe_out4  => vio_rx_in(6),
+      probe_out5  => vio_rx_in(8 downto 7),
+      probe_out6  => vio_rx_in(9),
+      probe_out7  => vio_rx_in(10),
+      probe_out8  => vio_rx_in(11)
     );
 
 
     i_ila_rx_data : ila_Rx_data
     port map (
         clk     => clk_sys_div2,
-        probe0  => rx_data_in_sync
+        probe0  => vio_rx_out_sync(43 downto 12)
     );
         
     i_vio_tx : vio_Tx
     port map (
       clk         => clk_sys_div2,
-      probe_in0   => vio_out_sync(13 downto 12),
-      probe_in1   => vio_out_sync(14),
-      probe_out0  => vio_in(11 downto 9),
-      probe_out1  => vio_in(12),
-      probe_out2  => vio_in(13),
-      probe_out3  => vio_in(14)
+      probe_in0   => vio_tx_out_sync(1 downto 0),
+      probe_in1   => vio_tx_out_sync(2),
+      probe_out0  => vio_tx_in(0),
+      probe_out1  => vio_tx_in(1),
+      probe_out2  => vio_tx_in(2),
+      probe_out3  => vio_tx_in(5 downto 3),
+      probe_out4  => vio_tx_in(37 downto 6)
     );
-    
-    i_vio_tx_data : vio_Tx_data
-    port map (
-        clk         => clk_sys_div2,
-        probe_out0  => tx_data_out
-    );
-    
     
 end Behavioral;

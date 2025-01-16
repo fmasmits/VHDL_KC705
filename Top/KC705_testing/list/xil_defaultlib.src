@@ -5,5 +5,4 @@ sources/ip/ila_rx_data/ila_rx_data.xci
 sources/ip/vio_tra_set/vio_tra_set.xci
 sources/ip/vio_Tx/vio_Tx.xci
 sources/ip/vio_Rx/vio_Rx.xci
-sources/ip/vio_Rx_data/vio_Rx_data.xci
 sources/ip/vio_drp/vio_drp.xci
