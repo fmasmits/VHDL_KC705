@@ -127,13 +127,13 @@ architecture Behavioral of KC705_top is
     
     component vio_drp
     port(
-        clk         : in    std_logic;
-        probe_in0   : in    std_logic_vector(15 downto 0);
-        probe_in1   : in    std_logic;
-        probe_out0  : out   std_logic_vector(8 downto 0);
-        probe_out1  : out   std_logic_vector(15 downto 0);
-        probe_out2  : out   std_logic;
-        probe_out3  : out   std_logic 
+        clk         : in    std_logic;                      -- drp
+        probe_in0   : in    std_logic_vector(15 downto 0);  -- drp
+        probe_in1   : in    std_logic;                      -- drp
+        probe_out0  : out   std_logic_vector(8 downto 0);   -- drp
+        probe_out1  : out   std_logic_vector(15 downto 0);  -- drp
+        probe_out2  : out   std_logic;                      -- drp
+        probe_out3  : out   std_logic                       -- drp
     );
     end component;
     
