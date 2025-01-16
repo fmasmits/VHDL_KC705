@@ -457,7 +457,6 @@ begin
       probe_out8  => vio_rx_in(11)
     );
 
-
     i_ila_rx_data : ila_Rx_data
     port map (
         clk     => clk_sys_div2,
