@@ -87,12 +87,14 @@ architecture Behavioral of KC705_top is
     signal vio_rx_out_sync  : std_logic_vector(43 downto 0);
     
     signal vio_tx_in        : std_logic_vector(37 downto 0);
+    signal vio_tx_in_dff    : std_logic_vector(37 downto 0);
     signal vio_tx_in_sync   : std_logic_vector(37 downto 0);
     signal vio_tx_out       : std_logic_vector(2 downto 0);
     signal vio_tx_out_sync  : std_logic_vector(2 downto 0);
     
     --        fifo signals          --
-    signal vio_fifo_tx_in   : std_logic_vector(5 downto 0);
+    --signal vio_fifo_tx_in   : std_logic_vector(5 downto 0);
+    
     
     
     ----------------------------------
@@ -173,23 +175,23 @@ architecture Behavioral of KC705_top is
     );
     end component;
     
-    component fifo_tx_in
-    port (
-        rst             : in  std_logic;
-        wr_clk          : in  std_logic;
-        rd_clk          : in  std_logic;
-        din             : in  std_logic_vector(37 downto 0);
-        wr_en           : in  std_logic;
-        rd_en           : in  std_logic;
-        dout            : out std_logic_vector(37 downto 0);
-        full            : out std_logic;
-        almost_full     : out std_logic;
-        overflow        : out std_logic;
-        empty           : out std_logic;
-        almost_empty    : out std_logic;
-        underflow       : out std_logic 
-    );
-    end component;
+--    component fifo_tx_in
+--    port (
+--        rst             : in  std_logic;
+--        wr_clk          : in  std_logic;
+--        rd_clk          : in  std_logic;
+--        din             : in  std_logic_vector(37 downto 0);
+--        wr_en           : in  std_logic;
+--        rd_en           : in  std_logic;
+--        dout            : out std_logic_vector(37 downto 0);
+--        full            : out std_logic;
+--        almost_full     : out std_logic;
+--        overflow        : out std_logic;
+--        empty           : out std_logic;
+--        almost_empty    : out std_logic;
+--        underflow       : out std_logic 
+--    );
+--    end component;
     
     component ila_Rx_data
     port (
@@ -277,22 +279,28 @@ architecture Behavioral of KC705_top is
  
 begin
 
+    --d-flipflop (data buffer)
+    process(clk_fabric_tx)
+    begin
+        vio_tx_in_sync <= vio_tx_in_dff;
+    end process;
+
     ----------------------------------
     --    Clock domain crossing     --
     ----------------------------------
---    i_xpm_cdc_vio_tx_in : xpm_cdc_array_single
---    generic map (
---          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
---          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
---          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
---          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
---          WIDTH          => 38
---    ) port map (
---          dest_out => vio_tx_in_sync,  
---          dest_clk => clk_fabric_tx,      -- 1-bit input: Clock signal for the destination clock domain.
---          src_clk  => clk_sys_div2,      -- 1-bit input: optional; required when SRC_INPUT_REG = 1
---          src_in   => vio_tx_in        
---    );
+    i_xpm_cdc_vio_tx_in : xpm_cdc_array_single
+    generic map (
+          DEST_SYNC_FF   => 4,           -- DECIMAL; range: 2-10
+          INIT_SYNC_FF   => 0,           -- DECIMAL; 0/1 = disable/enable simulation init values
+          SIM_ASSERT_CHK => 0,           -- DECIMAL; 0/1 = disable/enable simulation messages
+          SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
+          WIDTH          => 38
+    ) port map (
+          dest_out => vio_tx_in_dff,  
+          dest_clk => clk_fabric_tx,      -- 1-bit input: Clock signal for the destination clock domain.
+          src_clk  => clk_sys_div2,      -- 1-bit input: optional; required when SRC_INPUT_REG = 1
+          src_in   => vio_tx_in        
+    );
     
     i_xpm_cdc_vio_tx_out : xpm_cdc_array_single
     generic map (
@@ -498,21 +506,21 @@ begin
       probe_out4  => vio_tx_in(37 downto 6)
     );
     
-    i_fifo_tx_in : fifo_tx_in
-    port map (
-        rst             => '0',
-        wr_clk          => clk_sys_div2,
-        rd_clk          => clk_fabric_tx,
-        din             => vio_tx_in,
-        wr_en           => '1',
-        rd_en           => '1',
-        dout            => vio_tx_in_sync,
-        full            => vio_fifo_tx_in(0),
-        almost_full     => vio_fifo_tx_in(1),
-        overflow        => vio_fifo_tx_in(2),
-        empty           => vio_fifo_tx_in(3),
-        almost_empty    => vio_fifo_tx_in(4),
-        underflow       => vio_fifo_tx_in(5)
-      );
+--    i_fifo_tx_in : fifo_tx_in
+--    port map (
+--        rst             => '0',
+--        wr_clk          => clk_sys_div2,
+--        rd_clk          => clk_fabric_tx,
+--        din             => vio_tx_in,
+--        wr_en           => '1',
+--        rd_en           => '1',
+--        dout            => vio_tx_in_sync,
+--        full            => vio_fifo_tx_in(0),
+--        almost_full     => vio_fifo_tx_in(1),
+--        overflow        => vio_fifo_tx_in(2),
+--        empty           => vio_fifo_tx_in(3),
+--        almost_empty    => vio_fifo_tx_in(4),
+--        underflow       => vio_fifo_tx_in(5)
+--      );
         
 end Behavioral;
