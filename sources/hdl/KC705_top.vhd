@@ -167,10 +167,10 @@ architecture Behavioral of KC705_top is
         rst             : in  std_logic;
         wr_clk          : in  std_logic;
         rd_clk          : in  std_logic;
-        din             : in  std_logic_vector(11 downto 0);
+        din             : in  std_logic_vector(8 downto 0);
         wr_en           : in  std_logic;
         rd_en           : in  std_logic;
-        dout            : out std_logic_vector(11 downto 0);
+        dout            : out std_logic_vector(8 downto 0);
         full            : out std_logic;
         empty           : out std_logic
     );
