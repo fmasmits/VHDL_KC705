@@ -67,30 +67,27 @@
 ################################## Clock Constraints ##########################
 
 
-#create_clock -period 10.0 [get_ports sysclk_in]
 
 # User Clock Constraints
 create_clock -period 3.2 [get_pins -filter {REF_PIN_NAME=~*TXOUTCLK} -of_objects [get_cells -hierarchical -filter {NAME =~ *gt0_trans_wiz_i*gtxe2_i*}]]
 create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*TXOUTCLKFABRIC} -of_objects [get_cells -hierarchical -filter {NAME =~ *gt0_trans_wiz_i*gtxe2_i*}]]
 create_clock -period 8.0 [get_pins -filter {REF_PIN_NAME=~*RXOUTCLKFABRIC} -of_objects [get_cells -hierarchical -filter {NAME =~ *gt0_trans_wiz_i*gtxe2_i*}]]
-#set_false_path -to [get_cells -hierarchical -filter {NAME =~ *sync*/data_sync_reg1}]
-#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt_usrclk_source*DRP_CLK_BUFG*I}]] -to [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*TXOUTCLK}]]
-#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*TXOUTCLK}]] -to [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt_usrclk_source*DRP_CLK_BUFG*I}]]
+#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_ports SYSCLK_IN]] -to [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*TXOUTCLK}]]
+#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*TXOUTCLK}]] -to [get_clocks -include_generated_clocks -of_objects [get_ports SYSCLK_IN]]
+
+#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_ports SYSCLK_IN]] -to [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*RXOUTCLK}]]
+#set_false_path -from [get_clocks -include_generated_clocks -of_objects [get_pins -hier -filter {name=~*gt0_trans_wiz_i*gtxe2_i*RXOUTCLK}]] -to [get_clocks -include_generated_clocks -of_objects [get_ports SYSCLK_IN]]
+
 
 
 set_false_path -to [get_cells -hierarchical -filter {NAME =~ *data_sync_reg1}]
 
 
-#set_false_path -to [get_cells -hierarchical -filter {NAME =~ *common1_i/qpll_reset_r_reg}]
 
 
 ####################### GT reference clock constraints #########################
- 
-
-    #create_clock -period 8.0 [get_ports Q0_CLK0_GTREFCLK_PAD_P_IN]
 
 
-#create_clock -name GT0_GTREFCLK0_COMMON_IN -period 8.0 [get_pins -hier -filter {name=~*common0_i*gtxe2_common_i*GTREFCLK0}] 
 
 ################################# RefClk Location constraints (Can be uncommented) ##################### 
 ## set_property LOC R7 [get_ports  Q0_CLK0_GTREFCLK_PAD_N_IN ] 

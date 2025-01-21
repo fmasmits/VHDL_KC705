@@ -68,29 +68,24 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
 
+--***************************** Entity Declaration ****************************
 entity trans_wiz is
 port
 (
+    SYSCLK_IN                               : in   std_logic;
     SOFT_RESET_TX_IN                        : in   std_logic;
     SOFT_RESET_RX_IN                        : in   std_logic;
     DONT_RESET_ON_DATA_ERROR_IN             : in   std_logic;
-    Q0_CLK0_GTREFCLK_PAD_N_IN               : in   std_logic;
-    Q0_CLK0_GTREFCLK_PAD_P_IN               : in   std_logic;
-
     GT0_TX_FSM_RESET_DONE_OUT               : out  std_logic;
     GT0_RX_FSM_RESET_DONE_OUT               : out  std_logic;
     GT0_DATA_VALID_IN                       : in   std_logic;
- 
-    GT0_TXUSRCLK_OUT                        : out  std_logic;
-    GT0_TXUSRCLK2_OUT                       : out  std_logic;
-    GT0_RXUSRCLK_OUT                        : out  std_logic;
-    GT0_RXUSRCLK2_OUT                       : out  std_logic;
 
     --_________________________________________________________________________
     --GT0  (X1Y0)
     --____________________________CHANNEL PORTS________________________________
     ---------------------------- Channel - DRP Ports  --------------------------
     gt0_drpaddr_in                          : in   std_logic_vector(8 downto 0);
+    gt0_drpclk_in                           : in   std_logic;
     gt0_drpdi_in                            : in   std_logic_vector(15 downto 0);
     gt0_drpdo_out                           : out  std_logic_vector(15 downto 0);
     gt0_drpen_in                            : in   std_logic;
@@ -104,6 +99,9 @@ port
     -------------------------- RX Margin Analysis Ports ------------------------
     gt0_eyescandataerror_out                : out  std_logic;
     gt0_eyescantrigger_in                   : in   std_logic;
+    ------------------ Receive Ports - FPGA RX Interface Ports -----------------
+    gt0_rxusrclk_in                         : in   std_logic;
+    gt0_rxusrclk2_in                        : in   std_logic;
     ------------------ Receive Ports - FPGA RX interface Ports -----------------
     gt0_rxdata_out                          : out  std_logic_vector(31 downto 0);
     ------------------- Receive Ports - Pattern Checker Ports ------------------
@@ -134,6 +132,9 @@ port
     --------------------- TX Initialization and Reset Ports --------------------
     gt0_gttxreset_in                        : in   std_logic;
     gt0_txuserrdy_in                        : in   std_logic;
+    ------------------ Transmit Ports - FPGA TX Interface Ports ----------------
+    gt0_txusrclk_in                         : in   std_logic;
+    gt0_txusrclk2_in                        : in   std_logic;
     ------------------ Transmit Ports - Pattern Generator Ports ----------------
     gt0_txprbsforceerr_in                   : in   std_logic;
     ---------------------- Transmit Ports - TX Buffer Ports --------------------
@@ -144,6 +145,7 @@ port
     gt0_gtxtxn_out                          : out  std_logic;
     gt0_gtxtxp_out                          : out  std_logic;
     ----------- Transmit Ports - TX Fabric Clock Output Control Ports ----------
+    gt0_txoutclk_out                        : out  std_logic;
     gt0_txoutclkfabric_out                  : out  std_logic;
     gt0_txoutclkpcs_out                     : out  std_logic;
     ------------- Transmit Ports - TX Initialization and Reset Ports -----------
@@ -151,54 +153,56 @@ port
     ------------------ Transmit Ports - pattern Generator Ports ----------------
     gt0_txprbssel_in                        : in   std_logic_vector(2 downto 0);
 
-GT0_QPLLPD_IN                           : in   std_logic;
-    --____________________________COMMON PORTS________________________________
-    GT0_QPLLLOCK_OUT : out std_logic;
-    GT0_QPLLREFCLKLOST_OUT  : out std_logic;
-     GT0_QPLLOUTCLK_OUT  : out std_logic;
-     GT0_QPLLOUTREFCLK_OUT : out std_logic;
 
-          sysclk_in                               : in   std_logic
+    --____________________________COMMON PORTS________________________________
+    GT0_QPLLLOCK_IN : in std_logic;
+    GT0_QPLLREFCLKLOST_IN  : in std_logic;
+    GT0_QPLLRESET_OUT  : out std_logic;
+     GT0_QPLLOUTCLK_IN  : in std_logic;
+     GT0_QPLLOUTREFCLK_IN : in std_logic
 
 );
-
 end trans_wiz;
-    
+
 architecture RTL of trans_wiz is
+    attribute DowngradeIPIdentifiedWarnings: string;
+    attribute DowngradeIPIdentifiedWarnings of RTL : architecture is "yes";
+
     attribute X_CORE_INFO : string;
     attribute X_CORE_INFO of RTL : architecture is "trans_wiz,gtwizard_v3_6_16,{protocol_file=Start_from_scratch}";
     attribute CORE_GENERATION_INFO : string;
     attribute CORE_GENERATION_INFO of RTL : architecture is "trans_wiz,gtwizard_v3_6_16,{protocol_file=Start_from_scratch}";
 
-component trans_wiz_support 
+--**************************Component Declarations*****************************
+
+component trans_wiz_init 
 generic
 (
     EXAMPLE_SIM_GTRESET_SPEEDUP             : string    := "TRUE";     -- simulation setting for GT SecureIP model
-    STABLE_CLOCK_PERIOD                     : integer   := 10  
+    EXAMPLE_SIMULATION                      : integer   := 0;          -- Set to 1 for simulation
+ 
+ 
+    STABLE_CLOCK_PERIOD                     : integer   := 10;  
+        -- Set to 1 for simulation
+    EXAMPLE_USE_CHIPSCOPE                   : integer   := 0           -- Set to 1 to use Chipscope to drive resets
 
 );
 port
 (
+    SYSCLK_IN                               : in   std_logic;
     SOFT_RESET_TX_IN                        : in   std_logic;
     SOFT_RESET_RX_IN                        : in   std_logic;
     DONT_RESET_ON_DATA_ERROR_IN             : in   std_logic;
-    Q0_CLK0_GTREFCLK_PAD_N_IN               : in   std_logic;
-    Q0_CLK0_GTREFCLK_PAD_P_IN               : in   std_logic;
-
     GT0_TX_FSM_RESET_DONE_OUT               : out  std_logic;
     GT0_RX_FSM_RESET_DONE_OUT               : out  std_logic;
     GT0_DATA_VALID_IN                       : in   std_logic;
- 
-    GT0_TXUSRCLK_OUT                        : out  std_logic;
-    GT0_TXUSRCLK2_OUT                       : out  std_logic;
-    GT0_RXUSRCLK_OUT                        : out  std_logic;
-    GT0_RXUSRCLK2_OUT                       : out  std_logic;
 
     --_________________________________________________________________________
     --GT0  (X1Y0)
     --____________________________CHANNEL PORTS________________________________
     ---------------------------- Channel - DRP Ports  --------------------------
     gt0_drpaddr_in                          : in   std_logic_vector(8 downto 0);
+    gt0_drpclk_in                           : in   std_logic;
     gt0_drpdi_in                            : in   std_logic_vector(15 downto 0);
     gt0_drpdo_out                           : out  std_logic_vector(15 downto 0);
     gt0_drpen_in                            : in   std_logic;
@@ -212,6 +216,9 @@ port
     -------------------------- RX Margin Analysis Ports ------------------------
     gt0_eyescandataerror_out                : out  std_logic;
     gt0_eyescantrigger_in                   : in   std_logic;
+    ------------------ Receive Ports - FPGA RX Interface Ports -----------------
+    gt0_rxusrclk_in                         : in   std_logic;
+    gt0_rxusrclk2_in                        : in   std_logic;
     ------------------ Receive Ports - FPGA RX interface Ports -----------------
     gt0_rxdata_out                          : out  std_logic_vector(31 downto 0);
     ------------------- Receive Ports - Pattern Checker Ports ------------------
@@ -242,6 +249,9 @@ port
     --------------------- TX Initialization and Reset Ports --------------------
     gt0_gttxreset_in                        : in   std_logic;
     gt0_txuserrdy_in                        : in   std_logic;
+    ------------------ Transmit Ports - FPGA TX Interface Ports ----------------
+    gt0_txusrclk_in                         : in   std_logic;
+    gt0_txusrclk2_in                        : in   std_logic;
     ------------------ Transmit Ports - Pattern Generator Ports ----------------
     gt0_txprbsforceerr_in                   : in   std_logic;
     ---------------------- Transmit Ports - TX Buffer Ports --------------------
@@ -252,6 +262,7 @@ port
     gt0_gtxtxn_out                          : out  std_logic;
     gt0_gtxtxp_out                          : out  std_logic;
     ----------- Transmit Ports - TX Fabric Clock Output Control Ports ----------
+    gt0_txoutclk_out                        : out  std_logic;
     gt0_txoutclkfabric_out                  : out  std_logic;
     gt0_txoutclkpcs_out                     : out  std_logic;
     ------------- Transmit Ports - TX Initialization and Reset Ports -----------
@@ -259,48 +270,45 @@ port
     ------------------ Transmit Ports - pattern Generator Ports ----------------
     gt0_txprbssel_in                        : in   std_logic_vector(2 downto 0);
 
-GT0_QPLLPD_IN                           : in   std_logic;
+
     --____________________________COMMON PORTS________________________________
-    GT0_QPLLLOCK_OUT : out std_logic;
-    GT0_QPLLREFCLKLOST_OUT  : out std_logic;
-     GT0_QPLLOUTCLK_OUT  : out std_logic;
-     GT0_QPLLOUTREFCLK_OUT : out std_logic;
-          sysclk_in                               : in   std_logic
+    GT0_QPLLLOCK_IN : in std_logic;
+    GT0_QPLLREFCLKLOST_IN  : in std_logic;
+    GT0_QPLLRESET_OUT  : out std_logic;
+     GT0_QPLLOUTCLK_IN  : in std_logic;
+     GT0_QPLLOUTREFCLK_IN : in std_logic
 
 );
-
 end component;
-
+ 
 --**************************** Main Body of Code *******************************
 begin
-    U0 : trans_wiz_support
+    U0 : trans_wiz_init
     generic map
 (
         EXAMPLE_SIM_GTRESET_SPEEDUP   => "TRUE",
-        STABLE_CLOCK_PERIOD           => 10
+        EXAMPLE_SIMULATION            => 0,
+ 
+ 
+        STABLE_CLOCK_PERIOD           => 10,
+        EXAMPLE_USE_CHIPSCOPE         => 0
 )
 port map
 (
-    SOFT_RESET_TX_IN => SOFT_RESET_TX_IN,
-    SOFT_RESET_RX_IN => SOFT_RESET_RX_IN,
-    DONT_RESET_ON_DATA_ERROR_IN => DONT_RESET_ON_DATA_ERROR_IN,
-    Q0_CLK0_GTREFCLK_PAD_N_IN => Q0_CLK0_GTREFCLK_PAD_N_IN,
-    Q0_CLK0_GTREFCLK_PAD_P_IN => Q0_CLK0_GTREFCLK_PAD_P_IN,
-
-     GT0_TX_FSM_RESET_DONE_OUT => GT0_TX_FSM_RESET_DONE_OUT,
-     GT0_RX_FSM_RESET_DONE_OUT => GT0_RX_FSM_RESET_DONE_OUT,
-     GT0_DATA_VALID_IN => GT0_DATA_VALID_IN,
- 
-     GT0_TXUSRCLK_OUT => GT0_TXUSRCLK_OUT,
-     GT0_TXUSRCLK2_OUT => GT0_TXUSRCLK2_OUT,
-     GT0_RXUSRCLK_OUT => GT0_RXUSRCLK_OUT,
-     GT0_RXUSRCLK2_OUT => GT0_RXUSRCLK2_OUT,
+        SYSCLK_IN                       =>      SYSCLK_IN,
+        SOFT_RESET_TX_IN                =>      SOFT_RESET_TX_IN,
+        SOFT_RESET_RX_IN                =>      SOFT_RESET_RX_IN,
+        DONT_RESET_ON_DATA_ERROR_IN     =>      DONT_RESET_ON_DATA_ERROR_IN,
+    GT0_TX_FSM_RESET_DONE_OUT => GT0_TX_FSM_RESET_DONE_OUT,
+    GT0_RX_FSM_RESET_DONE_OUT => GT0_RX_FSM_RESET_DONE_OUT,
+    GT0_DATA_VALID_IN => GT0_DATA_VALID_IN,
 
     --_________________________________________________________________________
     --GT0  (X1Y0)
     --____________________________CHANNEL PORTS________________________________
     ---------------------------- Channel - DRP Ports  --------------------------
         gt0_drpaddr_in                  =>      gt0_drpaddr_in,
+        gt0_drpclk_in                   =>      gt0_drpclk_in,
         gt0_drpdi_in                    =>      gt0_drpdi_in,
         gt0_drpdo_out                   =>      gt0_drpdo_out,
         gt0_drpen_in                    =>      gt0_drpen_in,
@@ -314,6 +322,9 @@ port map
     -------------------------- RX Margin Analysis Ports ------------------------
         gt0_eyescandataerror_out        =>      gt0_eyescandataerror_out,
         gt0_eyescantrigger_in           =>      gt0_eyescantrigger_in,
+    ------------------ Receive Ports - FPGA RX Interface Ports -----------------
+        gt0_rxusrclk_in                 =>      gt0_rxusrclk_in,
+        gt0_rxusrclk2_in                =>      gt0_rxusrclk2_in,
     ------------------ Receive Ports - FPGA RX interface Ports -----------------
         gt0_rxdata_out                  =>      gt0_rxdata_out,
     ------------------- Receive Ports - Pattern Checker Ports ------------------
@@ -344,6 +355,9 @@ port map
     --------------------- TX Initialization and Reset Ports --------------------
         gt0_gttxreset_in                =>      gt0_gttxreset_in,
         gt0_txuserrdy_in                =>      gt0_txuserrdy_in,
+    ------------------ Transmit Ports - FPGA TX Interface Ports ----------------
+        gt0_txusrclk_in                 =>      gt0_txusrclk_in,
+        gt0_txusrclk2_in                =>      gt0_txusrclk2_in,
     ------------------ Transmit Ports - Pattern Generator Ports ----------------
         gt0_txprbsforceerr_in           =>      gt0_txprbsforceerr_in,
     ---------------------- Transmit Ports - TX Buffer Ports --------------------
@@ -354,6 +368,7 @@ port map
         gt0_gtxtxn_out                  =>      gt0_gtxtxn_out,
         gt0_gtxtxp_out                  =>      gt0_gtxtxp_out,
     ----------- Transmit Ports - TX Fabric Clock Output Control Ports ----------
+        gt0_txoutclk_out                =>      gt0_txoutclk_out,
         gt0_txoutclkfabric_out          =>      gt0_txoutclkfabric_out,
         gt0_txoutclkpcs_out             =>      gt0_txoutclkpcs_out,
     ------------- Transmit Ports - TX Initialization and Reset Ports -----------
@@ -361,15 +376,15 @@ port map
     ------------------ Transmit Ports - pattern Generator Ports ----------------
         gt0_txprbssel_in                =>      gt0_txprbssel_in,
 
-     GT0_QPLLPD_IN => GT0_QPLLPD_IN,
+
     --____________________________COMMON PORTS________________________________
-    GT0_QPLLLOCK_OUT => GT0_QPLLLOCK_OUT,
-    GT0_QPLLREFCLKLOST_OUT  => GT0_QPLLREFCLKLOST_OUT,
-     GT0_QPLLOUTCLK_OUT  => GT0_QPLLOUTCLK_OUT,
-     GT0_QPLLOUTREFCLK_OUT => GT0_QPLLOUTREFCLK_OUT,
-     sysclk_in => sysclk_in
+    GT0_QPLLLOCK_IN => GT0_QPLLLOCK_IN, 
+    GT0_QPLLREFCLKLOST_IN => GT0_QPLLREFCLKLOST_IN, 
+    GT0_QPLLRESET_OUT => GT0_QPLLRESET_OUT, 
+     GT0_QPLLOUTCLK_IN  => GT0_QPLLOUTCLK_IN,
+     GT0_QPLLOUTREFCLK_IN => GT0_QPLLOUTREFCLK_IN 
 
 );
- end RTL;
-
+ 
+end RTL;    
  

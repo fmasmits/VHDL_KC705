@@ -17,11 +17,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:38 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:29 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b19df7a</spirit:value>
+            <spirit:value>9:b4cd35e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -36,11 +36,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:38 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:29 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -54,11 +54,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:26:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:25:34 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -72,11 +72,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -87,7 +87,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -101,11 +101,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:40 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:32 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -120,11 +120,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:36 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:26 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -140,11 +140,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:38 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:29 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:2b19df7a</spirit:value>
+            <spirit:value>9:b4cd35e0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -160,11 +160,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Fri Jan 10 09:25:38 UTC 2025</spirit:value>
+            <spirit:value>Fri Jan 17 16:24:29 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a65a961d</spirit:value>
+            <spirit:value>9:4b50c330</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1643,7 +1643,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>gt0_usesharedlogic</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.gt0_usesharedlogic">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.gt0_usesharedlogic">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="string">
         <spirit:name>gt0_pll0_fbdiv</spirit:name>
@@ -3040,26 +3040,6 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>trans_wiz_common_reset.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_common.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_gt_usrclk_source.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_support.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
@@ -3086,26 +3066,6 @@
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
-      <spirit:file>
-        <spirit:name>trans_wiz_common_reset.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_common.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_gt_usrclk_source.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>trans_wiz_support.vhd</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_ipsharedlogic</spirit:userFileType>
-      </spirit:file>
       <spirit:file>
         <spirit:name>trans_wiz/example_design/trans_wiz_tx_startup_fsm.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
@@ -5554,7 +5514,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>gt0_usesharedlogic</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.gt0_usesharedlogic" spirit:choiceRef="choice_pairs_53749dec" spirit:order="627">1</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.gt0_usesharedlogic" spirit:choiceRef="choice_pairs_53749dec" spirit:order="627">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>gt0_val_port_clkrsvd</spirit:name>
@@ -5633,6 +5593,7 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_decoding" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_drp_clock" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_encoding" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_oob" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_port_qpllpd" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_port_rxbufreset" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.gt0_val_port_rxbufstatus" xilinx:valueSource="user"/>
