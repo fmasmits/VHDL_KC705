@@ -7,3 +7,4 @@ sources/ip/vio_Tx/vio_Tx.xci
 sources/ip/vio_Rx/vio_Rx.xci
 sources/ip/vio_drp/vio_drp.xci
 sources/ip/fifo_tx_in/fifo_tx_in.xci
+sources/ip/fifo_rx_in/fifo_rx_in.xci
