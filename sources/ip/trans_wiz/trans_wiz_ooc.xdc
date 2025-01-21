@@ -73,10 +73,13 @@
 
 ################################## Clock Constraints ##########################
 ################################################################################
-create_clock -period 10.0 [get_ports SYSCLK_IN]
+create_clock -period 10.0 [get_ports sysclk_in]
 
 ####################### GT reference clock constraints #########################
 
+ 
+
+    create_clock -period 8.0 [get_ports Q0_CLK0_GTREFCLK_PAD_P_IN]
 
 ################################################################################
 ############################# SYS/DRP Clock Constraints ########################
