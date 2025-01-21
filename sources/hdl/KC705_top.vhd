@@ -93,8 +93,8 @@ architecture Behavioral of KC705_top is
     signal vio_tx_out_sync  : std_logic_vector(2 downto 0);
     
     --        fifo signals          --
-    signal vio_fifo_tx_in   : std_logic_vector(3 downto 0);
-    signal vio_fifo_rx_in   : std_logic_vector(3 downto 0);
+    signal vio_fifo_tx_in   : std_logic_vector(1 downto 0);
+    signal vio_fifo_rx_in   : std_logic_vector(1 downto 0);
     
     
     
@@ -173,9 +173,7 @@ architecture Behavioral of KC705_top is
         rd_en           : in  std_logic;
         dout            : out std_logic_vector(11 downto 0);
         full            : out std_logic;
-        overflow        : out std_logic;
-        empty           : out std_logic;
-        underflow       : out std_logic
+        empty           : out std_logic
     );
     end component;
     
@@ -202,9 +200,7 @@ architecture Behavioral of KC705_top is
         rd_en           : in  std_logic;
         dout            : out std_logic_vector(37 downto 0);
         full            : out std_logic;
-        overflow        : out std_logic;
-        empty           : out std_logic;
-        underflow       : out std_logic
+        empty           : out std_logic
     );
     end component;
     
@@ -321,9 +317,7 @@ begin
         rd_en           => '1',
         dout            => vio_tx_in_sync,
         full            => vio_fifo_tx_in(0),
-        overflow        => vio_fifo_tx_in(1),
-        empty           => vio_fifo_tx_in(2),
-        underflow       => vio_fifo_tx_in(3)
+        empty           => vio_fifo_tx_in(1)
     );
     
     i_xpm_cdc_vio_tx_out : xpm_cdc_array_single
@@ -364,9 +358,7 @@ begin
         rd_en           => '1',
         dout            => vio_rx_in_sync,
         full            => vio_fifo_rx_in(0),
-        overflow        => vio_fifo_rx_in(1),
-        empty           => vio_fifo_rx_in(2),
-        underflow       => vio_fifo_rx_in(3)
+        empty           => vio_fifo_rx_in(1)
     );
     
     i_xpm_cdc_vio_rx_out : xpm_cdc_array_single
