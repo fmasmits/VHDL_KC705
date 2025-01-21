@@ -81,14 +81,13 @@ architecture Behavioral of KC705_top is
     signal eye_scan_trig    : std_logic;
 
     --         cdc signals          --
-    signal vio_rx_in        : std_logic_vector(8 downto 0);
-    signal vio_rx_in_sync   : std_logic_vector(8 downto 0);
+    signal vio_rx_in        : std_logic_vector(6 downto 0);
+    signal vio_rx_in_sync   : std_logic_vector(6 downto 0);
     signal vio_rx_out       : std_logic_vector(43 downto 0);
     signal vio_rx_out_sync  : std_logic_vector(43 downto 0);
     
-    signal vio_tx_in        : std_logic_vector(37 downto 0);
-    signal vio_tx_in_dff    : std_logic_vector(37 downto 0);
-    signal vio_tx_in_sync   : std_logic_vector(37 downto 0);
+    signal vio_tx_in        : std_logic_vector(39 downto 0);
+    signal vio_tx_in_sync   : std_logic_vector(39 downto 0);
     signal vio_tx_out       : std_logic_vector(2 downto 0);
     signal vio_tx_out_sync  : std_logic_vector(2 downto 0);
     
@@ -167,10 +166,10 @@ architecture Behavioral of KC705_top is
         rst             : in  std_logic;
         wr_clk          : in  std_logic;
         rd_clk          : in  std_logic;
-        din             : in  std_logic_vector(8 downto 0);
+        din             : in  std_logic_vector(6 downto 0);
         wr_en           : in  std_logic;
         rd_en           : in  std_logic;
-        dout            : out std_logic_vector(8 downto 0);
+        dout            : out std_logic_vector(6 downto 0);
         full            : out std_logic;
         empty           : out std_logic
     );
@@ -194,10 +193,10 @@ architecture Behavioral of KC705_top is
         rst             : in  std_logic;
         wr_clk          : in  std_logic;
         rd_clk          : in  std_logic;
-        din             : in  std_logic_vector(37 downto 0);
+        din             : in  std_logic_vector(39 downto 0);
         wr_en           : in  std_logic;
         rd_en           : in  std_logic;
-        dout            : out std_logic_vector(37 downto 0);
+        dout            : out std_logic_vector(39 downto 0);
         full            : out std_logic;
         empty           : out std_logic
     );
@@ -402,19 +401,19 @@ begin
             gt0_rxuserrdy_in                => vio_rx_in_sync(0),
             gt0_rxprbserr_out               => vio_rx_out(0),
             gt0_rxprbssel_in                => vio_tx_in_sync(3 downto 1),
-            gt0_rxprbscntreset_in           => vio_rx_in_sync(1),
+            gt0_rxprbscntreset_in           => vio_tx_in_sync(38),
             gt0_rxdata_out                  => vio_rx_out(43 downto 12),
             gt0_gtxrxp_in                   => data_in_diff(0),
             gt0_gtxrxn_in                   => data_in_diff(1),
-            gt0_rxbufreset_in               => vio_rx_in_sync(2),
+            gt0_rxbufreset_in               => vio_rx_in_sync(1),
             gt0_rxbufstatus_out             => vio_rx_out(3 downto 1),
-            gt0_rxdfelpmreset_in            => vio_rx_in_sync(3),
+            gt0_rxdfelpmreset_in            => vio_rx_in_sync(2),
             gt0_rxmonitorout_out            => vio_rx_out(10 downto 4),
-            gt0_rxmonitorsel_in             => vio_rx_in_sync(5 downto 4),
+            gt0_rxmonitorsel_in             => vio_rx_in_sync(4 downto 3),
             gt0_rxoutclkfabric_out          => clk_fabric_rx,
-            gt0_gtrxreset_in                => vio_rx_in_sync(6),
-            gt0_rxpmareset_in               => vio_rx_in_sync(7),
-            gt0_rxslide_in                  => vio_rx_in_sync(8),
+            gt0_gtrxreset_in                => vio_rx_in_sync(5),
+            gt0_rxpmareset_in               => vio_rx_in_sync(6),
+            gt0_rxslide_in                  => vio_tx_in_sync(39),
             gt0_rxresetdone_out             => vio_rx_out(11),
             
             --------------------------------- TX Ports ---------------------------------
@@ -481,13 +480,13 @@ begin
       probe_in2   => vio_rx_out_sync(10 downto 4),
       probe_in3   => vio_rx_out_sync(11),
       probe_out0  => vio_rx_in(0),
-      probe_out1  => vio_rx_in(1),
-      probe_out2  => vio_rx_in(2),
-      probe_out3  => vio_rx_in(3),
-      probe_out4  => vio_rx_in(5 downto 4),
-      probe_out5  => vio_rx_in(6),
-      probe_out6  => vio_rx_in(7),
-      probe_out7  => vio_rx_in(8)
+      probe_out1  => vio_tx_in(38),
+      probe_out2  => vio_rx_in(1),
+      probe_out3  => vio_rx_in(2),
+      probe_out4  => vio_rx_in(4 downto 3),
+      probe_out5  => vio_rx_in(5),
+      probe_out6  => vio_rx_in(6),
+      probe_out7  => vio_tx_in(39)
     );
 
     i_ila_rx_data : ila_Rx_data
