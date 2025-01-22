@@ -87,12 +87,10 @@ architecture Behavioral of KC705_top is
     signal vio_rx_out_sync  : std_logic_vector(43 downto 0);
     
     signal vio_tx_in            : std_logic_vector(39 downto 0);
-    signal vio_tx_dff_in        : std_logic_vector(39 downto 0);
     signal vio_tx_in_sync       : std_logic_vector(39 downto 0);
     signal vio_tx_out           : std_logic_vector(2 downto 0);
     signal vio_tx_out_sync      : std_logic_vector(2 downto 0);
-    signal vio_tx_dff_out_sync  : std_logic_vector(2 downto 0);
-    
+
     --        fifo signals          --
     signal vio_fifo_tx_in   : std_logic_vector(1 downto 0);
     signal vio_fifo_rx_in   : std_logic_vector(1 downto 0);
@@ -291,17 +289,6 @@ architecture Behavioral of KC705_top is
 begin
 
     ----------------------------------
-    --  D-flipflops agains vivado   --
-    ----------------------------------
-    process(clk_sys_div2)
-    begin
-        if rising_edge(clk_sys_div2) then
-            vio_tx_dff_in <= vio_tx_in;                 -- Registreer de VIO output
-            vio_tx_out_sync <= vio_tx_dff_out_sync;     -- Registreer de VIO output
-        end if;
-    end process;
-
-    ----------------------------------
     --    Clock domain crossing     --
     ----------------------------------
     
@@ -310,7 +297,7 @@ begin
         rst             => '0',
         wr_clk          => clk_sys_div2,
         rd_clk          => clk_pcs_tx,
-        din             => vio_tx_dff_in,
+        din             => vio_tx_in,
         wr_en           => '1',
         rd_en           => '1',
         dout            => vio_tx_in_sync,
@@ -326,7 +313,7 @@ begin
           SRC_INPUT_REG  => 0,           -- DECIMAL; 0/1 = do not/do register input
           WIDTH          => 3
     ) port map (
-          dest_out => vio_tx_dff_out_sync,  
+          dest_out => vio_tx_out_sync,  
           dest_clk => clk_sys_div2,      -- 1-bit input: Clock signal for the destination clock domain.
           src_clk  => clk_pcs_tx,     -- 1-bit input: optional; required when SRC_INPUT_REG = 1
           src_in   => vio_tx_out        

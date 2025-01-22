@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1.2 (lin64) Build 5164865 Thu Sep  5 14:36:28 MDT 2024
--- Date        : Mon Jan 13 16:25:51 2025
+-- Date        : Wed Jan 22 12:08:03 2025
 -- Host        : fmasmitsxps15 running 64-bit Ubuntu 20.04.6 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/fma_smits/documents/UU_afstuderen/VHDL_UU_KC705/sources/ip/vio_tra_set/vio_tra_set_stub.vhdl

@@ -13,4 +13,6 @@ set_property IOSTANDARD LVDS [get_ports {clk_sys_diff[0]}]
 set_property IOSTANDARD LVDS [get_ports {clk_sys_diff[1]}]
 
 
-
+#####################   Bank0 pin   #######################
+set_property CFGBVS Vcco [current_design]
+set_property config_voltage 2.5 [current_design]
