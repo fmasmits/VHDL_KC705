@@ -400,7 +400,7 @@ begin
             --------------------------------- RX Ports ---------------------------------
             gt0_rxuserrdy_in                => vio_rx_in_sync(0),
             gt0_rxprbserr_out               => vio_rx_out(0),
-            gt0_rxprbssel_in                => vio_tx_in_sync(3 downto 1),
+            gt0_rxprbssel_in                => vio_tx_in_sync(5 downto 3),
             gt0_rxprbscntreset_in           => vio_tx_in_sync(38),
             gt0_rxdata_out                  => vio_rx_out(43 downto 12),
             gt0_gtxrxp_in                   => data_in_diff(0),
